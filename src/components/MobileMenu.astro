@@ -1,0 +1,56 @@
+---
+// Component: MobileMenu
+// Purpose: Off-canvas mobile navigation panel with backdrop.
+// Props: none
+// JS: inline <script>
+
+import ButtonA from './ui/ButtonA.astro';
+---
+
+<div id="mobileBackdrop" class="fixed inset-0 bg-black/40 z-[1050] opacity-0 pointer-events-none transition-opacity"></div>
+
+<aside
+	id="mobilePanel"
+	class="fixed left-0 top-0 h-dvh w-[280px] bg-[#0f0d2e] z-[1100] p-6 flex flex-col gap-5 border-r border-white/5 -translate-x-full transition-transform duration-300"
+	aria-hidden="true"
+>
+	<button
+		id="mobileClose"
+		class="absolute top-[18px] right-[18px] w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center text-[18px]"
+		aria-label="Close menu"
+	>
+		×
+	</button>
+	<div class="mb-2">
+		<span class="text-white text-[20px] font-bold tracking-[-0.02em]">diteck</span>
+	</div>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">Demos</a>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">Company</a>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">Services</a>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">Case Studies</a>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">News</a>
+	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="#">All Pages</a>
+	<div class="mt-4 self-start">
+		<ButtonA href="#" label="get in touch" />
+	</div>
+</aside>
+
+<script>
+	const panel = document.getElementById('mobilePanel');
+	const backdrop = document.getElementById('mobileBackdrop');
+	const openMobile = () => {
+		panel?.classList.add('open', 'translate-x-0');
+		panel?.classList.remove('-translate-x-full');
+		backdrop?.classList.add('open', 'opacity-100', 'pointer-events-auto');
+		panel?.setAttribute('aria-hidden', 'false');
+	};
+	const closeMobile = () => {
+		panel?.classList.remove('open', 'translate-x-0');
+		panel?.classList.add('-translate-x-full');
+		backdrop?.classList.remove('open', 'opacity-100', 'pointer-events-auto');
+		panel?.setAttribute('aria-hidden', 'true');
+	};
+	document.getElementById('hamburger')?.addEventListener('click', openMobile);
+	document.getElementById('mobileClose')?.addEventListener('click', closeMobile);
+	backdrop?.addEventListener('click', closeMobile);
+</script>

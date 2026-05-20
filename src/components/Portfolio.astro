@@ -1,0 +1,114 @@
+---
+// Component: Portfolio
+// Purpose: Showcase selected project cards.
+// Props: none
+// JS: none
+
+import Eyebrow from './ui/Eyebrow.astro';
+import ButtonB from './ui/ButtonB.astro';
+
+interface Project {
+	bg: string;
+	gradient: string;
+	logo: string;
+	title: string;
+	category: string;
+	staggerIndex: number;
+}
+
+const projects: Project[] = [
+	{
+		bg: '#12343e',
+		gradient: 'linear-gradient(135deg,#1a4a5a,#0d2a35)',
+		logo: 'Galileo',
+		title: 'UI/UX Design Platform',
+		category: 'Advanced Analytics',
+		staggerIndex: 0
+	},
+	{
+		bg: '#3E122F',
+		gradient: 'linear-gradient(135deg,#5a1a45,#2a0a1f)',
+		logo: 'Interlock',
+		title: 'Social Media Campaigns',
+		category: 'Design',
+		staggerIndex: 1
+	},
+	{
+		bg: '#526648',
+		gradient: 'linear-gradient(135deg,#6a8060,#3a5030)',
+		logo: 'Segment',
+		title: 'Content Marketing Suite',
+		category: 'Development',
+		staggerIndex: 2
+	},
+	{
+		bg: '#423b2f',
+		gradient: 'linear-gradient(135deg,#5a5040,#2a2018)',
+		logo: 'Alt+Shift',
+		title: 'SEO & Marketing Tools',
+		category: 'Advanced Analytics',
+		staggerIndex: 3
+	},
+	{
+		bg: '#2d2736',
+		gradient: 'linear-gradient(135deg,#3d3548,#1d1525)',
+		logo: 'Boltshift',
+		title: 'Creative Branding Agency',
+		category: 'Marketing Strategy',
+		staggerIndex: 4
+	},
+	{
+		bg: '#4a0e0f',
+		gradient: 'linear-gradient(135deg,#6a1e20,#2a0808)',
+		logo: 'Lightbox',
+		title: 'Video Production Hub',
+		category: 'Technology',
+		staggerIndex: 5
+	}
+];
+---
+
+<section class="bg-brand-bg-light py-[100px]">
+	<div class="max-w-[1700px] mx-auto p-16 rounded-[40px] bg-white relative overflow-hidden">
+		<div class="absolute inset-0 bg-portfolio-image bg-cover bg-top opacity-40" aria-hidden="true"></div>
+		<div class="relative z-10">
+		<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-start mb-10">
+			<div class="flex flex-col">
+				<Eyebrow label="Selected works" />
+				<h2 class="text-h2 mt-[14px]">Our finished projects</h2>
+				<p class="text-xl text-brand-text mt-4 max-w-[720px]">
+					Read how we've helped some of the biggest brands transform their business.
+				</p>
+			</div>
+			<div class="lg:justify-self-end">
+				<ButtonB label="view all works" />
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+			{projects.map((project) => (
+				<article
+					class="group rounded-2xl overflow-hidden min-h-[450px] relative cursor-pointer flex flex-col reveal"
+					style={`--stagger-i:${project.staggerIndex}; --project-bg:${project.bg}; --project-gradient:${project.gradient}; background:${project.bg};`}
+				>
+					<div
+						class="relative overflow-hidden min-h-[325px] transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+						style={`background:${project.gradient};`}
+					>
+						<div class="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgba(255,255,255,.03)_0_1px,transparent_1px_12px)]"></div>
+						<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] rounded-full bg-white text-[#333] text-[10px] font-bold flex items-center justify-center shadow-lg z-[2]">
+							{project.logo}
+						</div>
+					</div>
+					<div class="px-10 py-10 min-h-[125px]" style={`background:${project.bg};`}>
+						<h5 class="text-white text-[17px] font-semibold leading-snug">{project.title}</h5>
+						<div class="text-white/60 text-xs mt-1">{project.category}</div>
+					</div>
+				</article>
+			))}
+		</div>
+
+			<div class="mt-10"></div>
+		</div>
+	</div>
+</section>

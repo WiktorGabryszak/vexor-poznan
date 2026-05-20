@@ -1,0 +1,56 @@
+---
+// Component: OurVision
+// Purpose: Vision statement with trust proof and logos.
+// Props: none
+// JS: none
+
+import Eyebrow from './ui/Eyebrow.astro';
+---
+
+<section class="bg-brand-bg-light pt-[100px] pb-[100px] sm:py-[100px] -z-[50]">
+	<div class="max-w-[1700px] mx-auto px-6 md:px-10">
+		<div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[60px] items-center">
+			<img
+				class="reveal aspect-[4/5] rounded-card object-cover"
+				style="--stagger-i:0"
+				src="/h6_bg-1.jpg"
+				alt="Team collaboration"
+				loading="eager"
+				fetchpriority="high"
+			/>
+			<div class="flex flex-col gap-[18px]">
+				<div class="reveal" style="--stagger-i:0">
+					<Eyebrow label="Our Vision" />
+				</div>
+				<h2 class="text-h2 reveal" style="--stagger-i:1">
+					We create brands and experiences that drive remarkable change
+				</h2>
+				<p class="text-xl text-brand-text max-w-[620px] reveal font-400" style="--stagger-i:2">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim condimentum tortor quis tristique. Proin tempus lacus quis scelerisque congue. Sed nec ipsum ut lectus volutpat tempus. Maecenas facilisis sed est eget lobortis. Sed a facilisis leo, vel dictum orci. Sed convallis ex quis sem pretium, ac laoreet mi aliquam. Morbi dignissim erat justo, id rhoncus dolor vehicula non. Integer congue mollis ligula ut pulvinar. Nunc vel orci tincidunt, ultrices tortor quis, vestibulum quam.
+				</p>
+				<hr class="border-brand-border reveal" style="--stagger-i:3" />
+				<p class="reveal" style="--stagger-i:4">
+					Trusted by <span class="text-primary font-bold">1900+</span> founders &amp; business owners
+				</p>
+				<div class="flex gap-6 flex-wrap reveal" style="--stagger-i:5">
+					<span class="inline-flex items-center gap-2 text-sm text-[#888] font-semibold">
+						<span class="w-2 h-2 rounded-sm bg-[#888] inline-block"></span>
+						Sisyphus
+					</span>
+					<span class="inline-flex items-center gap-2 text-sm text-[#888] font-semibold">
+						<span class="w-2 h-2 rounded-sm bg-[#2060D0] inline-block"></span>
+						Hourglass
+					</span>
+					<span class="inline-flex items-center gap-2 text-sm text-[#888] font-semibold">
+						<span class="w-2 h-2 rounded-sm bg-[#8040C0] inline-block"></span>
+						Layers
+					</span>
+					<span class="inline-flex items-center gap-2 text-sm text-[#888] font-semibold">
+						<span class="w-2 h-2 rounded-sm bg-[#4080E0] inline-block"></span>
+						Catalog
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

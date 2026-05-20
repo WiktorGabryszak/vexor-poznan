@@ -1,0 +1,22 @@
+---
+// Component: ButtonA
+// Purpose: Filled pill CTA with left arrow circle.
+// Props: href, label, invert
+// JS: none
+
+import ArrowCircle from './ArrowCircle.astro';
+
+const { href = '#', label, invert = false } = Astro.props;
+---
+
+<a
+	href={href}
+	class:list={[
+		'inline-flex items-center gap-2.5 rounded-full pl-2.5 pr-[22px] py-2.5 text-[15px] font-semibold tracking-[-0.005em]',
+		'transition-[background,transform] duration-200 hover:-translate-y-0.5',
+		invert ? 'bg-white text-brand-accent' : 'bg-primary text-white hover:bg-primary-hover'
+	]}
+>
+	<ArrowCircle size={32} dark={!invert} />
+	<span>{label}</span>
+</a>

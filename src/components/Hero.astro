@@ -1,0 +1,34 @@
+---
+// Component: Hero
+// Purpose: Top hero section with intro copy and service cards.
+// Props: none
+// JS: none
+
+import Eyebrow from './ui/Eyebrow.astro';
+import ServiceCards from './ServiceCards.astro';
+---
+
+<section class="min-h-[65vh] relative overflow-hidden flex flex-col bg-hero-image bg-cover bg-no-repeat text-white">
+	<div class="absolute inset-0 hero-dot-grid opacity-[0.35] [background-size:32px_32px]" aria-hidden="true"></div>
+	<div
+		class="absolute left-[8%] top-[25%] w-[250px] h-[250px] bg-shape-2 shape-gem bg-contain bg-no-repeat animate-float pointer-events-none drop-shadow-[0_20px_40px_rgba(160,96,255,0.4)]"
+		aria-hidden="true"
+	></div>
+	<div
+		class="absolute right-[5%] top-[35%] w-[350px] h-[350px] bg-shape-1 shape-gem bg-contain bg-no-repeat animate-float-2 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)]"
+		aria-hidden="true"
+	></div>
+
+	<div class="relative z-10 flex flex-col items-center text-center bg-hero-dots max-w-[1000px] mx-auto pt-[180px] px-6">
+		<h1 class="text-hero text-white mt-5 text-balance reveal" style="--stagger-i:1">
+			We design solutions that drive business
+		</h1>
+		<p class="text-[24px] text-white/100 max-w-[560px] mt-[22px] text-pretty reveal font-medium text-" style="--stagger-i:2">
+			We're a team of experts who've been delivering digital success for more than a decade.
+		</p>
+	</div>
+
+	<div class="relative z-50 mt-24 -mb-20">
+		<ServiceCards />
+	</div>
+</section>

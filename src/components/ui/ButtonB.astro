@@ -1,0 +1,23 @@
+---
+// Component: ButtonB
+// Purpose: Circle-arrow link button.
+// Props: href, label, dark
+// JS: none
+
+import ArrowCircle from './ArrowCircle.astro';
+
+const { href = '#', label, dark = false } = Astro.props;
+---
+
+<a
+	href={href}
+	class:list={[
+		'group inline-flex items-center gap-3 text-[15px] font-semibold transition-opacity duration-200',
+		dark ? 'text-white' : 'text-brand-accent'
+	]}
+>
+	<span class="transition-transform duration-200 group-hover:translate-x-1">
+		<ArrowCircle size={36} dark={dark} />
+	</span>
+	<span>{label}</span>
+</a>

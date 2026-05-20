@@ -1,0 +1,55 @@
+---
+// Component: Navbar
+// Purpose: Fixed top navigation with CTA and mobile trigger.
+// Props: none
+// JS: none
+
+import ButtonA from './ui/ButtonA.astro';
+---
+
+<header
+	id="nav"
+	class="fixed top-0 left-0 right-0 z-[100] h-[90px] m-8 py-3 flex items-center border-b border-transparent transition-[background,backdrop-filter,border-color] duration-200"
+>
+	<div class="w-full max-w-[1700px] mx-auto px-8 md:px-10 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 border border-white/10 rounded-[30px] py-2.5 pl-[30px] pr-[10px] backdrop-blur-[60px] transition-[background,backdrop-filter,border-color] duration-200 data-[scrolled]:bg-[rgba(10,8,40,1)] data-[scrolled]:backdrop-blur-xl data-[scrolled]:border-white/10">
+		<a href="#" class="inline-flex items-center gap-2.5 text-white" aria-label="diteck">
+			<span class="relative w-[18px] h-[18px]">
+				<span class="absolute top-0 left-0 w-2.5 h-2.5 rounded-[3px] bg-primary"></span>
+				<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-[3px] bg-[#A0A8F0]"></span>
+			</span>
+			<span class="text-[20px] font-bold tracking-[-0.02em]">diteck</span>
+		</a>
+
+		<nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white" aria-label="Primary">
+			<a class="hover:text-white transition-colors" href="#">Demos</a>
+			<span class="text-white/30">·</span>
+			<a class="hover:text-white transition-colors" href="#">Company</a>
+			<span class="text-white/30">·</span>
+			<a class="hover:text-white transition-colors" href="#">Services</a>
+			<span class="text-white/30">·</span>
+			<a class="hover:text-white transition-colors" href="#">Case Studies</a>
+			<span class="text-white/30">·</span>
+			<a class="hover:text-white transition-colors" href="#">News</a>
+			<span class="text-white/30">·</span>
+			<a class="hover:text-white transition-colors" href="#">All Pages</a>
+		</nav>
+
+		<div class="flex items-center gap-3">
+			<div class="hidden md:block">
+				<ButtonA href="#" label="get in touch" invert={true} />
+			</div>
+			<button
+				id="hamburger"
+				class="md:hidden inline-flex w-10 h-10 items-center justify-center rounded-lg text-white"
+				aria-label="Open menu"
+			>
+				<span class="flex flex-col gap-[7px]">
+					<span class="block w-[22px] h-[2px] bg-white"></span>
+					<span class="block w-[22px] h-[2px] bg-white"></span>
+					<span class="block w-[22px] h-[2px] bg-white"></span>
+				</span>
+			</button>
+		</div>
+	</div>
+</header>
+

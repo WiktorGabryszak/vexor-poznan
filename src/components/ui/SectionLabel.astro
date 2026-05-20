@@ -1,0 +1,15 @@
+---
+// Component: SectionLabel
+// Purpose: Ghost number with step title wrapper.
+// Props: number, title
+// JS: none
+
+const { number, title } = Astro.props;
+---
+
+<div class="relative">
+	<span class="ghost-number" aria-hidden="true">{number}</span>
+	<h5 class="text-[18px] font-bold text-brand-accent mt-[60px] leading-snug sm:mt-2">
+		{title}
+	</h5>
+</div>

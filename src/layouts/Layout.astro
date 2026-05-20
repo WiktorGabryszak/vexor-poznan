@@ -1,0 +1,75 @@
+---
+const { title = 'Diteck — Digital Agency' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body>
+		<slot />
+
+		<script>
+			const nav = document.getElementById('nav');
+			const onScroll = () => {
+				if (!nav) return;
+				if (window.scrollY > 40) {
+					nav.setAttribute('data-scrolled', 'true');
+				} else {
+					nav.removeAttribute('data-scrolled');
+				}
+			};
+			window.addEventListener('scroll', onScroll, { passive: true });
+			onScroll();
+
+			const revealObs = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('animate-in');
+							revealObs.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.15 }
+			);
+			document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+			function countUp(el, target, duration = 2000) {
+				const start = performance.now();
+				const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+				requestAnimationFrame(function tick(now) {
+					const p = Math.min((now - start) / duration, 1);
+					el.textContent = Math.round(easeOut(p) * target);
+					if (p < 1) requestAnimationFrame(tick);
+				});
+			}
+
+			const countObs = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.querySelectorAll('[data-count]').forEach((el) => {
+								countUp(el, parseInt(el.dataset.count, 10));
+							});
+							countObs.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.4 }
+			);
+			const teamStats = document.querySelector('.team-stats');
+			if (teamStats) countObs.observe(teamStats);
+		</script>
+	</body>
+</html>

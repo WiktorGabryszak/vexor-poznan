@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	*, *::before, *::after { box-sizing: border-box; }
+	html, body { margin: 0; padding: 0; overflow-x: hidden; }
+	body {
+		font-optical-sizing: auto;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+	h1,h2,h3,h4,h5,h6 { margin: 0; }
+	img { display: block; max-width: 100%; }
+	ul { list-style: none; margin: 0; padding: 0; }
+}
+
+@layer utilities {
+	/* Stagger delay - driven by inline CSS var --stagger-i set in HTML */
+	.stagger-reveal {
+		transition-delay: calc(var(--stagger-i, 0) * 80ms);
+	}
+  
+	/* Reveal - JS adds .animate-in via IntersectionObserver */
+	.reveal {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	.reveal.animate-in {
+		opacity: 1;
+		transform: translateY(0);
+		transition:
+			opacity   0.55s cubic-bezier(0.16,1,0.3,1) calc(var(--stagger-i,0) * 80ms),
+			transform 0.55s cubic-bezier(0.16,1,0.3,1) calc(var(--stagger-i,0) * 80ms);
+	}
+
+	/* Clip paths - Tailwind has no clip-path utilities */
+	.clip-star {
+		clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,
+											 50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+	}
+	.clip-triangle {
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	}
+	.clip-ribbon {
+		clip-path: polygon(20% 0%,80% 0%,100% 20%,80% 80%,
+											 50% 100%,20% 80%,0% 20%);
+	}
+
+	/* Gem shape - border-radius morph */
+	.shape-gem {
+		border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	}
+
+	/* Hero dot grid overlay */
+	.hero-dot-grid {
+		background-image: radial-gradient(circle, rgba(255,255,255,.12) 1px, transparent 1px);
+		background-size: 32px 32px;
+		mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 40%, transparent 80%);
+		-webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 40%, transparent 80%);
+	}
+
+	/* text-wrap utilities not in Tailwind v3 */
+	.text-balance  { text-wrap: balance; }
+	.text-pretty   { text-wrap: pretty; }
+
+	/* Ghost number behind step */
+	.ghost-number {
+		position: absolute;
+		top: -20px; left: 0;
+		font-size: 80px;
+		font-weight: 900;
+		color: rgba(0,0,0,.06);
+		user-select: none;
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+}

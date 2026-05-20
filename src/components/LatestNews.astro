@@ -1,0 +1,88 @@
+---
+// Component: LatestNews
+// Purpose: Recent posts list with featured item.
+// Props: none
+// JS: none
+
+import Eyebrow from './ui/Eyebrow.astro';
+import ButtonB from './ui/ButtonB.astro';
+
+interface NewsItem {
+	title: string;
+	category: string;
+	date: string;
+	thumbFrom: string;
+	thumbTo: string;
+}
+
+const newsItems: NewsItem[] = [
+	{
+		title: 'How to create a product that is profitable',
+		category: 'MARKETING',
+		date: 'AUG 25, 2025',
+		thumbFrom: '#C0C8E0',
+		thumbTo: '#8090C0'
+	},
+	{
+		title: 'Harnessing AI to improve conversion rates',
+		category: 'TECH',
+		date: 'AUG 22, 2025',
+		thumbFrom: '#E0C8C0',
+		thumbTo: '#C08A80'
+	},
+	{
+		title: 'Design systems that scale across teams',
+		category: 'DESIGN',
+		date: 'AUG 19, 2025',
+		thumbFrom: '#C8E0C8',
+		thumbTo: '#88A088'
+	}
+];
+---
+
+<section class="bg-brand-bg py-[100px] relative overflow-hidden">
+	<div class="absolute top-0 right-[-100px] w-[300px] h-[300px] rounded-full bg-[rgba(100,80,220,.08)] blur-[60px] pointer-events-none"></div>
+	<div class="max-w-[1700px] mx-auto px-6 md:px-10">
+		<div class="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 items-end mb-12">
+			<Eyebrow label="Recent post" />
+			<h2 class="text-h2">Our latest news</h2>
+		</div>
+
+		<div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10">
+			<div>
+				<div class="relative w-full aspect-[3/2] rounded-2xl bg-placeholder-img overflow-hidden">
+					<span class="absolute top-[14px] left-[14px] bg-white rounded-full px-3 py-1 text-xs font-bold text-[#333]">STRATEGY</span>
+				</div>
+				<div class="text-xs text-brand-muted mt-3 tracking-wide">STRATEGY · AUG 28, 2025</div>
+				<h3 class="text-[20px] font-semibold text-brand-accent mt-2 leading-snug">
+					Building a brand story that turns readers into customers
+				</h3>
+				<p class="text-sm text-brand-muted mt-1.5 leading-relaxed">
+					A practical framework for turning positioning into content that resonates and converts.
+				</p>
+				<div class="mt-4">
+					<ButtonB label="Read More" />
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-7">
+				{newsItems.map((item) => (
+					<div class="flex gap-5 items-start cursor-pointer">
+						<div
+							class="w-[90px] h-[68px] rounded-xl flex-shrink-0"
+							style={`background:linear-gradient(135deg,${item.thumbFrom},${item.thumbTo});`}
+						></div>
+						<div>
+							<div class="text-xs text-brand-muted">
+								{item.category} · {item.date}
+							</div>
+							<h3 class="text-[15px] font-semibold text-brand-accent mt-1 leading-snug hover:text-primary transition-colors duration-200">
+								{item.title}
+							</h3>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
