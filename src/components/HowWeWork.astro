@@ -15,60 +15,60 @@ interface Step {
 const steps: Step[] = [
 	{
 		num: '01',
-		title: 'Identify and Simplify',
-		desc: 'We help you identify ways to accelerate the development cycle and maintain cost-effectiveness.'
+		title: 'Analiza i planowanie',
+		desc: 'Rozpoznajemy cele Twojej firmy, grupę docelową i dobieramy najlepsze rozwiązania techniczne.'
 	},
 	{
 		num: '02',
-		title: 'Build and Develop',
-		desc: 'Once identified, we now carry out all the complex, dynamic, and real-time solutions for your industry.'
+		title: 'Projektowanie i budowa',
+		desc: 'Tworzymy projekt graficzny i wdrażamy stronę. Komunikacja na każdym etapie — bez niespodzianek.'
 	},
 	{
 		num: '03',
-		title: 'Quality Control',
-		desc: 'Be it functional, integration, system, and sanity — we meticulously control it all.'
+		title: 'Testy i optymalizacja',
+		desc: 'Sprawdzamy działanie na wszystkich urządzeniach, testujemy szybkość i optymalizujemy Core Web Vitals.'
 	},
 	{
 		num: '04',
-		title: 'Scale and Deploy',
-		desc: 'On-time deployment is our niche; we do this by assessing, and scaling your development needs.'
+		title: 'Wdrożenie i wsparcie',
+		desc: 'Uruchamiamy stronę i zostajemy z Tobą — aktualizacje, kopie zapasowe i wsparcie techniczne w pakiecie.'
 	}
 ];
 ---
 
 <section class="bg-brand-bg-light py-[100px]">
 	<div class="max-w-[1700px] mx-auto px-6 md:px-10">
-		<div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-6 lg:gap-[60px] items-start mb-[60px]">
-			<Eyebrow label="Working process" />
+		<div class="flex flex-col justify-center items-center gap-6 lg:gap-[60px] mb-[60px]">
+			<div class="flex justify-center w-full">
+				<Eyebrow label="Jak pracujemy" />
+			</div>
 			<div>
-				<h2 class="text-h2">How we work</h2>
-				<p class="text-[16px] text-brand-text max-w-[520px] mt-[14px]">
-					We are committed to supporting visionary entrepreneurs and fueling the growth of transformative businesses.
+				<h2 class="text-h2 text-center">Nasz proces pracy</h2>
+				<p class="text-xl text-brand-text max-w-[520px] mt-[14px] text-center">
+					Działamy przejrzyście i terminowo — od briefu po wdrożenie. Ty skupiasz się na biznesie, my na technikaliach.
 				</p>
 			</div>
 		</div>
 
-		<div class="relative mt-[60px]">
-			<div class="absolute top-6 left-[8%] right-[8%] h-px bg-brand-border z-0 lg:hidden"></div>
-			<div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 relative z-[1]">
+		<div class="relative mt-[60px] border-t border-brand-border">
+			<div class="hidden lg:flex absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10 text-[18px]" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg></div>
+			<div class="hidden lg:flex absolute top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10 text-[18px]" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg></div>
+			<div class="hidden lg:flex absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10 text-[18px]" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg></div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-4">
 				{steps.map((step, index) => (
-					<div class="relative reveal" style={`--stagger-i:${index}`}>
-						<div class="ghost-number max-sm:hidden" aria-hidden="true">
-							{step.num}
+					<div class:list={[
+						'group relative px-8 pt-[100px] pb-16 text-center overflow-hidden',
+						index < steps.length - 1 ? 'border-b lg:border-b-0 lg:border-r border-brand-border' : ''
+					]}>
+						<div class="absolute top-6 left-0 right-0 select-none pointer-events-none text-center z-[2]" aria-hidden="true">
+							<span class="relative block text-[150px] font-black leading-[0.75em]">
+								<span class="absolute inset-0 flex justify-center bg-gradient-to-b from-primary via-primary/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-none">{step.num}</span>
+								<span class="group-hover:opacity-0 transition-opacity duration-300" style="background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 20%, #DFDEE5 100%); -webkit-background-clip: text; -webkit-text-stroke: 4px transparent; color: transparent;">{step.num}</span>
+							</span>
 						</div>
-						<div
-							class:list={[
-								'absolute right-[-18px] top-6 w-9 h-9 rounded-full bg-primary text-white text-sm flex items-center justify-center z-[2] shadow-[0_6px_16px_rgba(99,110,223,.35)]',
-								index === steps.length - 1 ? 'hidden' : 'hidden sm:hidden lg:block lg:even:hidden'
-							]}
-							aria-hidden="true"
-						>
-							→
-						</div>
-						<h5 class="text-[18px] font-bold text-brand-accent mt-[60px] leading-snug max-sm:mt-2">
-							{step.title}
-						</h5>
-						<p class="text-sm text-brand-muted leading-relaxed mt-2">{step.desc}</p>
+						<h3 class="relative z-[50] text-h5 text-brand-accent mb-4 leading-snug">{step.title}</h3>
+						<p class="relative z-[1] text-base text-brand-muted leading-relaxed max-w-[240px] mx-auto">{step.desc}</p>
 					</div>
 				))}
 			</div>

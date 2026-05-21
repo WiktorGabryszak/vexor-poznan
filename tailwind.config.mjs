@@ -20,6 +20,7 @@ module.exports = {
 			fontSize: {
 				hero: ["clamp(42px,6vw,100px)", { lineHeight: "1.1", fontWeight: "500", letterSpacing: "-0.025em" }],
 				h2: ["clamp(32px,4vw,56px)", { lineHeight: "1.15", fontWeight: "500", letterSpacing: "-0.015em" }],
+				h5: ["clamp(21px,4vw,32px)", { lineHeight: "1.1875", fontWeight: "400", letterSpacing: "-1px" }],
 				stat: ["clamp(36px,4vw,52px)", { lineHeight: "1", fontWeight: "800", letterSpacing: "-0.02em" }],
 				"ghost-word": ["clamp(80px,18vw,260px)", { lineHeight: "1", fontWeight: "900", letterSpacing: "-0.04em" }],
 			},

@@ -8,19 +8,19 @@ import Eyebrow from './ui/Eyebrow.astro';
 import ButtonB from './ui/ButtonB.astro';
 
 const stats = [
-	{ value: 25, label: 'years experience working' },
-	{ value: 890, label: 'projects completed in total' },
-	{ value: 92, label: 'success rate in market' }
+	{ value: 50, label: 'zrealizowanych projektów' },
+	{ value: 5, label: 'lat doświadczenia' },
+	{ value: 100, label: 'zadowolonych klientów' }
 ];
 ---
 
 <section class="bg-brand-bg-light pb-[100px]">
 	<div class="max-w-[900px] mx-auto rounded-section overflow-hidden relative min-h-[420px] bg-team-card">
 		<div class="absolute top-[40px] left-[40px] max-w-[380px] z-[2] flex flex-col gap-[18px] md:static md:pt-8 md:px-7">
-			<Eyebrow dark={true} label="Who we are" />
-			<h2 class="text-h2 text-white">We are a team of creatives</h2>
+			<Eyebrow dark={true} label="Kim jesteśmy" />
+			<h2 class="text-h2 text-white">Projektujemy strony internetowe w całej Polsce</h2>
 			<p class="text-white/70">
-				We're a team of expert designers, web developers and marketers who've been delivering digital success for more than a decade.
+				Specjalizujemy się w tworzeniu stron internetowych, sklepów WooCommerce i aplikacji webowych. Działamy szybko, transparentnie i z pełnym wsparciem po wdrożeniu.
 			</p>
 		</div>
 
@@ -38,6 +38,6 @@ const stats = [
 	</div>
 
 	<div class="flex justify-center mt-8">
-		<ButtonB label="Meet Our Team" />
+		<ButtonB label="Poznaj nas" />
 	</div>
 </section>

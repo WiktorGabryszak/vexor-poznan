@@ -1,0 +1,22 @@
+# Vexor
+
+> Vexor to agencja projektowania stron internetowych. Tworzymy strony www, sklepy internetowe i aplikacje webowe dla firm w Polsce.
+
+Klienci wybierają pakiet, dostarczają treści i branding, a agencja zajmuje się projektem, wdrożeniem, SEO, responsywnością mobilną, SSL, codziennymi kopiami zapasowymi i integracją z Google Analytics.
+
+## Strona główna
+- [Strona główna](https://vexordesigns.pl): Główna strona Vexor z opisem usług.
+
+## Usługi
+- [Usługi](https://vexordesigns.pl/uslugi): Przegląd usług projektowania stron, e-commerce, aplikacji i SEO.
+- [Sklepy internetowe](https://vexordesigns.pl/uslugi/tworzenie-sklepow-internetowych): Tworzenie sklepów online.
+- [Aplikacje webowe](https://vexordesigns.pl/uslugi/aplikacje-internetowe): Dedykowane aplikacje webowe.
+- [Pozycjonowanie SEO](https://vexordesigns.pl/uslugi/pozycjonowanie-seo): Optymalizacja pod wyszukiwarki.
+- [Projektowanie stron](https://vexordesigns.pl/uslugi/projektowanie-stron-internetowych): Projektowanie stron internetowych.
+
+## Projekty
+- [Projekty](https://vexordesigns.pl/projekty): Zrealizowane projekty.
+
+## Firma
+- [O nas](https://vexordesigns.pl/o-nas): Informacje o firmie.
+- [Kontakt](https://vexordesigns.pl/kontakt): Formularz kontaktowy i dane.

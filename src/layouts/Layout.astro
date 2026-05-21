@@ -1,75 +1,162 @@
 ---
-const { title = 'Diteck — Digital Agency' } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = 'Projektowanie Stron Internetowych Vexor',
+  description = 'Tworzymy nowoczesne strony internetowe, sklepy online i aplikacje webowe. Szybka realizacja, stałe wsparcie i certyfikat SSL w każdym pakiecie. Zapytaj o wycenę!',
+  ogImage = '/og-image.jpg',
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const schemaOrg = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://vexordesigns.pl/#organization",
+    "name": "Vexor",
+    "url": "https://vexordesigns.pl",
+    "logo": "https://vexordesigns.pl/logo.png",
+    "description": "Projektujemy szybkie i nowoczesne strony internetowe, sklepy online i aplikacje webowe. Działamy w całej Polsce.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PL"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+48-601-076-883",
+      "contactType": "customer service",
+      "email": "kontakt@vexordesigns.pl",
+      "availableLanguage": "Polish"
+    },
+    "sameAs": ["https://www.instagram.com/vexordesigns_official/"],
+    "priceRange": "1899 PLN do 5000 PLN",
+    "currenciesAccepted": "PLN",
+    "areaServed": { "@type": "Country", "name": "Poland" },
+    "serviceType": [
+      "Tworzenie stron internetowych",
+      "Pozycjonowanie SEO",
+      "Sklepy internetowe WooCommerce",
+      "Aplikacje webowe"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://vexordesigns.pl/#website",
+    "url": "https://vexordesigns.pl",
+    "name": "Vexor",
+    "description": "Tworzenie stron internetowych dla firm",
+    "publisher": { "@id": "https://vexordesigns.pl/#organization" }
+  }
+]);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="/src/styles/global.css" />
-	</head>
-	<body>
-		<slot />
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<script>
-			const nav = document.getElementById('nav');
-			const onScroll = () => {
-				if (!nav) return;
-				if (window.scrollY > 40) {
-					nav.setAttribute('data-scrolled', 'true');
-				} else {
-					nav.removeAttribute('data-scrolled');
-				}
-			};
-			window.addEventListener('scroll', onScroll, { passive: true });
-			onScroll();
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Vexor" />
+    <link rel="canonical" href={canonicalURL} />
 
-			const revealObs = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('animate-in');
-							revealObs.unobserve(entry.target);
-						}
-					});
-				},
-				{ threshold: 0.15 }
-			);
-			document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Vexor" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-			function countUp(el, target, duration = 2000) {
-				const start = performance.now();
-				const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-				requestAnimationFrame(function tick(now) {
-					const p = Math.min((now - start) / duration, 1);
-					el.textContent = Math.round(easeOut(p) * target);
-					if (p < 1) requestAnimationFrame(tick);
-				});
-			}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
-			const countObs = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							entry.target.querySelectorAll('[data-count]').forEach((el) => {
-								countUp(el, parseInt(el.dataset.count, 10));
-							});
-							countObs.unobserve(entry.target);
-						}
-					});
-				},
-				{ threshold: 0.4 }
-			);
-			const teamStats = document.querySelector('.team-stats');
-			if (teamStats) countObs.observe(teamStats);
-		</script>
-	</body>
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="pl" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={schemaOrg} />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      const nav = document.getElementById('nav');
+      const onScroll = () => {
+        if (!nav) return;
+        if (window.scrollY > 40) {
+          nav.setAttribute('data-scrolled', 'true');
+        } else {
+          nav.removeAttribute('data-scrolled');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      const revealObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+              revealObs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+      function countUp(el, target, duration = 2000) {
+        const start = performance.now();
+        const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+        requestAnimationFrame(function tick(now) {
+          const p = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(easeOut(p) * target);
+          if (p < 1) requestAnimationFrame(tick);
+        });
+      }
+
+      const countObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('[data-count]').forEach((el) => {
+                countUp(el, parseInt(el.dataset.count, 10));
+              });
+              countObs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      const teamStats = document.querySelector('.team-stats');
+      if (teamStats) countObs.observe(teamStats);
+    </script>
+  </body>
 </html>
