@@ -19,6 +19,7 @@ module.exports = {
 			},
 			fontSize: {
 				hero: ["clamp(42px,6vw,100px)", { lineHeight: "1.1", fontWeight: "500", letterSpacing: "-0.025em" }],
+				heroSub : ["clamp(38px,6vw,68px)", { lineHeight: "1.1", fontWeight: "500", letterSpacing: "-0.025em" }],
 				h2: ["clamp(32px,4vw,56px)", { lineHeight: "1.15", fontWeight: "500", letterSpacing: "-0.015em" }],
 				h5: ["clamp(21px,4vw,32px)", { lineHeight: "1.1875", fontWeight: "400", letterSpacing: "-1px" }],
 				stat: ["clamp(36px,4vw,52px)", { lineHeight: "1", fontWeight: "800", letterSpacing: "-0.02em" }],
@@ -60,6 +61,7 @@ module.exports = {
           linear-gradient(135deg,#0D0B3B 0%,#1E0A5E 50%,#0A0A2E 100%)
         `,
 				"portfolio-image": `url('/h1_bg-3.png')`,
+				"sub-image": `url('/404-bg.png')`,
 				"hero-image": "url('/h6_bg-1.jpg')",
 				"hero-dots": "url('/h6_net')",
 				"portfolio-top": `
@@ -80,7 +82,7 @@ module.exports = {
         `,
 				"shape-1": "url('/h6_deco-1.png')",
 				"shape-2": "url('/h6_deco-2.png')",
-				"shape-3": "linear-gradient(135deg,#4060FF,#A040FF,#FF4080)",
+				"shape-3": "url('/h6_deco-3.png')",
 				"shape-4": "linear-gradient(135deg,#4060FF,#2030CC)",
 			},
 		},

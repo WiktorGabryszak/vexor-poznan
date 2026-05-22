@@ -44,14 +44,14 @@ const cards: ServiceCard[] = [
 ];
 ---
 
-<div class="max-w-[1700px] mx-auto px-10 sm:px-6">
+<div class="max-w-[1700px] mx-auto px-5 md:px-10">
 	<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
 		{cards.map((card, index) => (
 			<article
 				class="reveal bg-[#00000005] border-0 backdrop-blur-[30px] rounded-card p-8 flex flex-col text-white transition-colors duration-300 ease-out hover:bg-white/[0.18] gap-3" style={`--stagger-i:${index}; box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.1);`}
 			>
 				<div class="w-16 h-16 rounded-xl bg-white/[0.15] flex items-center justify-center" set:html={card.icon} />
-				<h3 class="text-[32px] font-500 text-white mtnt">{card.title}</h3>
+				<h3 class="text-h5 font-500 text-white mtnt">{card.title}</h3>
 				<p class="text-[16px] text-white font-400 leading-relaxed5">{card.desc}</p>
 				<div class="mt-auto pt-6">
 					<a
