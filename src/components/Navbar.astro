@@ -4,10 +4,15 @@ import ButtonA from './ui/ButtonA.astro';
 
 <header
   id="nav"
-  class="fixed top-0 left-0 right-0 z-[100] h-[90px] m-8 py-3 flex items-center border-b border-transparent transition-[background,backdrop-filter,border-color] duration-200"
+  class="group fixed top-0 left-0 right-0 z-[100] h-[90px] m-8 py-3 flex items-center"
 >
-  <div class="w-full max-w-[1700px] mx-auto px-8 md:pr-2.5 md:pl-8 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 border border-white/10 rounded-[30px] py-2.5 pl-[30px] pr-[10px] backdrop-blur-[60px] transition-[background,backdrop-filter,border-color] duration-200 data-[scrolled]:bg-[rgba(10,8,40,1)] data-[scrolled]:backdrop-blur-xl data-[scrolled]:border-white/10">
-    <a href="/" class="inline-flex items-center gap-2.5 text-white" aria-label="Vexor – tworzenie stron internetowych">
+  <div class="w-full max-w-[1700px] mx-auto px-8 md:pr-2.5 md:pl-8 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 border border-white/10 rounded-[30px] py-2.5 pl-[30px] pr-[10px] backdrop-blur-[60px] transition-all duration-150 ease-out
+    group-data-[scrolled]:bg-white/90
+    group-data-[scrolled]:backdrop-blur-2xl
+    group-data-[scrolled]:border-black/[0.06]
+    group-data-[scrolled]:shadow-[0_2px_24px_rgba(0,0,0,0.07)]">
+
+    <a href="/" class="inline-flex items-center gap-2.5 text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent" aria-label="Vexor – tworzenie stron internetowych">
       <span class="relative w-[18px] h-[18px]">
         <span class="absolute top-0 left-0 w-2.5 h-2.5 rounded-[3px] bg-primary"></span>
         <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-[3px] bg-[#A0A8F0]"></span>
@@ -15,14 +20,61 @@ import ButtonA from './ui/ButtonA.astro';
       <span class="text-[20px] font-bold tracking-[-0.02em]">Vexor</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white" aria-label="Główna nawigacja">
-      <a class="hover:text-white transition-colors" href="/uslugi/">Usługi</a>
-      <span class="text-white/30">·</span>
-      <a class="hover:text-white transition-colors" href="/o-nas/">O nas</a>
-      <span class="text-white/30">·</span>
-      <a class="hover:text-white transition-colors" href="/projekty/">Projekty</a>
-      <span class="text-white/30">·</span>
-      <a class="hover:text-white transition-colors" href="/kontakt/">Kontakt</a>
+    <nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent" aria-label="Główna nawigacja">
+      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/">Strona Główna</a>
+      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
+      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/o-nas/">O nas</a>
+      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
+
+      <!-- Usługi dropdown -->
+      <div class="relative group/dd">
+        <button class="flex items-center gap-1.5 hover:text-primary transition-colors cursor-pointer" aria-haspopup="true">
+          Usługi
+          <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover/dd:rotate-180" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2,4 6,8 10,4"/>
+          </svg>
+        </button>
+
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 pointer-events-none group-hover/dd:opacity-100 group-hover/dd:pointer-events-auto transition-all duration-200 translate-y-1 group-hover/dd:translate-y-0">
+          <div class="min-w-[300px] rounded-[24px] bg-white shadow-[0_8px_40px_rgba(0,0,0,0.18)] p-3 flex flex-col">
+            <a href="/uslugi/strony-internetowe/" class="flex items-center gap-3 px-4 py-3.5 rounded-2xl hover:bg-gray-50 transition-colors group/item">
+              <svg class="w-[18px] h-[18px] text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="2" width="14" height="11" rx="2"/>
+                <path d="M5 15h6M8 13v2"/>
+              </svg>
+              <span class="text-[16px] font-medium text-gray-800 group-hover/item:text-gray-900 transition-colors">Strony Internetowe</span>
+            </a>
+            <a href="/uslugi/sklepy-internetowe/" class="flex items-center gap-3 px-4 py-3.5 rounded-2xl hover:bg-gray-50 transition-colors group/item">
+              <svg class="w-[18px] h-[18px] text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 2h1.5l1 5h7l1-4H4.5"/>
+                <circle cx="6.5" cy="13" r="1"/><circle cx="11" cy="13" r="1"/>
+              </svg>
+              <span class="text-[16px] font-medium text-gray-800 group-hover/item:text-gray-900 transition-colors">Sklepy Internetowe</span>
+            </a>
+            <a href="/uslugi/pozycjonowanie-seo/" class="flex items-center gap-3 px-4 py-3.5 rounded-2xl hover:bg-gray-50 transition-colors group/item">
+              <svg class="w-[18px] h-[18px] text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="7" cy="7" r="4.5"/>
+                <path d="M10.5 10.5L14 14"/>
+                <path d="M5 7h4M7 5v4"/>
+              </svg>
+              <span class="text-[16px] font-medium text-gray-800 group-hover/item:text-gray-900 transition-colors">Pozycjonowanie SEO</span>
+            </a>
+            <a href="/uslugi/aplikacje-webowe/" class="flex items-center gap-3 px-4 py-3.5 rounded-2xl hover:bg-gray-50 transition-colors group/item">
+              <svg class="w-[18px] h-[18px] text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4,6 1,8 4,10"/>
+                <polyline points="12,6 15,8 12,10"/>
+                <line x1="9" y1="4" x2="7" y2="12"/>
+              </svg>
+              <span class="text-[16px] font-medium text-gray-800 group-hover/item:text-gray-900 transition-colors">Aplikacje Webowe</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
+      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/projekty/">Projekty</a>
+      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
+      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/kontakt/">Kontakt</a>
     </nav>
 
     <div class="flex items-center gap-3">
@@ -31,13 +83,13 @@ import ButtonA from './ui/ButtonA.astro';
       </div>
       <button
         id="hamburger"
-        class="md:hidden inline-flex w-10 h-10 items-center justify-center rounded-lg text-white"
+        class="md:hidden inline-flex w-10 h-10 items-center justify-center rounded-lg text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent"
         aria-label="Otwórz menu"
       >
         <span class="flex flex-col gap-[7px]">
-          <span class="block w-[22px] h-[2px] bg-white"></span>
-          <span class="block w-[22px] h-[2px] bg-white"></span>
-          <span class="block w-[22px] h-[2px] bg-white"></span>
+          <span class="block w-[22px] h-[2px] bg-current"></span>
+          <span class="block w-[22px] h-[2px] bg-current"></span>
+          <span class="block w-[22px] h-[2px] bg-current"></span>
         </span>
       </button>
     </div>

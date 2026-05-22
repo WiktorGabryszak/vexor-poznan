@@ -5,7 +5,6 @@
 // JS: none
 
 import Eyebrow from './ui/Eyebrow.astro';
-import ButtonB from './ui/ButtonB.astro';
 import ButtonA from './ui/ButtonA.astro';
 
 interface Project {
@@ -24,9 +23,9 @@ const projects: Project[] = [
 		gradient: 'linear-gradient(135deg,#1a4a5a,#0d2a35)',
 		logo: 'Galileo',
 		title: 'UI/UX Design Platform',
-		category: 'Advanced Analytics',
+		category: 'Development',
 		staggerIndex: 0,
-		link: "#"
+		link: "/projekty/ui-ux-design-platform/"
 	},
 	{
 		bg: '#3E122F',
@@ -35,7 +34,7 @@ const projects: Project[] = [
 		title: 'Social Media Campaigns',
 		category: 'Design',
 		staggerIndex: 1,
-		link: "#"
+		link: "/projekty/social-media-campaigns/"
 	},
 	{
 		bg: '#526648',
@@ -44,7 +43,7 @@ const projects: Project[] = [
 		title: 'Content Marketing Suite',
 		category: 'Development',
 		staggerIndex: 2,
-		link: "#"
+		link: "/projekty/content-marketing-suite/"
 	},
 	{
 		bg: '#423b2f',
@@ -53,7 +52,7 @@ const projects: Project[] = [
 		title: 'SEO & Marketing Tools',
 		category: 'Advanced Analytics',
 		staggerIndex: 3,
-		link: "#"
+		link: "/projekty/seo-marketing-tools/"
 	},
 	{
 		bg: '#2d2736',
@@ -62,7 +61,7 @@ const projects: Project[] = [
 		title: 'Creative Branding Agency',
 		category: 'Marketing Strategy',
 		staggerIndex: 4,
-		link: "#"
+		link: "/projekty/creative-branding-agency/"
 	},
 	{
 		bg: '#4a0e0f',
@@ -71,8 +70,7 @@ const projects: Project[] = [
 		title: 'Video Production Hub',
 		category: 'Technology',
 		staggerIndex: 5,
-		link: "#"
-		
+		link: "/projekty/video-production-hub/"
 	}
 ];
 ---
@@ -97,7 +95,7 @@ const projects: Project[] = [
 		<div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
 			{projects.map((project) => (
 				<article
-					class="group rounded-2xl overflow-hidden min-h-[400px] relative cursor-pointer flex flex-col reveal"
+					class="group rounded-[20px] overflow-hidden min-h-[400px] relative cursor-pointer flex flex-col reveal"
 					style={`--stagger-i:${project.staggerIndex}; --project-bg:${project.bg}; --project-gradient:${project.gradient}; background:${project.bg};`}
 				>
 					<div
