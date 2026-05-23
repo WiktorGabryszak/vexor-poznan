@@ -70,7 +70,8 @@ const projekty: Project[] = [
       <div class="max-w-[1700px] mx-auto px-5 md:px-10">
         <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projekty.map((p, i) => (
-            <article
+            <a
+              href={p.link}
               class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
               style={`--stagger-i:${i}; background:${p.bg};`}
             >
@@ -87,10 +88,7 @@ const projekty: Project[] = [
                 <h3 class="text-white text-h5">{p.title}</h3>
                 <p class="text-white/70 text-base font-400 mt-1">{p.category}</p>
                 <div class="mt-auto pt-6">
-                  <a
-                    class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden"
-                    href={p.link}
-                  >
+                  <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
                     <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
                     <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="#000000" aria-hidden="true">
@@ -98,10 +96,10 @@ const projekty: Project[] = [
                       </svg>
                     </span>
                     <span class="relative z-10 group-hover/btn:text-black">Zobacz projekt</span>
-                  </a>
+                  </span>
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>

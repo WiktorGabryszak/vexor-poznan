@@ -1,26 +1,28 @@
 ---
 import ButtonA from './ui/ButtonA.astro';
+
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
 ---
 
 <header
   id="nav"
   class="group fixed top-0 left-0 right-0 z-[100] h-[90px] m-5 md:m-8 py-3 flex items-center"
 >
-  <div class="w-full max-w-[1700px] mx-auto px-8 md:pr-2.5 md:pl-8 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 border border-white/10 rounded-[30px] py-2.5 pl-[30px] pr-[10px] backdrop-blur-[60px] transition-all duration-150 ease-out
-    group-data-[scrolled]:bg-white/90
-    group-data-[scrolled]:backdrop-blur-2xl
-    group-data-[scrolled]:border-black/[0.06]
-    group-data-[scrolled]:shadow-[0_2px_24px_rgba(0,0,0,0.07)]">
+  <div class={`w-full max-w-[1700px] mx-auto px-8 md:pr-2.5 md:pl-8 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 rounded-[30px] py-2.5 pl-[30px] pr-[10px] backdrop-blur-[60px] transition-all duration-150 ease-out border ${dark ? 'border-black/[0.06] bg-white/90' : 'border-white/10'} group-data-[scrolled]:bg-white/90 group-data-[scrolled]:backdrop-blur-2xl group-data-[scrolled]:border-black/[0.06] group-data-[scrolled]:shadow-[0_2px_24px_rgba(0,0,0,0.07)]`}>
 
-    <a href="/" class="inline-flex items-center gap-2.5 text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent" aria-label="Vexor – tworzenie stron internetowych">
-      <span class="relative w-[18px] h-[18px]">
-        <span class="absolute top-0 left-0 w-2.5 h-2.5 rounded-[3px] bg-primary"></span>
-        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-[3px] bg-[#A0A8F0]"></span>
-      </span>
+    <a href="/" class={`inline-flex items-center gap-2.5 transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent ${dark ? 'text-brand-accent' : 'text-white'}`} aria-label="Vexor – tworzenie stron internetowych">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 1024 1024" width="28" height="28" fill="currentColor" class="text-primary" aria-hidden="true">
+        <g transform="translate(0,1024) scale(0.1,-0.1)">
+          <path d="M1717 7460 c-54 -14 -128 -54 -159 -87 -14 -15 -37 -50 -50 -78 l-23 -50 0 -1035 0 -1035 24 -45 c35 -68 98 -127 159 -150 51 -19 79 -20 944 -20 617 0 912 -3 957 -11 81 -14 149 -47 208 -102 57 -52 86 -97 115 -179 l22 -63 3 -945 c3 -1052 0 -996 73 -1088 27 -35 55 -56 101 -78 l64 -29 944 -3 c1063 -3 1000 -7 1089 73 30 27 59 66 73 97 l24 53 5 960 c6 1040 3 984 60 1095 31 61 115 141 180 173 30 14 84 31 120 37 41 6 380 10 911 10 950 0 899 -4 987 75 36 33 53 58 70 106 l22 64 0 1006 c0 1129 3 1073 -72 1155 -22 24 -66 56 -97 71 l-56 28 -935 -1 -935 -1 -52 -22 c-30 -13 -70 -43 -94 -68 -80 -87 -73 -1 -79 -1098 l-5 -980 -28 -69 c-60 -152 -174 -246 -332 -275 -72 -13 -1501 -15 -1648 -2 -198 18 -329 120 -394 308 -15 43 -18 145 -23 1018 l-5 970 -23 50 c-29 64 -74 110 -137 143 l-50 25 -960 3 c-565 2 -975 -1 -998 -6z" />
+        </g>
+      </svg>
       <span class="text-[20px] font-bold tracking-[-0.02em]">Vexor</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white group-data-[scrolled]:text-brand-accent" aria-label="Główna nawigacja">
+    <nav class={`hidden md:flex items-center gap-4 text-[18px] font-medium group-data-[scrolled]:text-brand-accent ${dark ? 'text-brand-accent' : 'text-white'}`} aria-label="Główna nawigacja">
       <a class="group/navlink relative inline-block overflow-hidden" href="/">
         <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">Strona Główna</span>
         <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">Strona Główna</span>
@@ -98,7 +100,7 @@ import ButtonA from './ui/ButtonA.astro';
       </div>
       <button
         id="hamburger"
-        class="md:hidden inline-flex w-10 h-10 items-center justify-center rounded-lg text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent"
+        class={`md:hidden inline-flex w-10 h-10 items-center justify-center rounded-lg transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent ${dark ? 'text-brand-accent' : 'text-white'}`}
         aria-label="Otwórz menu"
       >
         <span class="flex flex-col gap-[7px]">
