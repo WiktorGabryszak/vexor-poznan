@@ -1,0 +1,139 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Footer from '../../components/Footer.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Eyebrow from '../../components/ui/Eyebrow.astro';
+import { Image } from 'astro:assets';
+
+import imgFabullate   from '../../assets/images/projekty-home/Fabullate.png';
+import imgFitBox      from '../../assets/images/projekty-home/FitBox.png';
+import imgGreenwich   from '../../assets/images/projekty-home/Greenwich.png';
+import imgJennings    from '../../assets/images/projekty-home/Jennings Storage.png';
+import imgMateo       from '../../assets/images/projekty-home/PW Mateo.png';
+import imgPadel       from '../../assets/images/projekty-home/Padel King.png';
+
+import type { ImageMetadata } from 'astro';
+
+interface Project {
+	bg: string;
+	img: ImageMetadata;
+	title: string;
+	category: string;
+	link: string;
+}
+
+const projekty: Project[] = [
+	{ bg: '#12343e', img: imgFabullate, title: 'Fabulatte',                category: 'Web Design & Development',     link: '/projekty/fabulatte/' },
+	{ bg: '#D58E24', img: imgFitBox,    title: 'FitBox',                   category: 'Web Design & Development',     link: '/projekty/fitbox/' },
+	{ bg: '#F30094', img: imgGreenwich, title: 'Just Golf Greenwich',       category: 'Web Design & Development',     link: '/projekty/greenwich/' },
+	{ bg: '#00A68B', img: imgJennings,  title: 'Jennings Storage',          category: 'Website Redesign',             link: '/projekty/jennings-storage/' },
+	{ bg: '#E4362A', img: imgMateo,     title: 'P.W. Mateo',                category: 'Website Design & Development', link: '/projekty/pw-mateo/' },
+	{ bg: '#142129', img: imgPadel,     title: 'Padel King',                category: 'Website Design & Development', link: '/projekty/padel-king/' },
+];
+---
+
+<Layout
+  title="Projekty – Realizacje Stron Internetowych | Vexor Designs"
+  description="Sprawdź realizacje Vexor Designs. Strony firmowe, sklepy WooCommerce i aplikacje webowe dla klientów z Polski i Wielkiej Brytanii."
+  canonicalURL="https://vexordesigns.pl/projekty/"
+  ogImage="https://vexordesigns.pl/og-image.jpg"
+>
+  <Navbar />
+  <MobileMenu />
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-[50vh] relative flex flex-col justify-center items-center bg-hero-image bg-cover bg-no-repeat text-white">
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-[47px] py-16 mt-[110px] flex flex-col justify-center items-center gap-5">
+        <nav aria-label="Breadcrumb">
+          <ol class="inline-flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10 text-sm text-white/70">
+            <li><a href="/" class="hover:text-white transition-colors duration-150">Strona główna</a></li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li class="text-white font-medium" aria-current="page">Projekty</li>
+          </ol>
+        </nav>
+        <h1 class="text-heroSub text-white text-balance reveal text-center" style="--stagger-i:0">
+          Nasze realizacje
+        </h1>
+        <p class="text-[21px] text-white/80 max-w-[560px] text-pretty reveal font-medium text-center" style="--stagger-i:1">
+          Wybrane projekty zrealizowane dla firm z Polski i Wielkiej Brytanii. Strony firmowe, sklepy WooCommerce i dedykowane aplikacje webowe.
+        </p>
+      </div>
+    </section>
+
+    <!-- Siatka projektów -->
+    <section class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {projekty.map((p, i) => (
+            <article
+              class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
+              style={`--stagger-i:${i}; background:${p.bg};`}
+            >
+              <div class="overflow-hidden rounded-b-[20px]">
+                <Image
+                  src={p.img}
+                  alt={p.title}
+                  class="w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style="height: clamp(250px, 22vw, 300px);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="px-10 pb-10 pt-5 flex flex-col items-start" style={`background:${p.bg};`}>
+                <h3 class="text-white text-h5">{p.title}</h3>
+                <p class="text-white/70 text-base font-400 mt-1">{p.category}</p>
+                <div class="mt-auto pt-6">
+                  <a
+                    class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden"
+                    href={p.link}
+                  >
+                    <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
+                    <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="#000000" aria-hidden="true">
+                        <path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" />
+                      </svg>
+                    </span>
+                    <span class="relative z-10 group-hover/btn:text-black">Zobacz projekt</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA
+      eyebrow="Twój projekt"
+      heading="Chcesz dołączyć do tej listy?"
+      description="Opisz nam swój projekt, a my wrócimy z bezpłatną wyceną i propozycją rozwiązania w ciągu 24 godzin. Bez zobowiązań, bez ukrytych kosztów."
+      buttonLabel="Opisz swój projekt"
+    />
+  </main>
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://vexordesigns.pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projekty",
+      "item": "https://vexordesigns.pl/projekty/"
+    }
+  ]
+}
+</script>

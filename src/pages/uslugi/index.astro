@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Footer from '../../components/Footer.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Eyebrow from '../../components/ui/Eyebrow.astro';
+import ButtonA from '../../components/ui/ButtonA.astro';
+import { Image } from 'astro:assets';
+import imgVexor1 from '../../assets/images/vexor-1.jpg';
+import imgVexor2 from '../../assets/images/vexor-2.jpg';
+---
+
+<Layout
+  title="Usługi Tworzenia Stron Internetowych | Vexor Designs"
+  description="Strony internetowe, sklepy WooCommerce, pozycjonowanie SEO i aplikacje webowe. Poznaj pełną ofertę Vexor Designs."
+  canonicalURL="https://vexordesigns.pl/uslugi/"
+  ogImage="https://vexordesigns.pl/og-image.jpg"
+>
+  <Navbar />
+  <MobileMenu />
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-[50vh] relative flex flex-col justify-center items-center bg-hero-image bg-cover bg-no-repeat text-white">
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-[47px] py-16 mt-[110px] flex flex-col justify-center items-center gap-5">
+        <nav aria-label="Breadcrumb">
+          <ol class="inline-flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10 text-sm text-white/70">
+            <li><a href="/" class="hover:text-white transition-colors duration-150">Strona główna</a></li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li class="text-white font-medium" aria-current="page">Usługi</li>
+          </ol>
+        </nav>
+        <h1 class="text-heroSub text-white text-balance reveal text-center" style="--stagger-i:0">
+          Pełna oferta cyfrowa dla Twojej firmy
+        </h1>
+        <p class="text-[21px] text-white/80 max-w-[560px] text-pretty reveal font-medium text-center" style="--stagger-i:1">
+          Od prostej strony wizytówki po zaawansowaną aplikację webową. Dobieramy zakres usług do Twoich celów i budżetu.
+        </p>
+      </div>
+    </section>
+
+    <!-- Karty usług -->
+    <section class="bg-brand-bg-light py-[40px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="flex flex-col gap-6">
+          {([
+            {
+              title: 'Strony internetowe',
+              desc: 'Projektujemy strony z responsywnym designem, optymalizacją SEO i certyfikatem SSL. Dostosowujemy projekt graficzny do Twojej branży i grupy docelowej. Realizacja zazwyczaj w 2 do 4 tygodnie od dostarczenia materiałów.',
+              href: '/uslugi/strony-internetowe/',
+              img: imgVexor1,
+              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+            },
+            {
+              title: 'Sklepy internetowe',
+              desc: 'Wdrażamy sklepy z integracją Przelewy24 i Stripe, zarządzaniem produktami i certyfikatem SSL. Pomagamy też w migracji z innych platform i optymalizacji istniejących sklepów pod kątem konwersji.',
+              href: '/uslugi/sklepy-internetowe/',
+              img: imgVexor2,
+              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+            },
+            {
+              title: 'Pozycjonowanie SEO',
+              desc: 'Zaczynamy od audytu technicznego, optymalizujemy treści, budujemy linki i poprawiamy Core Web Vitals. Co miesiąc dostajesz raport z pozycji i ruchu organicznego. Transparentnie, bez obietnic efektów z dnia na dzień.',
+              href: '/uslugi/pozycjonowanie-seo/',
+              img: imgVexor1,
+              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>`,
+            },
+            {
+              title: 'Aplikacje webowe',
+              desc: 'Budujemy portale klientów, systemy CRM, MVP startupów i integracje z zewnętrznymi API. Pracujemy w React, Next.js i Astro. Pełna kontrola nad funkcjonalnościami bez kompromisów narzucanych przez gotowe platformy.',
+              href: '/uslugi/aplikacje-webowe/',
+              img: imgVexor2,
+              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+            },
+          ] as const).map((s, i) => (
+            <div class="bg-white rounded-[32px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 reveal" style={`--stagger-i:${i}`}>
+              <div class:list={['p-10 lg:p-14 flex flex-col gap-7 order-2', i % 2 === 0 ? 'lg:order-1' : 'lg:order-2']}>
+                <span class="w-16 h-16 rounded-2xl flex items-center justify-center bg-brand-bg-light transition-colors duration-300 flex-shrink-0">
+                  <span class="w-8 h-8 text-primary transition-colors duration-300" set:html={s.icon}></span>
+                </span>
+                <div class="flex flex-col gap-3 flex-1">
+                  <h2 class="text-h5 text-brand-accent leading-snug">{s.title}</h2>
+                  <p class="text-brand-text text-lg leading-relaxed">{s.desc}</p>
+                </div>
+                <hr class="border-brand-border" />
+                <div class="self-start">
+                  <ButtonA href={s.href} label="Dowiedz się więcej" />
+                </div>
+              </div>
+              <div class:list={['order-1 aspect-video lg:aspect-auto relative', i % 2 === 0 ? 'lg:order-2' : 'lg:order-1']}>
+                <Image src={s.img} alt={s.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Dlaczego Vexor -->
+    <section class="bg-brand-bg-light py-[40px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div class="flex flex-col gap-6 reveal" style="--stagger-i:0">
+            <Eyebrow label="Dlaczego Vexor" />
+            <h2 class="text-h2 text-brand-accent">Trzy powody, dla których warto z nami pracować</h2>
+          </div>
+          <div class="flex flex-col gap-8 reveal" style="--stagger-i:1">
+            {[
+              {
+                icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+                title: 'Szybka realizacja bez bałaganu',
+                desc: 'Mamy sprawdzony proces od briefu przez projekt do wdrożenia. Zazwyczaj pierwsze makiety pojawiają się już po kilku dniach, a gotowa strona ląduje na serwerze w ciągu 2 do 4 tygodni. Ty nie musisz niczego pilnować.',
+              },
+              {
+                icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+                title: 'Piszemy kod, który faktycznie działa',
+                desc: 'Nie używamy szablonów, które zwalniają stronę. Każdy projekt jest pisany pod konkretne wymagania, co przekłada się na lepszy wynik Google PageSpeed i niższy współczynnik odrzuceń.',
+              },
+              {
+                icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>`,
+                title: 'Jesteśmy dostępni po wdrożeniu',
+                desc: 'Oferujemy pakiety opieki technicznej, które obejmują aktualizacje, kopie zapasowe i szybką pomoc przy zmianach. Nie musisz szukać nowego specjalisty przy każdej poprawce.',
+              },
+            ].map((item, i) => (
+              <div class:list={['flex items-start gap-5', i < 2 ? 'pb-8 border-b border-brand-border' : '']}>
+                <span class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white transition-colors duration-300 flex-shrink-0">
+                  <span class="w-8 h-8 text-primary transition-colors duration-300" set:html={item.icon}></span>
+                </span>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-h5 text-brand-accent font-medium">{item.title}</h3>
+                  <p class="text-brand-text leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://vexordesigns.pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Usługi",
+      "item": "https://vexordesigns.pl/uslugi/"
+    }
+  ]
+}
+</script>

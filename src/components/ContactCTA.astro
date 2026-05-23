@@ -1,18 +1,21 @@
 ---
-// Component: ContactCTA
-// Purpose: Full-width CTA card with photo background, centered content, phone, email and CTA button.
-// Props: none
-// JS: none
-
 import ButtonA from './ui/ButtonA.astro';
 import ButtonB from './ui/ButtonB.astro';
 import Eyebrow from './ui/Eyebrow.astro';
 
-const stats = [
-	{ value: '50+', label: 'zrealizowanych projektów' },
-	{ value: '5+', label: 'lat doświadczenia' },
-	{ value: '100%', label: 'klientów z gwarancją' }
-];
+interface Props {
+	eyebrow?: string;
+	heading?: string;
+	description?: string;
+	buttonLabel?: string;
+}
+
+const {
+	eyebrow = 'Skontaktuj się',
+	heading = 'Zbudujmy stronę, która przyciąga klientów',
+	description = 'Bezpłatna wycena w 24h. Bez zobowiązań, bez ukrytych kosztów.',
+	buttonLabel = 'Bezpłatna wycena',
+} = Astro.props;
 ---
 
 <section class="bg-brand-bg-light">
@@ -28,14 +31,14 @@ const stats = [
 			<!-- Centered content -->
 			<div class="relative z-10 flex flex-col items-center justify-center text-center flex-1 px-6 py-20 gap-5">
 				<div class="flex justify-center w-full">
-					<Eyebrow dark={true} label="Skontaktuj się" />
+					<Eyebrow dark={true} label={eyebrow} />
 				</div>
 				<h2 class="text-h2 text-white max-w-[600px]">
-					Zbudujmy stronę, która przyciąga klientów
+					{heading}
 				</h2>
 
 				<p class="text-white/70 text-xl max-w-[440px] leading-relaxed">
-					Bezpłatna wycena w 24h. Bez zobowiązań, bez ukrytych kosztów.
+					{description}
 				</p>
 
 				<!-- Phone + Email -->
@@ -64,7 +67,7 @@ const stats = [
 
 				<!-- Button -->
 				<div class="mt-2">
-					<ButtonA href="/kontakt/" label="Bezpłatna wycena" invert={false} />
+					<ButtonA href="/kontakt/" label={buttonLabel} invert={false} />
 				</div>
 			</div>
 

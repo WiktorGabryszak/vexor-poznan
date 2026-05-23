@@ -1,54 +1,142 @@
 ---
-// Component: MobileMenu
-// Purpose: Off-canvas mobile navigation panel with backdrop.
-// Props: none
-// JS: inline <script>
-
 import ButtonA from './ui/ButtonA.astro';
 ---
 
-<div id="mobileBackdrop" class="fixed inset-0 bg-black/40 z-[1050] opacity-0 pointer-events-none transition-opacity"></div>
+<div
+  id="mobileBackdrop"
+  class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[1050] opacity-0 pointer-events-none transition-opacity duration-300"
+></div>
 
 <aside
-	id="mobilePanel"
-	class="fixed left-0 top-0 h-dvh w-[280px] bg-[#0f0d2e] z-[1100] p-6 flex flex-col gap-5 border-r border-white/5 -translate-x-full transition-transform duration-300"
-	aria-hidden="true"
+  id="mobilePanel"
+  class="fixed right-0 top-0 h-dvh w-full max-w-[340px] bg-white z-[1100] flex flex-col border-l border-black/[0.06] shadow-[−4px_0_40px_rgba(0,0,0,0.08)] translate-x-full transition-transform duration-300 ease-out"
+  aria-hidden="true"
 >
-	<button
-		id="mobileClose"
-		class="absolute top-[18px] right-[18px] w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center text-[18px]"
-		aria-label="Close menu"
-	>
-		×
-	</button>
-	<div class="mb-2">
-		<span class="text-white text-[20px] font-bold tracking-[-0.02em]">Vexor</span>
-	</div>
-	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="/uslugi/">Usługi</a>
-	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="/o-nas/">O nas</a>
-	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="/projekty/">Projekty</a>
-	<a class="text-white text-[18px] font-medium py-2.5 border-b border-white/10" href="/kontakt/">Kontakt</a>
-	<div class="mt-4 self-start">
-		<ButtonA href="/kontakt/" label="Zamów stronę" />
-	</div>
+  <!-- Header -->
+  <div class="flex items-center justify-between px-5 py-5 border-b border-black/[0.06]">
+    <a href="/" class="inline-flex items-center gap-2.5 text-brand-accent" aria-label="Vexor">
+      <span class="relative w-[18px] h-[18px]">
+        <span class="absolute top-0 left-0 w-2.5 h-2.5 rounded-[3px] bg-primary"></span>
+        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-[3px] bg-[#A0A8F0]"></span>
+      </span>
+      <span class="text-[20px] font-bold tracking-[-0.02em]">Vexor</span>
+    </a>
+    <button
+      id="mobileClose"
+      class="w-9 h-9 rounded-xl bg-black/[0.05] text-brand-accent flex items-center justify-center hover:bg-black/10 transition-colors duration-150"
+      aria-label="Zamknij menu"
+    >
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M2 2l10 10M12 2L2 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex flex-col px-3 py-3 gap-0.5 flex-1 overflow-y-auto">
+    <a href="/" class="flex items-center px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150">
+      Strona Główna
+    </a>
+    <a href="/o-nas/" class="flex items-center px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150">
+      O nas
+    </a>
+
+    <!-- Usługi accordion -->
+    <div>
+      <button
+        id="mobileServicesToggle"
+        class="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150"
+      >
+        Usługi
+        <svg id="mobileServicesChevron" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,4 6,8 10,4"/>
+        </svg>
+      </button>
+      <div id="mobileServicesPanel" class="hidden flex-col gap-0.5 pl-2 pb-1">
+        <a href="/uslugi/strony-internetowe/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+          <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="2" width="14" height="11" rx="2"/>
+            <path d="M5 15h6M8 13v2"/>
+          </svg>
+          Strony Internetowe
+        </a>
+        <a href="/uslugi/sklepy-internetowe/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+          <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 2h1.5l1 5h7l1-4H4.5"/>
+            <circle cx="6.5" cy="13" r="1"/><circle cx="11" cy="13" r="1"/>
+          </svg>
+          Sklepy Internetowe
+        </a>
+        <a href="/uslugi/pozycjonowanie-seo/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+          <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="7" cy="7" r="4.5"/>
+            <path d="M10.5 10.5L14 14"/>
+            <path d="M5 7h4M7 5v4"/>
+          </svg>
+          Pozycjonowanie SEO
+        </a>
+        <a href="/uslugi/aplikacje-webowe/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+          <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,6 1,8 4,10"/>
+            <polyline points="12,6 15,8 12,10"/>
+            <line x1="9" y1="4" x2="7" y2="12"/>
+          </svg>
+          Aplikacje Webowe
+        </a>
+      </div>
+    </div>
+
+    <a href="/projekty/" class="flex items-center px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150">
+      Projekty
+    </a>
+    <a href="/kontakt/" class="flex items-center px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150">
+      Kontakt
+    </a>
+  </nav>
+
+  <!-- CTA -->
+  <div class="px-5 py-5 border-t border-black/[0.06]">
+    <ButtonA href="/kontakt/" label="Zamów stronę" />
+  </div>
 </aside>
 
 <script>
-	const panel = document.getElementById('mobilePanel');
-	const backdrop = document.getElementById('mobileBackdrop');
-	const openMobile = () => {
-		panel?.classList.add('open', 'translate-x-0');
-		panel?.classList.remove('-translate-x-full');
-		backdrop?.classList.add('open', 'opacity-100', 'pointer-events-auto');
-		panel?.setAttribute('aria-hidden', 'false');
-	};
-	const closeMobile = () => {
-		panel?.classList.remove('open', 'translate-x-0');
-		panel?.classList.add('-translate-x-full');
-		backdrop?.classList.remove('open', 'opacity-100', 'pointer-events-auto');
-		panel?.setAttribute('aria-hidden', 'true');
-	};
-	document.getElementById('hamburger')?.addEventListener('click', openMobile);
-	document.getElementById('mobileClose')?.addEventListener('click', closeMobile);
-	backdrop?.addEventListener('click', closeMobile);
+  const panel = document.getElementById('mobilePanel');
+  const backdrop = document.getElementById('mobileBackdrop');
+
+  const openMobile = () => {
+    panel?.classList.remove('translate-x-full');
+    panel?.classList.add('translate-x-0');
+    backdrop?.classList.add('opacity-100', 'pointer-events-auto');
+    panel?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeMobile = () => {
+    panel?.classList.add('translate-x-full');
+    panel?.classList.remove('translate-x-0');
+    backdrop?.classList.remove('opacity-100', 'pointer-events-auto');
+    panel?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  document.getElementById('hamburger')?.addEventListener('click', openMobile);
+  document.getElementById('mobileClose')?.addEventListener('click', closeMobile);
+  backdrop?.addEventListener('click', closeMobile);
+
+  const toggle = document.getElementById('mobileServicesToggle');
+  const subPanel = document.getElementById('mobileServicesPanel');
+  const chevron = document.getElementById('mobileServicesChevron');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = subPanel?.classList.contains('flex');
+    if (isOpen) {
+      subPanel?.classList.remove('flex');
+      subPanel?.classList.add('hidden');
+      chevron?.classList.remove('rotate-180');
+    } else {
+      subPanel?.classList.add('flex');
+      subPanel?.classList.remove('hidden');
+      chevron?.classList.add('rotate-180');
+    }
+  });
 </script>

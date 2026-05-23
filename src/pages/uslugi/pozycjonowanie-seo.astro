@@ -1,0 +1,476 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Footer from '../../components/Footer.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Eyebrow from '../../components/ui/Eyebrow.astro';
+import ButtonA from '../../components/ui/ButtonA.astro';
+import { Image } from 'astro:assets';
+import imgVexor1 from '../../assets/images/vexor-1.jpg';
+import imgVexor2 from '../../assets/images/vexor-2.jpg';
+---
+
+<Layout
+  title="Pozycjonowanie SEO Stron Internetowych | Vexor Designs"
+  description="Pomagamy firmom być widocznym w Google. Audyt SEO, optymalizacja on-page, link building i miesięczne raporty. Sprawdź jak działamy."
+  canonicalURL="https://vexordesigns.pl/uslugi/pozycjonowanie-seo/"
+  ogImage="https://vexordesigns.pl/og-image.jpg"
+>
+  <Navbar />
+  <MobileMenu />
+  <main class="bg-brand-bg-light">
+
+    <!-- Hero -->
+    <section class="min-h-[50vh] relative flex flex-col justify-center items-center bg-hero-image bg-cover bg-no-repeat text-white">
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-[47px] py-16 mt-[110px] flex flex-col justify-center items-center gap-5">
+        <nav aria-label="Breadcrumb">
+          <ol class="inline-flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10 text-sm text-white/70">
+            <li><a href="/" class="hover:text-white transition-colors duration-150">Strona główna</a></li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li><a href="/uslugi/" class="hover:text-white transition-colors duration-150">Usługi</a></li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li class="text-white font-medium" aria-current="page">Pozycjonowanie SEO</li>
+          </ol>
+        </nav>
+        <h1 class="text-heroSub text-white text-balance reveal text-center" style="--stagger-i:0">
+          Pozycjonowanie stron internetowych w Google
+        </h1>
+        <p class="text-[21px] text-white/80 max-w-[600px] text-pretty reveal font-medium text-center" style="--stagger-i:1">
+          Pomagamy firmom pojawiać się wysoko w Google na frazy, które wpisują ich potencjalni klienci. Bez obietnic overnight, za to z mierzalnymi wynikami.
+        </p>
+        <div class="reveal mt-2" style="--stagger-i:2">
+          <ButtonA href="/kontakt/" label="Zapytaj o audyt SEO" invert={true} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Dlaczego SEO jest kluczowe -->
+    <section class="bg-white py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-[60px] items-center">
+          <div class="flex flex-col gap-6 reveal order-2 lg:order-1" style="--stagger-i:0">
+            <Eyebrow label="Widoczność w Google to inwestycja" light={true} />
+            <h2 class="text-h2 text-brand-accent">
+              Większość klientów szuka Twojej firmy w Google, zanim do Ciebie zadzwoni
+            </h2>
+            <p class="text-brand-text text-lg leading-relaxed">
+              Prawie każdy klient przed zakupem usługi lub produktu sprawdza Google. Firmy, które pojawiają się na pierwszej stronie wyników, zbierają zapytania od osób już gotowych do zakupu. Firmy niewidoczne w Google tracą tych klientów na rzecz konkurencji.
+            </p>
+            <p class="text-brand-text text-lg leading-relaxed">
+              SEO to praca długoterminowa, ale mierzalna. Pierwsze efekty widać po kilku tygodniach, a stabilne pozycje na frazy z realnym ruchem budują się przez 3 do 6 miesięcy. Reklamy Google Ads dają ruch tylko dopóki płacisz. Pozycjonowanie buduje widoczność, która zostaje.
+            </p>
+            <p class="text-brand-text text-lg leading-relaxed">
+              Nasze działania są przejrzyste. Ustalamy frazy do śledzenia, wykonujemy konkretne prace każdego miesiąca i dostarczamy raport z wynikami. Zawsze wiesz co robimy i po co.
+            </p>
+            <div class="self-start"><ButtonA href="/kontakt/" label="Zapytaj o wycenę" invert={false} /></div>
+          </div>
+          <Image
+            src={imgVexor1}
+            alt="Pozycjonowanie SEO stron internetowych – Vexor Designs"
+            class="reveal rounded-card lg:aspect-[4/5] object-cover w-full order-1 lg:order-2"
+            style="--stagger-i:1"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Co wchodzi w skład SEO -->
+    <section class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="text-center mb-14 reveal" style="--stagger-i:0">
+          <Eyebrow label="Zakres usługi" />
+          <h2 class="text-h2 text-brand-accent mt-4">Co wchodzi w skład naszego pozycjonowania SEO</h2>
+          <p class="text-brand-text text-lg mt-4 max-w-[580px] mx-auto leading-relaxed">
+            SEO to nie jeden zabieg, lecz ciągły proces złożony z wielu elementów, które razem budują widoczność Twojej strony w Google.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"/>`,
+              title: 'Audyt techniczny SEO',
+              desc: 'Analizujemy stronę pod kątem błędów technicznych: zduplikowane treści, błędy indeksowania, brakujące meta tagi, nieoptymalna struktura URL i przekierowania. Audyt wskazuje konkretne priorytety do naprawy.'
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75-6.75a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"/><path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z"/>`,
+              title: 'Optymalizacja treści',
+              desc: 'Analizujemy frazy kluczowe i optymalizujemy istniejące treści lub tworzymy nowe. Dbamy o właściwą strukturę nagłówków, gęstość fraz i semantyczną spójność tekstu.'
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6152 1.59492C14.9164 1.76287 15.0643 2.1146 14.9736 2.44734L12.9819 9.75H20.25C20.5486 9.75 20.8188 9.92718 20.9378 10.2011C21.0569 10.475 21.0021 10.7934 20.7983 11.0117L10.2983 22.2617C10.063 22.5139 9.68601 22.573 9.38478 22.4051C9.08354 22.2371 8.93567 21.8854 9.02641 21.5527L11.018 14.25H3.74999C3.45134 14.25 3.18115 14.0728 3.06213 13.7989C2.9431 13.525 2.99792 13.2066 3.20169 12.9883L13.7017 1.73826C13.937 1.48613 14.314 1.42698 14.6152 1.59492Z"/>`,
+              title: 'Core Web Vitals',
+              desc: 'Google bierze pod uwagę szybkość ładowania (LCP), interaktywność (INP) i stabilność wizualną (CLS) jako czynniki rankingowe. Optymalizujemy stronę pod wysokie wyniki PageSpeed Insights.'
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"/>`,
+              title: 'Link building',
+              desc: 'Zdobywamy wartościowe linki zewnętrzne z tematycznie powiązanych stron i portali branżowych. Pracujemy wyłącznie z naturalnymi metodami, bez zakupu farm linków.'
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"/>`,
+              title: 'Dane strukturalne',
+              desc: 'Wdrażamy znaczniki schema.org dla artykułów, produktów, opinii i danych firmy. Dzięki temu Google może wyświetlać rozszerzone wyniki (rich snippets), które wyróżniają Twoją stronę.'
+            },
+            {
+              icon: `<path d="M18.375 2.25C17.3395 2.25 16.5 3.08947 16.5 4.125V19.875C16.5 20.9105 17.3395 21.75 18.375 21.75H19.125C20.1605 21.75 21 20.9105 21 19.875V4.125C21 3.08947 20.1605 2.25 19.125 2.25H18.375Z"/><path d="M9.75 8.625C9.75 7.58947 10.5895 6.75 11.625 6.75H12.375C13.4105 6.75 14.25 7.58947 14.25 8.625V19.875C14.25 20.9105 13.4105 21.75 12.375 21.75H11.625C10.5895 21.75 9.75 20.9105 9.75 19.875V8.625Z"/><path d="M3 13.125C3 12.0895 3.83947 11.25 4.875 11.25H5.625C6.66053 11.25 7.5 12.0895 7.5 13.125V19.875C7.5 20.9105 6.66053 21.75 5.625 21.75H4.875C3.83947 21.75 3 20.9105 3 19.875V13.125Z"/>`,
+              title: 'Miesięczne raporty',
+              desc: 'Co miesiąc dostajesz raport z pozycji śledzonych fraz, ruchu organicznego, liczby kliknięć z Google Search Console i postępu prac. Nic nie dzieje się za plecami klienta.'
+            },
+          ].map((feat, i) => (
+            <div class="bg-white rounded-[24px] p-7 flex flex-col min-h-[300px] reveal gap-16" style={`--stagger-i:${i}`}>
+              <span class="w-16 h-16 rounded-2xl flex items-center justify-center bg-brand-bg-light flex-shrink-0">
+                <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" set:html={feat.icon}></svg>
+              </span>
+              <div class="flex-1"></div>
+              <div class="flex flex-col gap-2 mt-6">
+                <h3 class="text-h5 font-semibold text-brand-accent leading-snug">{feat.title}</h3>
+                <p class="text-brand-text leading-relaxed text-sm">{feat.desc}</p>
+              </div>
+            </div>
+          ))}
+
+          <!-- CTA card -->
+          <div class="lg:col-span-2 rounded-[24px] p-8 flex flex-col justify-between min-h-[300px] relative overflow-hidden reveal" style="--stagger-i:6; background: linear-gradient(135deg, #1a1a3e 0%, #2d2d6b 60%, #3d3d8f 100%);">
+            <span class="inline-flex items-center gap-2 text-white text-sm font-medium">
+              <span class="w-1.5 h-1.5 rounded-sm bg-primary flex-shrink-0"></span>
+              Dlaczego Vexor
+            </span>
+            <div class="flex flex-col gap-6">
+              <h3 class="text-h2 text-white">
+                Zacznij od bezpłatnego audytu SEO
+              </h3>
+              <div class="self-start"><ButtonA href="/kontakt/" label="Zapytaj o audyt" invert={true} /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak wyceniamy SEO -->
+    <section class="py-[80px] md:py-[100px] mx-3 rounded-[40px] relative overflow-hidden" style="background-image: url('/h7_bg2.jpg'); background-size: cover; background-position: center;">
+      <div class="absolute inset-0 bg-black/55" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[60px] items-center">
+
+          <Image
+            src={imgVexor2}
+            alt="Wycena pozycjonowania SEO – Vexor Designs"
+            class="reveal rounded-[28px] aspect-video lg:aspect-[4/5] object-cover w-full"
+            style="--stagger-i:0"
+            loading="lazy"
+          />
+
+          <div class="flex flex-col gap-6 reveal" style="--stagger-i:1">
+            <Eyebrow dark={true} label="Dlaczego Vexor" />
+
+            <h2 class="text-h2 text-white">
+              Wycena SEO dopasowana do Twojej strony i branży
+            </h2>
+
+            <p class="text-white/70 text-lg leading-relaxed">
+              Każdy projekt jest inny, dlatego nie stosujemy sztywnych pakietów cenowych. Wycena zależy od branży, aktualnego stanu strony, liczby śledzonych fraz i zakresu planowanych działań.
+            </p>
+
+            <div class="flex flex-col gap-5 mt-2">
+              <div class="flex items-center gap-4">
+                <span class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.12)">
+                  <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-white font-semibold text-[18px] leading-snug">Działamy transparentnie</h3>
+                  <p class="text-white/60 text-[15px] leading-relaxed mt-1">Ustalamy frazy do śledzenia, wykonujemy konkretne prace i dostarczamy raport. Zawsze wiesz co robimy i po co.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.12)">
+                  <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-white font-semibold text-[18px] leading-snug">Bezpłatny audyt na start</h3>
+                  <p class="text-white/60 text-[15px] leading-relaxed mt-1">Wyślij nam adres strony i opis branży. Odpowiadamy z wyceną w ciągu 24 godzin. Zaczynamy od bezpłatnego audytu.</p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-white/10 mt-2" />
+
+            <div class="flex flex-wrap items-center gap-5">
+              <p class="text-white/80 text-[16px]">Dołącz do <strong class="text-white">40+ firm</strong>, które nam zaufały</p>
+              <ButtonA href="/kontakt/" label="Zapytaj o wycenę SEO" invert={true} />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-brand-bg-light py-[80px] md:py-[120px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+
+        <div class="lg:hidden mb-8">
+          <Eyebrow label="Znajdź odpowiedź" />
+          <h2 class="text-heroSub text-brand-accent mt-4">
+            Przeczytaj najczęstsze pytania
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-12 lg:gap-20">
+
+          <div class="flex flex-col order-2 lg:order-1">
+            <div class="hidden lg:block">
+              <Eyebrow label="Znajdź odpowiedź" />
+            </div>
+
+            <nav class="flex flex-col mt-0 lg:mt-16" id="faq-cats" aria-label="Kategorie FAQ">
+              {[
+                { label: 'Ogólne pytania', cat: 'all' },
+                { label: 'Czas & Efekty',  cat: 'efekty' },
+                { label: 'Narzędzia',      cat: 'narzedzia' },
+                { label: 'Wycena',         cat: 'wycena' },
+              ].map(({ label, cat }) => (
+                <button
+                  class="faq-cat-btn text-left py-3.5 text-[18px] font-medium transition-colors duration-150"
+                  data-cat={cat}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+
+            <hr class="my-6 border-brand-border" />
+
+            <p class="text-brand-text text-sm leading-relaxed">Nie znalazłeś odpowiedzi na swoje pytanie?</p>
+            <a href="/kontakt/" class="text-brand-accent font-semibold text-sm mt-1 hover:text-primary transition-colors">Skontaktuj się z nami</a>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <h2 class="hidden lg:block text-heroSub text-brand-accent mb-12 reveal" style="--stagger-i:0">
+              Przeczytaj najczęstsze pytania
+            </h2>
+
+            <p id="faq-mobile-cat" class="lg:hidden text-brand-accent font-semibold text-[18px] mb-2">Ogólne pytania</p>
+
+            <div id="faq-list" class="flex flex-col">
+              {[
+                { cat: 'efekty',    q: 'Po jakim czasie zobaczę efekty SEO?',                  a: 'Pierwsze zmiany w pozycjach są widoczne zazwyczaj po 4 do 8 tygodniach od wdrożenia optymalizacji technicznej. Stabilne pozycje na konkurencyjne frazy budują się przez 3 do 6 miesięcy regularnych działań. Czas zależy od konkurencyjności branży i aktualnego stanu strony.' },
+                { cat: 'efekty',    q: 'Czy gwarantujecie pierwsze miejsce w Google?',         a: 'Nikt uczciwy nie może zagwarantować konkretnej pozycji w Google. Algorytm wyszukiwarki zmienia się regularnie i Google ma w tym pełną kontrolę. Możemy zagwarantować, że nasze działania są zgodne z wytycznymi Google i mierzalnie poprawiają widoczność Twojej strony w czasie.' },
+                { cat: 'efekty',    q: 'Czy SEO działa jeśli mam nową stronę?',                a: 'Tak. Nowa strona wymaga więcej czasu na zbudowanie autorytetu w Google, ale wdrożenie SEO od początku skraca ten czas. Optymalizacja techniczna, dobra struktura treści i pierwsze linki zewnętrzne sprawiają, że strona zaczyna się indeksować i zdobywać widoczność szybciej.' },
+                { cat: 'narzedzia', q: 'Jak mierzysz postępy pozycjonowania?',                 a: 'Co miesiąc dostarczamy raport z pozycji śledzonych fraz, ruchu organicznego z Google Analytics i danych z Google Search Console. Widzisz dokładnie które frazy rosną, ile kliknięć pochodzi z organicznego wyszukiwania i jakie prace zostały wykonane w danym miesiącu.' },
+              ].map((item, i) => (
+                <div class="faq-item border-b border-brand-border" data-cat={item.cat}>
+                  <button
+                    class="faq-trigger w-full flex items-start gap-4 py-7 text-left group"
+                    aria-expanded={i === 0 ? 'true' : 'false'}
+                  >
+                    <span class="text-primary font-bold text-[20px] leading-none mt-0.5 flex-shrink-0">Q.</span>
+                    <span class="text-[18px] md:text-[20px] font-semibold text-brand-accent group-hover:text-primary transition-colors leading-snug flex-1">{item.q}</span>
+                    <svg class="faq-chevron w-5 h-5 flex-shrink-0 mt-1 text-brand-muted transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
+                  <div class="faq-answer overflow-hidden" style="max-height:0">
+                    <p class="pb-7 text-brand-text text-lg leading-relaxed pl-9">{item.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const cats = document.querySelectorAll<HTMLButtonElement>('.faq-cat-btn');
+      const items = document.querySelectorAll<HTMLElement>('.faq-item');
+      const triggers = document.querySelectorAll<HTMLButtonElement>('.faq-trigger');
+
+      function openAnswer(trigger: HTMLButtonElement) {
+        const answer = trigger.nextElementSibling as HTMLElement;
+        const chevron = trigger.querySelector<SVGElement>('.faq-chevron');
+        trigger.setAttribute('aria-expanded', 'true');
+        answer.style.transition = 'max-height 0.4s cubic-bezier(0.4,0,0.2,1)';
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        chevron?.style.setProperty('transform', 'rotate(180deg)');
+      }
+
+      function closeAnswer(trigger: HTMLButtonElement) {
+        const answer = trigger.nextElementSibling as HTMLElement;
+        const chevron = trigger.querySelector<SVGElement>('.faq-chevron');
+        trigger.setAttribute('aria-expanded', 'false');
+        answer.style.transition = 'max-height 0.4s cubic-bezier(0.4,0,0.2,1)';
+        answer.style.maxHeight = '0';
+        chevron?.style.setProperty('transform', 'rotate(0deg)');
+      }
+
+      const mobileCatLabel = document.getElementById('faq-mobile-cat');
+
+      function activateCat(cat: string) {
+        cats.forEach(btn => {
+          const active = btn.dataset.cat === cat;
+          btn.classList.toggle('text-brand-accent', active);
+          btn.classList.toggle('font-semibold', active);
+          btn.classList.toggle('text-brand-muted', !active);
+          if (active && mobileCatLabel) mobileCatLabel.textContent = btn.textContent;
+        });
+        items.forEach(item => {
+          const show = cat === 'all' || item.dataset.cat === cat;
+          item.style.display = show ? '' : 'none';
+        });
+      }
+
+      cats.forEach(btn => {
+        btn.addEventListener('click', () => activateCat(btn.dataset.cat!));
+      });
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+          isOpen ? closeAnswer(trigger) : openAnswer(trigger);
+        });
+      });
+
+      if (triggers.length) openAnswer(triggers[0] as HTMLButtonElement);
+      activateCat('all');
+    </script>
+
+    <!-- Inne usługi -->
+    <section class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+
+        <div class="flex flex-col items-center text-center gap-4 mb-14 reveal" style="--stagger-i:0">
+          <div class="flex justify-center w-full"><Eyebrow label="Co jeszcze robimy" /></div>
+          <h2 class="text-h2 text-brand-accent max-w-[600px]">
+            Sprawdź inne nasze usługi i realizacje
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          {[
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 5.25C2.25 3.59315 3.59315 2.25 5.25 2.25H18.75C20.4069 2.25 21.75 3.59315 21.75 5.25V15C21.75 16.6569 20.4069 18 18.75 18H15.75V18.2574C15.75 18.8541 15.9871 19.4264 16.409 19.8483L17.0303 20.4697C17.2448 20.6842 17.309 21.0068 17.1929 21.287C17.0768 21.5673 16.8033 21.75 16.5 21.75H7.5C7.19665 21.75 6.92318 21.5673 6.80709 21.287C6.691 21.0068 6.75517 20.6842 6.96967 20.4697L7.59099 19.8484C8.01295 19.4264 8.25 18.8541 8.25 18.2574V18H5.25C3.59315 18 2.25 16.6569 2.25 15V5.25ZM3.75 5.25V12.75C3.75 13.5784 4.42157 14.25 5.25 14.25H18.75C19.5784 14.25 20.25 13.5784 20.25 12.75V5.25C20.25 4.42157 19.5784 3.75 18.75 3.75H5.25C4.42157 3.75 3.75 4.42157 3.75 5.25Z"/>`,
+              title: 'Strony internetowe',
+              desc: 'Projektujemy strony firmowe, które ładują się szybko, wyglądają profesjonalnie i generują zapytania od klientów.',
+              href: '/uslugi/strony-internetowe/',
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/>`,
+              title: 'Sklepy internetowe',
+              desc: 'Budujemy sklepy WooCommerce i e-commerce, które sprzedają. Integracje z płatnościami, automatyzacja wysyłki i panel zarządzania zamówieniami.',
+              href: '/uslugi/sklepy-internetowe/',
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"/>`,
+              title: 'Aplikacje webowe',
+              desc: 'Tworzymy dedykowane aplikacje webowe — od prostych narzędzi wewnętrznych po rozbudowane platformy SaaS. React, Next.js, Node.js.',
+              href: '/uslugi/aplikacje-webowe/',
+            },
+            {
+              icon: `<path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"/>`,
+              title: 'Nasze realizacje',
+              desc: 'Zobacz projekty, które zrealizowaliśmy dla firm z Polski i Wielkiej Brytanii. Strony firmowe, sklepy i aplikacje webowe.',
+              href: '/projekty/',
+            },
+          ].map((s, i) => (
+            <div
+              class="rounded-[24px] p-8 flex flex-col gap-4 reveal border border-black/[0.06]"
+              style={`--stagger-i:${i}`}
+            >
+              <span class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-white">
+                <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor" set:html={s.icon}></svg>
+              </span>
+
+              <div class="flex flex-col gap-2 flex-1">
+                <h3 class="text-h5 text-brand-accent leading-snug">{s.title}</h3>
+                <p class="text-brand-text text-sm leading-relaxed">{s.desc}</p>
+              </div>
+
+              <div class="mt-auto pt-6">
+                <a
+                  class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-brand-accent text-[16px] font-semibold leading-[1.625] relative overflow-hidden"
+                  href={s.href}
+                >
+                  <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-primary transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
+                  <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="white" aria-hidden="true">
+                      <path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" />
+                    </svg>
+                  </span>
+                  <span class="relative z-10 group-hover/btn:text-white">Dowiedz się więcej</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://vexordesigns.pl/"},
+    {"@type": "ListItem", "position": 2, "name": "Usługi", "item": "https://vexordesigns.pl/uslugi/"},
+    {"@type": "ListItem", "position": 3, "name": "Pozycjonowanie SEO", "item": "https://vexordesigns.pl/uslugi/pozycjonowanie-seo/"}
+  ]
+}
+</script>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Po jakim czasie zobaczę efekty SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pierwsze zmiany w pozycjach są widoczne zazwyczaj po 4 do 8 tygodniach od wdrożenia optymalizacji technicznej. Stabilne pozycje na konkurencyjne frazy budują się przez 3 do 6 miesięcy regularnych działań."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy gwarantujecie pierwsze miejsce w Google?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nikt uczciwy nie może zagwarantować konkretnej pozycji w Google. Algorytm zmienia się regularnie. Możemy zagwarantować, że nasze działania są zgodne z wytycznymi Google i mierzalnie poprawiają widoczność Twojej strony."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy SEO działa jeśli mam nową stronę?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Nowa strona wymaga więcej czasu na zbudowanie autorytetu w Google, ale wdrożenie SEO od początku skraca ten czas. Optymalizacja techniczna i dobra struktura treści sprawiają, że strona zaczyna się indeksować szybciej."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak mierzysz postępy pozycjonowania?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Co miesiąc dostarczamy raport z pozycji śledzonych fraz, ruchu organicznego z Google Analytics i danych z Google Search Console. Widzisz które frazy rosną i jakie prace zostały wykonane."
+      }
+    }
+  ]
+}
+</script>

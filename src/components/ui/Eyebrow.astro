@@ -4,14 +4,15 @@
 // Props: label, dark
 // JS: none
 
-const { label, dark = false } = Astro.props;
+const { label, dark = false, light = false } = Astro.props;
 ---
 
 <span
 	class:list={[
-		'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl  text-[18px] font-medium tracking-[0.02em]',
-		'bg-white/40 backdrop-blur-md w-fit self-start justify-self-start',
-		dark ? ' text-white bg-white' : 'border-brand-border text-brand-text'
+		'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em]',
+		'w-fit self-start justify-self-start',
+		dark ? 'text-white' : 'border-brand-border text-brand-text',
+		light ? 'bg-brand-bg-light' : 'bg-white/40 backdrop-blur-md',
 	]}
 >
 	<span class:list={['w-1.5 h-1.5 rounded-sm', dark ? 'bg-white' : 'bg-primary']} aria-hidden="true"></span>

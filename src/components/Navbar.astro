@@ -20,20 +20,29 @@ import ButtonA from './ui/ButtonA.astro';
       <span class="text-[20px] font-bold tracking-[-0.02em]">Vexor</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white transition-colors duration-150 ease-out group-data-[scrolled]:text-brand-accent" aria-label="Główna nawigacja">
-      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/">Strona Główna</a>
-      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
-      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/o-nas/">O nas</a>
-      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
+    <nav class="hidden md:flex items-center gap-4 text-[18px] font-medium text-white group-data-[scrolled]:text-brand-accent" aria-label="Główna nawigacja">
+      <a class="group/navlink relative inline-block overflow-hidden" href="/">
+        <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">Strona Główna</span>
+        <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">Strona Główna</span>
+      </a>
+      <span class="w-1.5 h-1.5 rounded-sm bg-primary flex-shrink-0" aria-hidden="true"></span>
+      <a class="group/navlink relative inline-block overflow-hidden" href="/o-nas/">
+        <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">O nas</span>
+        <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">O nas</span>
+      </a>
+      <span class="w-1.5 h-1.5 rounded-sm bg-primary flex-shrink-0" aria-hidden="true"></span>
 
       <!-- Usługi dropdown -->
       <div class="relative group/dd">
-        <button class="flex items-center gap-1.5 hover:text-primary transition-colors cursor-pointer" aria-haspopup="true">
-          Usługi
+        <a href="/uslugi/" class="group/navlink flex items-center gap-1.5" aria-haspopup="true">
+          <span class="relative inline-block overflow-hidden">
+            <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">Usługi</span>
+            <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">Usługi</span>
+          </span>
           <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover/dd:rotate-180" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="2,4 6,8 10,4"/>
           </svg>
-        </button>
+        </a>
 
         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 pointer-events-none group-hover/dd:opacity-100 group-hover/dd:pointer-events-auto transition-all duration-200 translate-y-1 group-hover/dd:translate-y-0">
           <div class="min-w-[300px] rounded-[24px] bg-white shadow-[0_8px_40px_rgba(0,0,0,0.18)] p-3 flex flex-col">
@@ -71,10 +80,16 @@ import ButtonA from './ui/ButtonA.astro';
         </div>
       </div>
 
-      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
-      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/projekty/">Projekty</a>
-      <svg class="w-1.5 h-1.5 text-primary fill-current flex-shrink-0" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3"/></svg>
-      <a class="hover:text-primary transition-colors duration-150 ease-out" href="/kontakt/">Kontakt</a>
+      <span class="w-1.5 h-1.5 rounded-sm bg-primary flex-shrink-0" aria-hidden="true"></span>
+      <a class="group/navlink relative inline-block overflow-hidden" href="/projekty/">
+        <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">Projekty</span>
+        <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">Projekty</span>
+      </a>
+      <span class="w-1.5 h-1.5 rounded-sm bg-primary flex-shrink-0" aria-hidden="true"></span>
+      <a class="group/navlink relative inline-block overflow-hidden" href="/kontakt/">
+        <span class="block transition-transform duration-300 ease-out group-hover/navlink:-translate-y-full">Kontakt</span>
+        <span class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover/navlink:translate-y-0">Kontakt</span>
+      </a>
     </nav>
 
     <div class="flex items-center gap-3">
