@@ -7,7 +7,7 @@ module.exports = {
 				"primary-hover": "#5963C8",
 				brand: {
 					text: "#484848",
-					muted: "#888888",
+					muted: "#767676",
 					accent: "#000000",
 					border: "#DFDEE5",
 					bg: "#FFFFFF",
@@ -62,7 +62,7 @@ module.exports = {
         `,
 				"portfolio-image": `url('/h1_bg-3.png')`,
 				"sub-image": `url('/404-bg.png')`,
-				"hero-image": "url('/h6_bg-1.jpg')",
+				"hero-image": "url('/h6_bg-1.webp')",
 				"hero-dots": "url('/h6_net')",
 				"portfolio-top": `
           radial-gradient(ellipse 80% 50% at 50% -10%, rgba(160,160,255,.15) 0%, transparent 60%),
@@ -80,7 +80,7 @@ module.exports = {
           repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0px, rgba(255,255,255,.08) 1px, transparent 1px, transparent 20px),
           linear-gradient(135deg, #C8C8E0 0%, #9898C0 100%)
         `,
-				"shape-1": "url('/h6_deco-1.png')",
+				"shape-1": "url('/h6_deco-1.webp')",
 				"shape-2": "url('/h6_deco-2.png')",
 				"shape-3": "url('/h6_deco-3.png')",
 				"shape-4": "linear-gradient(135deg,#4060FF,#2030CC)",

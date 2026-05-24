@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -94,15 +96,9 @@ const schemaOrg = JSON.stringify([
     <link rel="alternate" hreflang="pl" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <!-- Fonts: served locally from /fonts/ via global.css @font-face -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/mona-sans-normal-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/mona-sans-normal-latin-ext.woff2" crossorigin />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={schemaOrg} />

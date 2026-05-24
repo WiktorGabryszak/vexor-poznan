@@ -4,7 +4,7 @@
 // Props: href, label, invert
 // JS: none
 
-const { href = '#', label, invert = false } = Astro.props;
+const { href = '#', label, invert = false, ariaLabel } = Astro.props;
 ---
 
 <div class:list={['mt-auto rounded-[20px] p-1.5', invert ? 'bg-white' : 'bg-primary']}>
@@ -14,6 +14,7 @@ const { href = '#', label, invert = false } = Astro.props;
 			invert ? 'text-brand-accent' : 'text-white'
 		]}
 		href={href}
+		aria-label={ariaLabel}
 	>
 		<span class:list={[
 			'absolute left-0 top-0 bottom-0 w-12 rounded-2xl transition-all duration-300 ease-[ease] group-hover/btn:w-full',

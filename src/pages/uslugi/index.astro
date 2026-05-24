@@ -6,6 +6,50 @@ import Footer from '../../components/Footer.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 import Eyebrow from '../../components/ui/Eyebrow.astro';
 import ButtonA from '../../components/ui/ButtonA.astro';
+import { Image } from 'astro:assets';
+import imgStrony from '../../assets/images/uslugi-strony-1.jpg';
+import imgSklepy from '../../assets/images/uslugi-sklepy-1.jpg';
+import imgSeo from '../../assets/images/uslugi-seo-1.jpg';
+import imgAplikacje from '../../assets/images/uslugi-aplikacje-1.jpg';
+
+const services = [
+  {
+    title: 'Strony internetowe',
+    desc: 'Projektujemy strony z responsywnym designem, optymalizacją SEO i certyfikatem SSL. Dostosowujemy projekt graficzny do Twojej branży i grupy docelowej. Realizacja zazwyczaj w 2 do 4 tygodnie od dostarczenia materiałów.',
+    href: '/uslugi/strony-internetowe/',
+    img: imgStrony,
+    imgWidth: 744,
+    imgHeight: 587,
+    icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  },
+  {
+    title: 'Sklepy internetowe',
+    desc: 'Wdrażamy sklepy z integracją Przelewy24 i Stripe, zarządzaniem produktami i certyfikatem SSL. Pomagamy też w migracji z innych platform i optymalizacji istniejących sklepów pod kątem konwersji.',
+    href: '/uslugi/sklepy-internetowe/',
+    img: imgSklepy,
+    imgWidth: 744,
+    imgHeight: 496,
+    icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+  },
+  {
+    title: 'Pozycjonowanie SEO',
+    desc: 'Zaczynamy od audytu technicznego, optymalizujemy treści, budujemy linki i poprawiamy Core Web Vitals. Co miesiąc dostajesz raport z pozycji i ruchu organicznego. Transparentnie, bez obietnic efektów z dnia na dzień.',
+    href: '/uslugi/pozycjonowanie-seo/',
+    img: imgSeo,
+    imgWidth: 744,
+    imgHeight: 530,
+    icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>`,
+  },
+  {
+    title: 'Aplikacje webowe',
+    desc: 'Budujemy portale klientów, systemy CRM, MVP startupów i integracje z zewnętrznymi API. Pracujemy w React, Next.js i Astro. Pełna kontrola nad funkcjonalnościami bez kompromisów narzucanych przez gotowe platformy.',
+    href: '/uslugi/aplikacje-webowe/',
+    img: imgAplikacje,
+    imgWidth: 744,
+    imgHeight: 497,
+    icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  },
+];
 ---
 
 <Layout
@@ -43,36 +87,7 @@ import ButtonA from '../../components/ui/ButtonA.astro';
     <section class="bg-brand-bg-light py-[40px] md:py-[100px]">
       <div class="max-w-[1700px] mx-auto px-5 md:px-10">
         <div class="flex flex-col gap-6">
-          {([
-            {
-              title: 'Strony internetowe',
-              desc: 'Projektujemy strony z responsywnym designem, optymalizacją SEO i certyfikatem SSL. Dostosowujemy projekt graficzny do Twojej branży i grupy docelowej. Realizacja zazwyczaj w 2 do 4 tygodnie od dostarczenia materiałów.',
-              href: '/uslugi/strony-internetowe/',
-              img: '/uslugi-strony-1.jpg',
-              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-            },
-            {
-              title: 'Sklepy internetowe',
-              desc: 'Wdrażamy sklepy z integracją Przelewy24 i Stripe, zarządzaniem produktami i certyfikatem SSL. Pomagamy też w migracji z innych platform i optymalizacji istniejących sklepów pod kątem konwersji.',
-              href: '/uslugi/sklepy-internetowe/',
-              img: '/uslugi-sklepy-1.jpg',
-              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
-            },
-            {
-              title: 'Pozycjonowanie SEO',
-              desc: 'Zaczynamy od audytu technicznego, optymalizujemy treści, budujemy linki i poprawiamy Core Web Vitals. Co miesiąc dostajesz raport z pozycji i ruchu organicznego. Transparentnie, bez obietnic efektów z dnia na dzień.',
-              href: '/uslugi/pozycjonowanie-seo/',
-              img: '/uslugi-seo-1.jpg',
-              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>`,
-            },
-            {
-              title: 'Aplikacje webowe',
-              desc: 'Budujemy portale klientów, systemy CRM, MVP startupów i integracje z zewnętrznymi API. Pracujemy w React, Next.js i Astro. Pełna kontrola nad funkcjonalnościami bez kompromisów narzucanych przez gotowe platformy.',
-              href: '/uslugi/aplikacje-webowe/',
-              img: '/uslugi-aplikacje-1.jpg',
-              icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-            },
-          ] as const).map((s, i) => (
+          {services.map((s, i) => (
             <div class="bg-white rounded-[32px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 reveal" style={`--stagger-i:${i}`}>
               <div class:list={['p-10 lg:p-14 flex flex-col gap-7 order-2', i % 2 === 0 ? 'lg:order-1' : 'lg:order-2']}>
                 <span class="w-16 h-16 rounded-2xl flex items-center justify-center bg-brand-bg-light transition-colors duration-300 flex-shrink-0">
@@ -84,11 +99,21 @@ import ButtonA from '../../components/ui/ButtonA.astro';
                 </div>
                 <hr class="border-brand-border" />
                 <div class="self-start">
-                  <ButtonA href={s.href} label="Dowiedz się więcej" />
+                  <ButtonA href={s.href} label="Dowiedz się więcej" ariaLabel={`Dowiedz się więcej o usłudze: ${s.title}`} />
                 </div>
               </div>
               <div class:list={['order-1 aspect-video lg:aspect-auto relative', i % 2 === 0 ? 'lg:order-2' : 'lg:order-1']}>
-                <img src={s.img} alt={s.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <Image
+                  src={s.img}
+                  alt={s.title}
+                  width={s.imgWidth}
+                  height={s.imgHeight}
+                  format="webp"
+                  quality={82}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}

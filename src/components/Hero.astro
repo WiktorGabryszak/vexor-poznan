@@ -6,18 +6,13 @@
 
 import Eyebrow from './ui/Eyebrow.astro';
 import ServiceCards from './ServiceCards.astro';
+import { Image } from 'astro:assets';
+import deco2 from '../assets/images/h6_deco-2.png';
+import deco1 from '../assets/images/h6_deco-1.webp';
 ---
 
 <section class="min-h-[65vh] relative flex flex-col bg-hero-image bg-cover bg-no-repeat text-white">
 	<div class="absolute inset-0 hero-dot-grid opacity-[0.35] [background-size:32px_32px]" aria-hidden="true"></div>
-	<div
-		class="absolute left-[8%] top-[25%] w-[250px] h-[250px] bg-shape-2 shape-gem bg-contain bg-no-repeat animate-float pointer-events-none drop-shadow-[0_20px_40px_rgba(160,96,255,0.4)]"
-		aria-hidden="true"
-	></div>
-	<div
-		class="absolute right-[5%] top-[35%] w-[350px] h-[350px] bg-shape-1 shape-gem bg-contain bg-no-repeat animate-float-2 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)]"
-		aria-hidden="true"
-	></div>
 
 	<div class="relative z-10 flex flex-col items-center text-center bg-hero-dots max-w-[1000px] mx-auto pt-[180px] px-6">
 		<h1 class="text-hero text-white mt-5 text-balance reveal" style="--stagger-i:1">
@@ -31,4 +26,40 @@ import ServiceCards from './ServiceCards.astro';
 	<div class="relative z-50 mt-16 -mb-8">
 		<ServiceCards />
 	</div>
+
+	<!-- gemma lewa -->
+	<Image
+		src={deco2}
+		alt=""
+		aria-hidden="true"
+		role="presentation"
+		fetchpriority="low"
+		loading="lazy"
+		width={250}
+		height={250}
+		style="display:none"
+		class="absolute left-[8%] top-[25%] w-[250px] h-[250px] shape-gem object-contain animate-float pointer-events-none drop-shadow-[0_20px_40px_rgba(160,96,255,0.4)]"
+	/>
+
+	<!-- gemma prawa -->
+	<Image
+		src={deco1}
+		alt=""
+		aria-hidden="true"
+		role="presentation"
+		fetchpriority="low"
+		loading="lazy"
+		width={350}
+		height={350}
+		style="display:none"
+		class="absolute right-[5%] top-[35%] w-[350px] h-[350px] shape-gem object-contain animate-float-2 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)]"
+	/>
 </section>
+
+<style>
+	@media (min-width: 768px) {
+		.shape-gem {
+			display: block !important;
+		}
+	}
+</style>

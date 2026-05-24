@@ -1,0 +1,72 @@
+Napraw wykrywanie LCP na stronie głównej. Lighthouse błędnie wskazuje
+dekoracyjny element .bg-shape-2 jako LCP zamiast głównego h1.
+Nie zmieniaj wyglądu. Jeśli cokolwiek mogłoby wpłynąć na wygląd —
+zatrzymaj się i zapytaj mnie.
+
+---
+
+## Plik: src/components/Hero.astro
+
+## Zmiana 1 — opóźnij renderowanie gemm przez CSS
+
+Oba dekoracyjne divy (bg-shape-2 i bg-shape-1) mają już aria-hidden
+i role="presentation" ale Lighthouse nadal je wykrywa jako LCP bo
+CSS background-image ładuje się razem z resztą.
+
+Dodaj do obu divów atrybut style z content-visibility:
+
+  <!-- gemma lewa -->
+  <div
+    class="absolute left-[8%] top-[25%] w-[250px] h-[250px] bg-shape-2 shape-gem bg-contain bg-no-repeat animate-float pointer-events-none drop-shadow-[0_20px_40px_rgba(160,96,255,0.4)]"
+    aria-hidden="true"
+    role="presentation"
+    style="content-visibility: auto; contain-intrinsic-size: 250px 250px;"
+  ></div>
+
+  <!-- gemma prawa -->
+  <div
+    class="absolute right-[5%] top-[35%] w-[350px] h-[350px] bg-shape-1 shape-gem bg-contain bg-no-repeat animate-float-2 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)]"
+    aria-hidden="true"
+    role="presentation"
+    style="content-visibility: auto; contain-intrinsic-size: 350px 350px;"
+  ></div>
+
+---
+
+## Zmiana 2 — dodaj fetchpriority na h1
+
+Bezpośrednio nad tagiem <h1> w Hero.astro dodaj link preload
+w <head> layoutu (Layout.astro) dla fonta używanego przez h1:
+
+  <link
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    href="/fonts/mona-sans-normal-latin.woff2"
+    crossorigin
+  />
+
+Jeśli ten link już istnieje w Layout.astro — pomiń ten krok.
+
+---
+
+## Zmiana 3 — przenieś gemmy na koniec sekcji w DOM
+
+Kolejność elementów w DOM wpływa na to co Lighthouse uznaje za LCP.
+Przenieś oba dekoracyjne divy z gemami na sam koniec tagu <section>,
+tuż przed zamknięciem </section> — po bloku z h1 i po <ServiceCards />.
+Pozycja wizualna się nie zmieni (są absolute) ale parser HTML
+napotka najpierw h1 a dopiero potem gemmy.
+
+Nowa kolejność w sekcji:
+  1. div.hero-dot-grid
+  2. div.relative.z-10 (blok z h1 i p)
+  3. div.relative.z-50 (ServiceCards)
+  4. div.bg-shape-2 (gemma lewa) ← przeniesiona na koniec
+  5. div.bg-shape-1 (gemma prawa) ← przeniesiona na koniec
+
+---
+
+Po zmianach uruchom npm run build i sprawdź Lighthouse.
+Oczekiwany efekt: LCP zmieni się na element h1 lub p,
+czas LCP spadnie poniżej 2.5s, Performance podskoczy do 93+.
