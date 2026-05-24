@@ -13,9 +13,14 @@ interface Project {
   date: string;
   client: string;
   location: string;
+  siteUrl?: string;
+  partner?: string;
   heroGradient: string;
   coverGradient: string;
+  coverImage?: string;
   previewImage?: string;
+  img1Image?: string;
+  img2Image?: string;
   intro: string;
   challenge: { heading: string; text: string; items: string[] };
   process: { heading: string; text: string };
@@ -34,109 +39,222 @@ export function getStaticPaths() {
       slug: 'fabulatte',
       title: 'Fabulatte',
       category: 'Web Design & Development',
-      date: '10 marca, 2025',
+      date: '2024',
       client: 'Fabulatte',
-      location: 'Londyn, UK',
-      heroGradient: 'radial-gradient(ellipse at 60% 40%, rgba(18, 52, 62, 0.12) 0%, #F5F4F8 70%)',
-      coverGradient: 'linear-gradient(135deg, #0a1e24 0%, #12343e 60%, #1a4a58 100%)',
-      intro: 'Dla londyńskiej marki lifestyle\'owej Fabulatte zaprojektowaliśmy i wdrożyliśmy elegancką stronę internetową z wbudowanym sklepem WooCommerce oraz systemem rezerwacji stolików online. Projekt kładł nacisk na spójną identyfikację wizualną i wciągające doświadczenie użytkownika, które odzwierciedla ekskluzywny charakter marki.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Klient potrzebował platformy łączącej sprzedaż produktów premium z rezerwacją miejsc w kawiarni — dotychczasowa strona nie spełniała żadnej z tych funkcji i generowała wysokie wskaźniki odrzuceń. Rozwiązaniem był spójny ekosystem cyfrowy zbudowany na WooCommerce z niestandardowym motywem i zintegrowanym modułem rezerwacji.', items: ['Audyt UX i analiza konkurencji', 'Projekt identyfikacji wizualnej', 'Integracja WooCommerce + rezerwacje'] },
-      process: { heading: 'Nasz\nproces', text: 'Prace rozpoczęliśmy od warsztatów brandingowych z klientem, by w pełni zrozumieć DNA marki. Następnie przeszliśmy przez etapy wireframingu, prototypowania w Figmie i iteracyjnego testowania interfejsu z grupą rzeczywistych użytkowników przed wdrożeniem produkcyjnym.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'Nowa strona uruchomiona w marcu 2025 roku przyniosła natychmiastowy wzrost sprzedaży online oraz znaczące skrócenie czasu potrzebnego do dokonania rezerwacji. Klient odnotował wyraźną poprawę wizerunku marki wśród swoich klientów.', items: ['Wzrost sprzedaży online o 38% w pierwszym miesiącu', 'Redukcja bounce rate z 72% do 41%', 'Średni czas rezerwacji skrócony o 60%'] },
-      img1Gradient: 'linear-gradient(160deg, #0d2830 0%, #12343e 100%)',
-      img2Gradient: 'linear-gradient(135deg, #12343e 0%, #1f4f60 100%)',
-      prevSlug: 'padel-king', prevTitle: 'Padel King',
-      nextSlug: 'fitbox', nextTitle: 'FitBox',
+      location: 'Wielka Brytania',
+      siteUrl: 'https://fabulatte.co.uk/',
+      partner: 'YostratO',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(18,52,62,.4) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(40,100,120,.3) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#12343e 0%,#0a1f26 100%)',
+      coverImage: '/images/projekty/fabulatte/hero.jpeg',
+      previewImage: '/images/projekty/fabulatte/preview.jpeg',
+      img1Image: '/images/projekty/fabulatte/gallery-left.jpeg',
+      img2Image: '/images/projekty/fabulatte/gallery-right.jpeg',
+      intro: 'Zaprojektowaliśmy i wdrożyliśmy stronę internetową dla Fabulatte, kreatywnej agencji marketingowej z Wielkiej Brytanii oferującej pełen zakres usług: od strategii marki, przez creative development i media planning, aż po zarządzanie social media i organizację eventów. Strona odzwierciedla boldowe, pewne siebie podejście agencji do marketingu dla ambitnych marek.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Agencja potrzebowała strony, która sama w sobie jest demonstracją ich kompetencji: przyciągającej uwagę, spójnej wizualnie i czytelnie prezentującej pełne portfolio usług. Wyzwaniem było pokazanie szerokiego zakresu działalności (Brand Strategy, Creative Development, Media Planning & Buying, Digital Marketing, Social Media Management, Events Management) bez przytłaczania odwiedzającego.',
+        items: ['Strategia treści i architektura informacji', 'Design system i identyfikacja wizualna', 'Wdrożenie WordPress + Elementor Pro'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Po analizie konkurencji i briefu stworzyliśmy strukturę strony eksponującą główne usługi oraz case studies realizowane dla klientów z branży medycznej i beauty (STAAR Surgical, BioHorizons Camlog, OCL Vision, O by Olfacto). Projekt zrealizowany we współpracy z YostratO.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Strona przedstawia Fabulatte jako agencję premium na rynku brytyjskim. Przejrzysta prezentacja case studies buduje wiarygodność i przyciąga nowych klientów z sektora healthcare i lifestyle.',
+        items: ['Pełna strona firmowa z portfolio case studies', 'Szybkie ładowanie i responsywność mobile-first', 'Spójna identyfikacja wizualna zgodna z brand voice'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#12343e,#0a1f26)',
+      img2Gradient: 'linear-gradient(135deg,#1a4a5a,#0d2a35)',
+      prevSlug: 'padel-king',
+      prevTitle: 'Padel King',
+      nextSlug: 'fitbox',
+      nextTitle: 'FitBox',
     },
     {
       slug: 'fitbox',
       title: 'FitBox',
       category: 'Web Design & Development',
-      date: '20 stycznia, 2025',
-      client: 'FitBox',
-      location: 'Manchester, UK',
-      heroGradient: 'radial-gradient(ellipse at 50% 50%, rgba(213, 142, 36, 0.14) 0%, #F5F4F8 65%)',
-      coverGradient: 'linear-gradient(135deg, #3d2400 0%, #7a4a10 50%, #D58E24 100%)',
-      intro: 'FitBox to dynamiczne studio boksu i fitnessu z Manchesteru, dla którego stworzyliśmy stronę internetową z systemem zapisu na zajęcia online, integracją płatności Stripe oraz interaktywnym planem treningów. Strona jest w pełni responsywna i zoptymalizowana pod konwersję nowych klientów.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Studio działało wyłącznie w oparciu o kontakt telefoniczny i media społecznościowe, tracąc potencjalnych klientów, którzy chcieli szybko i wygodnie zapisać się na zajęcia o dowolnej porze. Wdrożyliśmy dedykowaną platformę rezerwacyjną zintegrowaną z kalendarzem instruktorów i automatycznymi przypomnieniami SMS.', items: ['Analiza ścieżki klienta', 'Projekt systemu rezerwacji online', 'Integracja Stripe i powiadomień SMS'] },
-      process: { heading: 'Nasz\nproces', text: 'Kluczowym elementem procesu było stworzenie intuicyjnego flow rezerwacji — przetestowanego z 15 użytkownikami przed wdrożeniem. Projekt graficzny nawiązuje do energetycznego charakteru marki: kontrastowe kolory, dynamiczna typografia i zdjęcia treningowe w roli głównej.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'Platforma uruchomiona w styczniu 2025 roku przyspieszyła procesy zapisu i odciążyła recepcję studia od obsługi telefonicznej. W ciągu pierwszych ośmiu tygodni FitBox pozyskał znacząco więcej nowych klientów niż w analogicznym okresie rok wcześniej.', items: ['Wzrost liczby rezerwacji online o 52%', 'Redukcja połączeń telefonicznych o 70%', 'Współczynnik konwersji strony na poziomie 6,4%'] },
-      img1Gradient: 'linear-gradient(160deg, #3d2400 0%, #a06318 100%)',
-      img2Gradient: 'linear-gradient(135deg, #7a4a10 0%, #D58E24 100%)',
-      prevSlug: 'fabulatte', prevTitle: 'Fabulatte',
-      nextSlug: 'greenwich', nextTitle: 'Just Golf Greenwich',
+      date: '2024',
+      client: 'Fitbox Personal Training',
+      location: 'Staines, Wielka Brytania',
+      siteUrl: 'https://fitboxpersonaltraining.co.uk/',
+      partner: 'YostratO',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(213,142,36,.4) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(180,120,20,.3) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#D58E24 0%,#7a4f0d 100%)',
+      coverImage: '/images/projekty/fitbox/hero.jpeg',
+      previewImage: '/images/projekty/fitbox/preview.jpeg',
+      img1Image: '/images/projekty/fitbox/gallery-left.jpeg',
+      img2Image: '/images/projekty/fitbox/gallery-right.jpeg',
+      intro: 'Stworzyliśmy stronę internetową dla Fitbox Personal Training, studia treningowego założonego w 2014 roku w Staines. Fitbox oferuje spersonalizowane treningi 1-2-1 oraz programy transformacyjne (90-dniowe i 6-tygodniowe) dla zapracowanych dorosłych, którzy chcą schudnąć, nabrać siły i poczuć się lepiej, bez presji typowej siłowni.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Studio potrzebowało strony, która odróżni je od klasycznych siłowni i dotrze do zapracowanych dorosłych szukających elastycznego, spersonalizowanego podejścia. Zależało nam na przekazaniu ciepłej, nieintymidującej atmosfery i pokazaniu realnych efektów transformacji klientów.',
+        items: ['Pozycjonowanie marki vs. tradycyjne siłownie', 'Sekcja transformacji klientów z wynikami', 'Prezentacja metodologii: trening, żywienie, komunikacja'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Zaprojektowaliśmy strukturę skupioną na konwersji: hero z CTA "Join Now", sekcja "A fresh take on fitness" budująca zaufanie, prezentacja 4 filarów metodologii (plany treningowe, elastyczne godziny, prowadzenie żywieniowe, regularna komunikacja), galeria transformacji klientów i mapa lokalizacji. Projekt zrealizowany we współpracy z YostratO.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Strona pokazuje unikalną propozycję wartości Fitbox i zamienia odwiedzających w zapisy na treningi. Przejrzysta prezentacja programów transformacyjnych skraca ścieżkę decyzyjną potencjalnych klientów.',
+        items: ['Mobile-first design z wysoką konwersją', 'Sekcja transformacji budująca social proof', 'Integracja z formularzem zapisów i kanałami social media'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#D58E24,#7a4f0d)',
+      img2Gradient: 'linear-gradient(135deg,#b07010,#5a3008)',
+      prevSlug: 'fabulatte',
+      prevTitle: 'Fabulatte',
+      nextSlug: 'greenwich',
+      nextTitle: 'Just Golf Greenwich',
     },
     {
       slug: 'greenwich',
       title: 'Just Golf Greenwich',
       category: 'Web Design & Development',
-      date: '5 listopada, 2024',
-      client: 'Just Golf Greenwich',
-      location: 'Londyn, UK',
-      heroGradient: 'radial-gradient(ellipse at 55% 35%, rgba(243, 0, 148, 0.10) 0%, #F5F4F8 68%)',
-      coverGradient: 'linear-gradient(135deg, #5a0037 0%, #a5005f 50%, #F30094 100%)',
-      intro: 'Dla ekskluzywnego klubu golfowego Just Golf w Greenwich (Londyn) zaprojektowaliśmy i wdrożyliśmy reprezentacyjną stronę internetową z systemem rezerwacji pola online oraz modułem zarządzania subskrypcjami członkowskimi. Strona wyróżnia się minimalistycznym designem i płynnymi animacjami sekcji, oddając prestiżowy charakter marki.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Klub posiadał przestarzałą witrynę bez możliwości rezerwacji online, co skutkowało dużą liczbą porzuconych zapytań i brakiem danych o klientach. Rozwiązaniem był nowoczesny serwis z zintegrowanym systemem rezerwacji slotów, automatyczną pocztą potwierdzającą i bazą CRM do zarządzania członkostwem.', items: ['Przeprojektowanie architektury informacji', 'Budowa systemu rezerwacji slotów', 'Integracja CRM i e-mail automation'] },
-      process: { heading: 'Nasz\nproces', text: 'Projekt realizowaliśmy metodą sprint-based: w ciągu 8 tygodni przeszliśmy przez fazy discovery, UX design, visual design i development z cotygodniowymi przeglądami z klientem. Szczególny nacisk położyliśmy na dopasowanie estetyki do oczekiwań zamożnej, brytyjskiej grupy docelowej.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'Od momentu uruchomienia strona stała się głównym kanałem pozyskiwania nowych członków klubu, wyprzedzając polecenia i media społecznościowe. Klient zwrócił koszty projektu w ciągu pierwszych czterech miesięcy działania serwisu.', items: ['Wzrost rezerwacji online o 44% vs. poprzedni okres', '1 200+ zapisanych użytkowników w ciągu 3 miesięcy', 'Średni czas na stronie wydłużony do 3 min 42 sek'] },
-      img1Gradient: 'linear-gradient(160deg, #5a0037 0%, #c0006e 100%)',
-      img2Gradient: 'linear-gradient(135deg, #a5005f 0%, #F30094 100%)',
-      prevSlug: 'fitbox', prevTitle: 'FitBox',
-      nextSlug: 'jennings-storage', nextTitle: 'Jennings Storage',
+      date: '2024',
+      client: 'Greenwich Peninsula Golf Range',
+      location: 'Greenwich, Londyn',
+      siteUrl: 'https://greenwichpeninsulagolfrange.com/',
+      partner: 'YostratO',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(243,0,148,.3) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(180,0,110,.3) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#8a0050 0%,#3a0020 100%)',
+      coverImage: '/images/projekty/greenwich/hero.jpeg',
+      previewImage: '/images/projekty/greenwich/preview.jpeg',
+      img1Image: '/images/projekty/greenwich/gallery-left.jpeg',
+      img2Image: '/images/projekty/greenwich/gallery-right.jpeg',
+      intro: 'Zaprojektowaliśmy stronę dla Greenwich Peninsula Golf Range, kompleksu golfowego w Londynie. Oferta obejmuje driving range, akademię golfową, indoor golf simulatory z technologią Inrange, CrazyPutt (adventure golf dla rodzin), VIP Bay oraz restaurację. Centrum przyjmuje graczy na każdym poziomie, od rodzin szukających zabawy po zaawansowanych golfistów.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Kompleks oferuje wiele różnych aktywności i każda z nich wymagała własnej, czytelnej ścieżki: zarówno dla graczy szukających szybkiej rezerwacji baya, jak i rodzin planujących wyjście na CrazyPutt. Priorytetem były integracje z systemami bookingu dla driving range i adventure golf.',
+        items: ['Architektura informacji dla 7+ różnych atrakcji', 'Integracja systemu bookingu YouGolfBooking', 'Prezentacja technologii Inrange i leaderboardów'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Zaprojektowaliśmy nawigację z podziałem na aktywności: Golf (Driving Range, VIP Bay, Indoor Sims, CrazyPutt, Academy, Club Fitting) oraz ofertę towarzyszącą (Restauracja, Events, Special Offers, Vouchers). System rezerwacji zintegrowany bezpośrednio z kartami aktywności. Projekt zrealizowany we współpracy z YostratO.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Strona obsługuje zarówno lokalnych golfistów, jak i londyńskich turystów odkrywających kompleks. Leaderboardy Inrange i sekcja eventów angażują stałych bywalców i budują społeczność wokół centrum.',
+        items: ['Booking online dla driving range i CrazyPutt', 'Prezentacja technologii Inrange z leaderboardami', 'Moduł eventów i special offers zwiększający powroty'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#8a0050,#3a0020)',
+      img2Gradient: 'linear-gradient(135deg,#6a0040,#2a0010)',
+      prevSlug: 'fitbox',
+      prevTitle: 'FitBox',
+      nextSlug: 'jennings-storage',
+      nextTitle: 'Jennings Storage',
     },
     {
       slug: 'jennings-storage',
       title: 'Jennings Storage',
       category: 'Website Redesign',
-      date: '12 września, 2024',
+      date: '2024',
       client: 'Jennings Storage',
-      location: 'Birmingham, UK',
-      heroGradient: 'radial-gradient(ellipse at 45% 55%, rgba(0, 166, 139, 0.12) 0%, #F5F4F8 65%)',
-      coverGradient: 'linear-gradient(135deg, #003830 0%, #006655 50%, #00A68B 100%)',
-      intro: 'Jennings Storage to birminghamska firma self-storage, której całkowicie przeprojektowaliśmy witrynę internetową — zastępując przestarzały, nieresponsywny serwis nowoczesną platformą z interaktywną wyszukiwarką dostępnych boksów magazynowych i kalkulatorem cen online. Nowa strona jest zoptymalizowana pod wyszukiwania lokalne i generuje leady bezpośrednio z formularzy kontaktowych.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Stara strona Jennings Storage ładowała się ponad 8 sekund, była nieczytelna na urządzeniach mobilnych i nie pojawiała się w wynikach lokalnego Google dla kluczowych fraz. Przeprowadziliśmy kompleksowy redesign oparty na audycie technicznym, analizie konkurencji i optymalizacji SEO już na etapie projektowania.', items: ['Audyt techniczny i SEO', 'Responsywny redesign UX/UI', 'Optymalizacja Core Web Vitals'] },
-      process: { heading: 'Nasz\nproces', text: 'Projekt podzieliliśmy na dwa etapy: najpierw naprawiliśmy fundamenty techniczne (migracja na szybki hosting, optymalizacja kodu), następnie przebudowaliśmy wizualną warstwę serwisu. Nowy design oparliśmy na hierarchii informacji ułatwiającej jak najszybsze dotarcie klienta do interesującego go rozmiaru boksu.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'Po redesignie strona Jennings Storage wskoczyła na pierwszą stronę wyników Google dla 12 lokalnych fraz kluczowych w Birmingham. Firma odnotowała istotny wzrost liczby zapytań ofertowych generowanych bezpośrednio przez stronę.', items: ['Czas ładowania skrócony z 8,2 s do 1,4 s', 'Wzrost organicznego ruchu o 67% w 6 miesięcy', 'Liczba leadów z formularzy wzrosła o 83%'] },
-      img1Gradient: 'linear-gradient(160deg, #003830 0%, #008068 100%)',
-      img2Gradient: 'linear-gradient(135deg, #006655 0%, #00A68B 100%)',
-      prevSlug: 'greenwich', prevTitle: 'Just Golf Greenwich',
-      nextSlug: 'pw-mateo', nextTitle: 'P.W. Mateo',
+      location: 'Oxford, Wielka Brytania',
+      siteUrl: 'https://jenningsstorage.co.uk/',
+      partner: 'YostratO',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(0,166,139,.3) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(0,120,100,.3) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#00A68B 0%,#005a4a 100%)',
+      coverImage: '/images/projekty/jennings-storage/hero.jpeg',
+      previewImage: '/images/projekty/jennings-storage/preview.jpeg',
+      img1Image: '/images/projekty/jennings-storage/gallery-left.jpeg',
+      img2Image: '/images/projekty/jennings-storage/gallery-right.jpeg',
+      intro: 'Przeprojektowaliśmy stronę dla Jennings Storage, firmy oferującej kontenery magazynowe w Oxfordzie i Oxfordshire. Oferta obejmuje jednostki od 40 do 320 sq ft dla klientów indywidualnych (właściciele domów, studenci, podróżujący, remonty) i biznesowych (archiwizacja dokumentów, sprzęt, palety, narzędzia dla firm). Rezerwację można złożyć online, 24/7.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Stara strona generowała mało zapytań i nie pokazywała pełnej oferty. Firma obsługuje dwa różne segmenty: klientów prywatnych i biznesowych, każdy z własnymi potrzebami i ścieżką decyzyjną. Brakowało też treści edukacyjnych wspierających SEO.',
+        items: ['Segmentacja ścieżek Personal Storage i Business Storage', 'Integracja systemu bookingu z pełną ofertą rozmiarów', 'Rozbudowany content hub: pillar pages, FAQ, poradniki'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Przebudowaliśmy architekturę informacji tworząc wyraźny podział: Personal Storage (Home Owner, DIY & Renovation, Student Storage Oxford, Long-term Storage, Storage while Travelling) i Business Storage (Archive, Equipment, Pallet, Trades, Warehouse). Zintegrowany booking i The Hub z rozbudowanym contentem SEO. Projekt zrealizowany we współpracy z YostratO.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Nowa strona czytelnie prezentuje 5 rozmiarów kontenerów z cenami, a rezerwację można złożyć online. Rozbudowany content hub (pillar pages, Q&A, glossary) buduje autorytet SEO dla fraz "storage units Oxford" i "self storage Oxfordshire".',
+        items: ['Rezerwacja online dla 5 rozmiarów kontenerów', 'SEO content hub z pillar pages i 6 zestawami FAQ', 'Podwójna ścieżka konwersji: Personal i Business'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#00A68B,#005a4a)',
+      img2Gradient: 'linear-gradient(135deg,#008a72,#003a30)',
+      prevSlug: 'greenwich',
+      prevTitle: 'Just Golf Greenwich',
+      nextSlug: 'pw-mateo',
+      nextTitle: 'P.W. Mateo',
     },
     {
       slug: 'pw-mateo',
       title: 'P.W. Mateo',
-      category: 'Web Design & Development',
-      date: '8 czerwca, 2024',
+      category: 'Website Design & Development',
+      date: '2026',
       client: 'P.W. Mateo',
-      location: 'Kraków, PL',
-      heroGradient: 'radial-gradient(ellipse at 50% 40%, rgba(228, 54, 42, 0.11) 0%, #F5F4F8 66%)',
-      coverGradient: 'linear-gradient(135deg, #5c0a06 0%, #a01c14 50%, #E4362A 100%)',
-      intro: 'P.W. Mateo to krakowska firma wielobranżowa świadcząca usługi budowlane, remontowe i wykończeniowe, dla której studio Vexor Designs zaprojektowało i wdrożyło kompleksową stronę firmową. Serwis zawiera rozbudowane portfolio realizacji z galerią zdjęć, formularz wyceny online oraz moduł prezentacji usług z podziałem na branże.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Firma P.W. Mateo polegała wyłącznie na poleceniach i nie posiadała żadnej obecności w internecie, co ograniczało jej zasięg do klientów już znających markę. Zadaniem Vexor było stworzenie wiarygodnego, profesjonalnego serwisu wizytówkowego, który zbuduje zaufanie nowych klientów i ułatwi im szybkie zlecenie usługi.', items: ['Strategia contentu i pozycjonowanie marki', 'Projekt portfolio realizacji z galerią', 'Formularz wyceny z integracją e-mail'] },
-      process: { heading: 'Nasz\nproces', text: 'Jako projekt własny studia Vexor Designs mieliśmy pełną swobodę twórczą — skupiliśmy się na budowie silnej, przejrzystej hierarchii treści prowadzącej odwiedzającego od prezentacji usług przez portfolio aż do kontaktu. Motyw graficzny nawiązuje do profesjonalizmu branży budowlanej: mocne linie, czysta typografia i stonowana paleta z akcentem głębokiej czerwieni.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'W ciągu sześciu miesięcy od uruchomienia firma pozyskała pierwszych klientów bezpośrednio ze strony internetowej, co potwierdziło skuteczność cyfrowej obecności nawet w tradycyjnie opartej na poleceniach branży. Klient wyraził chęć rozbudowy serwisu o moduł zamówień materiałów.', items: ['Pierwsze zlecenie z formularza po 11 dniach od startu', 'Średnio 320 sesji miesięcznie po 3 miesiącach', 'Ocena 5/5 w Google Moja Firma po 6 miesiącach'] },
-      img1Gradient: 'linear-gradient(160deg, #5c0a06 0%, #c01e14 100%)',
-      img2Gradient: 'linear-gradient(135deg, #a01c14 0%, #E4362A 100%)',
-      prevSlug: 'jennings-storage', prevTitle: 'Jennings Storage',
-      nextSlug: 'padel-king', nextTitle: 'Padel King',
+      location: 'Polska',
+      siteUrl: 'https://pwmateo.pl/',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(228,54,42,.35) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(180,30,20,.3) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#E4362A 0%,#7a1410 100%)',
+      coverImage: '/images/projekty/pw-mateo/hero.jpeg',
+      previewImage: '/images/projekty/pw-mateo/preview.jpeg',
+      img1Image: '/images/projekty/pw-mateo/gallery-left.jpeg',
+      img2Image: '/images/projekty/pw-mateo/gallery-right.jpeg',
+      intro: 'Zaprojektowaliśmy i wdrożyliśmy stronę internetową dla P.W. Mateo, warsztatu samochodowego z pełnym zakresem usług blacharsko-lakierniczych. Oferta obejmuje lakiernictwo, blacharstwo, polerowanie lakieru, naprawy PDR i Smart (usuwanie wgnieceń bez lakierowania), pomoc drogową oraz naprawy powypadkowe. Strona prezentuje realizacje i buduje zaufanie klientów szukających rzetelnego warsztatu.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Warsztat dysponował szeroką ofertą i doświadczonym zespołem, ale brakowało mu profesjonalnej obecności online wyróżniającej go na lokalnym rynku. Postawiliśmy na galerię realizacji i osobną stronę dla każdej usługi z opisem procesu.',
+        items: ['6 osobnych podstron usługowych z opisami', 'Galeria realizacji z prawdziwymi zdjęciami', 'Wyraźne CTA: formularz wyceny i bezpośredni telefon'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Zbudowaliśmy stronę na WordPressie z naciskiem na zdjęcia z realizacji i przejrzystą strukturę usług. Każda usługa (lakiernictwo, blacharstwo, PDR i Smart, polerowanie, pomoc drogowa, naprawy powypadkowe) ma osobną podstronę z opisem procesu i typowymi zleceniami. Sekcja "Realizacje" pokazuje efekty przed i po.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Strona generuje zapytania od klientów szukających lakiernika i blacharza w regionie. Galeria realizacji buduje wiarygodność jeszcze przed pierwszym kontaktem: klient widzi poziom pracy zanim zadzwoni.',
+        items: ['6 osobnych podstron usługowych', 'Galeria realizacji jako główny dowód jakości', 'Szybki kontakt: formularz + telefon w widocznym miejscu'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#E4362A,#7a1410)',
+      img2Gradient: 'linear-gradient(135deg,#c02a20,#5a0e08)',
+      prevSlug: 'jennings-storage',
+      prevTitle: 'Jennings Storage',
+      nextSlug: 'padel-king',
+      nextTitle: 'Padel King',
     },
     {
       slug: 'padel-king',
       title: 'Padel King',
-      category: 'Web Design & Development',
-      date: '22 kwietnia, 2025',
-      client: 'Padel King',
-      location: 'Londyn, UK',
-      heroGradient: 'radial-gradient(ellipse at 40% 50%, rgba(20, 33, 41, 0.15) 0%, #F5F4F8 68%)',
-      coverGradient: 'linear-gradient(135deg, #0a1318 0%, #142129 60%, #1e3040 100%)',
-      intro: 'Padel King to londyński klub padla oferujący nowoczesne korty i lekcje dla wszystkich poziomów zaawansowania, dla którego zaprojektowaliśmy i wdrożyliśmy stronę internetową z zintegrowanym systemem rezerwacji kortów real-time, płatnościami kartą online oraz interaktywnym harmonogramem treningów. Serwis zbudowano w modelu mobile-first — ponad 80% ruchu pochodzi z urządzeń mobilnych.',
-      challenge: { heading: 'Wyzwanie\ni rozwiązanie', text: 'Klub działał bez dedykowanej strony i zarządzał rezerwacjami ręcznie przez WhatsApp, co prowadziło do podwójnych bookingów i frustracji klientów. Zaprojektowaliśmy platformę rezerwacyjną real-time z zarządzaniem dostępnością kortów, płatnościami online i automatycznymi potwierdzeniami.', items: ['Mapowanie procesu rezerwacji', 'Budowa systemu real-time availability', 'Integracja płatności online i przypomnień SMS'] },
-      process: { heading: 'Nasz\nproces', text: 'Projekt realizowaliśmy w modelu mobile-first — najpierw zaprojektowaliśmy doświadczenie na smartfonie, następnie skalowaliśmy je na desktop. Ciemna kolorystyka nawiązuje do nocnych rozgrywek pod sztucznym oświetleniem, a energetyczne akcenty podkreślają dynamiczny charakter sportu.' },
-      result: { heading: 'Wyniki\ni efekty', text: 'Platforma uruchomiona w kwietniu 2025 roku wyeliminowała problem podwójnych rezerwacji i znacząco zmniejszyła liczbę no-show dzięki automatycznym przypomnieniom SMS. Klub zanotował wzrost liczby rezerwacji i poszerzenie bazy klientów o osoby, które wcześniej nie wiedziały o jego istnieniu.', items: ['Wzrost rezerwacji o 61% rok do roku', 'Zero przypadków podwójnych rezerwacji od uruchomienia', 'Wskaźnik no-show obniżony z 22% do 7%'] },
-      img1Gradient: 'linear-gradient(160deg, #0a1318 0%, #1a2d3a 100%)',
-      img2Gradient: 'linear-gradient(135deg, #142129 0%, #1e3040 100%)',
-      prevSlug: 'pw-mateo', prevTitle: 'P.W. Mateo',
-      nextSlug: 'fabulatte', nextTitle: 'Fabulatte',
+      category: 'Website Design & Development',
+      date: '2026',
+      client: 'Padel King Aylesbury',
+      location: 'Aylesbury, Wielka Brytania',
+      siteUrl: 'https://padel-king.co.uk/',
+      partner: 'YostratO',
+      heroGradient: 'radial-gradient(ellipse 60% 80% at 10% 50%, rgba(20,33,41,.5) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 90% 50%, rgba(40,60,80,.4) 0%, transparent 60%), #F5F4F8',
+      coverGradient: 'linear-gradient(135deg,#142129 0%,#06121a 100%)',
+      coverImage: '/images/projekty/padel-king/hero.jpeg',
+      previewImage: '/images/projekty/padel-king/preview.jpeg',
+      img1Image: '/images/projekty/padel-king/gallery-left.jpeg',
+      img2Image: '/images/projekty/padel-king/gallery-right.jpeg',
+      intro: 'Zaprojektowaliśmy i wdrożyliśmy stronę dla Padel King, centrum padla w Aylesbury z 4 kortami najwyższej klasy przy miejscowym klubie rugby. Wynik przeszedł oczekiwania: w pierwszym tygodniu po uruchomieniu stronę odwiedziło ponad 1 600 unikalnych użytkowników. Rezerwację kortów gracz składa bezpośrednio ze strony przez Playtomic, bez przechodzenia do zewnętrznej aplikacji.',
+      challenge: {
+        heading: 'Wyzwanie\ni rozwiązanie',
+        text: 'Centrum startowało od zera na nowym rynku padla w Aylesbury. Strona musiała w ciągu pierwszych dni generować realne rezerwacje kortów i zapisy na członkostwo, nie tylko budować świadomość. Priorytetem była integracja z Playtomic i czytelna prezentacja poziomów członkostwa.',
+        items: ['Integracja widżetu bookingu Playtomic', 'System członkostwa: Pay-To-Play, miesięczne, roczne', 'Sekcja coachingu i lekcji dla nowych graczy'],
+      },
+      process: {
+        heading: 'Nasz\nproces',
+        text: 'Zbudowaliśmy stronę z wyraźnym CTA "Book a Court" prowadzącym bezpośrednio do Playtomic, gracz rezerwuje kort bez opuszczania ekosystemu marki. Zaprojektowaliśmy przejrzysty system członkostwa z benefitami (zaawansowane okno bookingu, niższe stawki, dostęp do box leagues i mix-ins). Dodaliśmy też sekcję coachingu dla osób dopiero zaczynających przygodę z padlem. Projekt zrealizowany we współpracy z YostratO.',
+      },
+      result: {
+        heading: 'Wyniki\ni efekty',
+        text: 'Ponad 1 600 odwiedzin w pierwszym tygodniu od uruchomienia, bez płatnej reklamy. System Playtomic działa 24/7 zamieniając ruch organiczny w realne rezerwacje kortów. Centrum zbudowało rozpoznawalność w regionie i aktywną społeczność graczy.',
+        items: ['Ponad 1 600 odwiedzin w pierwszym tygodniu', 'Booking online 24/7 zintegrowany z Playtomic', 'Szybkie zbudowanie rozpoznawalności w regionie Aylesbury'],
+      },
+      img1Gradient: 'linear-gradient(135deg,#142129,#06121a)',
+      img2Gradient: 'linear-gradient(135deg,#1e3040,#0a1820)',
+      prevSlug: 'pw-mateo',
+      prevTitle: 'P.W. Mateo',
+      nextSlug: 'fabulatte',
+      nextTitle: 'Fabulatte',
     },
   ];
   return data.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
@@ -157,7 +275,7 @@ const { project } = Astro.props as { project: Project };
 
     <!-- ── HERO ─────────────────────────────────────────────── -->
     <section
-      class="relative min-h-[88vh] flex flex-col items-center justify-center px-6 pt-[120px] pb-0 overflow-hidden"
+      class="relative min-h-[88vh] flex flex-col items-center justify-center px-6 pt-[180px] pb-0 overflow-hidden"
       style={`background: ${project.heroGradient};`}
     >
       <!-- Eyebrow centred -->
@@ -190,10 +308,13 @@ const { project } = Astro.props as { project: Project };
       <!-- Cover image -->
       <div
         class="w-full max-w-[1700px] mx-auto my-12 rounded-[40px] overflow-hidden flex-shrink-0"
-        style={`height: clamp(240px, 36vw, 720px); background: ${project.coverGradient};`}
-        aria-hidden="true"
+        style={`height: clamp(240px, 36vw, 720px);${!project.coverImage ? ` background: ${project.coverGradient};` : ''}`}
       >
-        <div class="w-full h-full" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 20px);"></div>
+        {project.coverImage ? (
+          <img src={project.coverImage} alt={project.title} class="w-full h-full object-cover" />
+        ) : (
+          <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 20px);"></div>
+        )}
       </div>
     </section>
 
@@ -206,6 +327,32 @@ const { project } = Astro.props as { project: Project };
       <p class="text-xl md:text-2xl text-brand-text leading-relaxed max-w-[820px]">
         {project.intro}
       </p>
+      {project.siteUrl && (
+        <div class="mt-8 flex flex-col items-start gap-2">
+          <a
+            href={project.siteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 bg-white rounded-[20px] px-6 py-4 border border-brand-border hover:border-primary hover:bg-primary transition-all duration-200"
+          >
+            <svg class="w-4 h-4 text-brand-muted group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2z"/>
+              <path d="M2 10h16M10 2c-2 2-3 5-3 8s1 6 3 8M10 2c2 2 3 5 3 8s-1 6-3 8"/>
+            </svg>
+            <span class="text-[14px] font-semibold text-brand-accent group-hover:text-white transition-colors whitespace-nowrap">
+              Odwiedź stronę
+            </span>
+            <svg class="w-3.5 h-3.5 text-brand-muted group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 3h10v10M17 3L3 17"/>
+            </svg>
+          </a>
+          {project.partner && (
+            <p class="text-[12px] text-brand-muted pl-1">
+              We współpracy z <span class="font-semibold">{project.partner}</span>
+            </p>
+          )}
+        </div>
+      )}
     </section>
 
     <!-- ── 50/50: STICKY ACCORDION + SCROLLING WEBSITE IMAGE ── -->
@@ -254,7 +401,7 @@ const { project } = Astro.props as { project: Project };
             <span class="w-[11px] h-[11px] rounded-full bg-[#ffbd2e]"></span>
             <span class="w-[11px] h-[11px] rounded-full bg-[#28c840]"></span>
             <div class="flex-1 mx-3 h-6 rounded-full bg-white/10 flex items-center px-3">
-              <span class="text-[11px] font-mono text-white/40">vexordesigns.pl/{project.slug}/</span>
+              <span class="text-[11px] font-mono text-white/40">{project.siteUrl ? project.siteUrl.replace('https://', '') : `vexordesigns.pl/${project.slug}/`}</span>
             </div>
           </div>
           {project.previewImage ? (
@@ -278,17 +425,23 @@ const { project } = Astro.props as { project: Project };
     <div class="max-w-[1700px] mx-auto px-6 md:px-10 mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
       <div
         class="rounded-[32px] overflow-hidden reveal"
-        style={`height: clamp(220px,28vw,420px); background: ${project.img1Gradient};`}
-        aria-hidden="true"
+        style={`height: clamp(220px,28vw,420px);${!project.img1Image ? ` background: ${project.img1Gradient};` : ''}`}
       >
-        <div class="w-full h-full" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
+        {project.img1Image ? (
+          <img src={project.img1Image} alt={project.title} class="w-full h-full object-cover" />
+        ) : (
+          <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
+        )}
       </div>
       <div
         class="rounded-[32px] overflow-hidden reveal"
-        style={`height: clamp(220px,28vw,420px); background: ${project.img2Gradient}; --stagger-i:1;`}
-        aria-hidden="true"
+        style={`height: clamp(220px,28vw,420px);${!project.img2Image ? ` background: ${project.img2Gradient}; --stagger-i:1;` : ' --stagger-i:1;'}`}
       >
-        <div class="w-full h-full" style="background-image: repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
+        {project.img2Image ? (
+          <img src={project.img2Image} alt={project.title} class="w-full h-full object-cover" />
+        ) : (
+          <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
+        )}
       </div>
     </div>
 

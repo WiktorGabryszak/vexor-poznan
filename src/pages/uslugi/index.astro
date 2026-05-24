@@ -6,9 +6,6 @@ import Footer from '../../components/Footer.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 import Eyebrow from '../../components/ui/Eyebrow.astro';
 import ButtonA from '../../components/ui/ButtonA.astro';
-import { Image } from 'astro:assets';
-import imgVexor1 from '../../assets/images/vexor-1.jpg';
-import imgVexor2 from '../../assets/images/vexor-2.jpg';
 ---
 
 <Layout
@@ -51,28 +48,28 @@ import imgVexor2 from '../../assets/images/vexor-2.jpg';
               title: 'Strony internetowe',
               desc: 'Projektujemy strony z responsywnym designem, optymalizacją SEO i certyfikatem SSL. Dostosowujemy projekt graficzny do Twojej branży i grupy docelowej. Realizacja zazwyczaj w 2 do 4 tygodnie od dostarczenia materiałów.',
               href: '/uslugi/strony-internetowe/',
-              img: imgVexor1,
+              img: '/uslugi-strony-1.jpg',
               icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
             },
             {
               title: 'Sklepy internetowe',
               desc: 'Wdrażamy sklepy z integracją Przelewy24 i Stripe, zarządzaniem produktami i certyfikatem SSL. Pomagamy też w migracji z innych platform i optymalizacji istniejących sklepów pod kątem konwersji.',
               href: '/uslugi/sklepy-internetowe/',
-              img: imgVexor2,
+              img: '/uslugi-sklepy-1.jpg',
               icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
             },
             {
               title: 'Pozycjonowanie SEO',
               desc: 'Zaczynamy od audytu technicznego, optymalizujemy treści, budujemy linki i poprawiamy Core Web Vitals. Co miesiąc dostajesz raport z pozycji i ruchu organicznego. Transparentnie, bez obietnic efektów z dnia na dzień.',
               href: '/uslugi/pozycjonowanie-seo/',
-              img: imgVexor1,
+              img: '/uslugi-seo-1.jpg',
               icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>`,
             },
             {
               title: 'Aplikacje webowe',
               desc: 'Budujemy portale klientów, systemy CRM, MVP startupów i integracje z zewnętrznymi API. Pracujemy w React, Next.js i Astro. Pełna kontrola nad funkcjonalnościami bez kompromisów narzucanych przez gotowe platformy.',
               href: '/uslugi/aplikacje-webowe/',
-              img: imgVexor2,
+              img: '/uslugi-aplikacje-1.jpg',
               icon: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
             },
           ] as const).map((s, i) => (
@@ -91,7 +88,7 @@ import imgVexor2 from '../../assets/images/vexor-2.jpg';
                 </div>
               </div>
               <div class:list={['order-1 aspect-video lg:aspect-auto relative', i % 2 === 0 ? 'lg:order-2' : 'lg:order-1']}>
-                <Image src={s.img} alt={s.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <img src={s.img} alt={s.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           ))}

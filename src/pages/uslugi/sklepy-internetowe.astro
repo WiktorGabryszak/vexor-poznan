@@ -6,9 +6,6 @@ import Footer from '../../components/Footer.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 import Eyebrow from '../../components/ui/Eyebrow.astro';
 import ButtonA from '../../components/ui/ButtonA.astro';
-import { Image } from 'astro:assets';
-import imgVexor1 from '../../assets/images/vexor-1.jpg';
-import imgVexor2 from '../../assets/images/vexor-2.jpg';
 ---
 
 <Layout
@@ -69,8 +66,8 @@ import imgVexor2 from '../../assets/images/vexor-2.jpg';
             </p>
             <div class="self-start"><ButtonA href="/kontakt/" label="Zapytaj o wycenę" invert={false} /></div>
           </div>
-          <Image
-            src={imgVexor1}
+          <img
+            src="/uslugi-sklepy-1.jpg"
             alt="Tworzenie sklepów internetowych WooCommerce – Vexor Designs"
             class="reveal rounded-card lg:aspect-[4/5] object-cover w-full order-1 lg:order-2"
             style="--stagger-i:1"
@@ -226,8 +223,8 @@ import imgVexor2 from '../../assets/images/vexor-2.jpg';
       <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[60px] items-center">
 
-          <Image
-            src={imgVexor2}
+          <img
+            src="/uslugi-sklepy-2.jpg"
             alt="Wycena sklepu internetowego – Vexor Designs"
             class="reveal rounded-[28px] aspect-video lg:aspect-[4/5] object-cover w-full"
             style="--stagger-i:0"
