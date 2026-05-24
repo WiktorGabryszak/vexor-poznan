@@ -102,6 +102,15 @@ const schemaOrg = JSON.stringify([
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={schemaOrg} />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P0Y6SZL6" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E7P0Y6SZL6');
+    </script>
   </head>
   <body>
     <slot />
