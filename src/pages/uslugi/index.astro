@@ -110,8 +110,8 @@ const services = [
                   height={s.imgHeight}
                   format="webp"
                   quality={82}
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  fetchpriority={i === 0 ? 'high' : undefined}
+                  loading="lazy"
+                  decoding="async"
                   class="absolute inset-0 w-full h-full object-cover"
                 />
               </div>

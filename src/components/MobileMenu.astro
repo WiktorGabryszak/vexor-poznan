@@ -9,8 +9,9 @@ import ButtonA from './ui/ButtonA.astro';
 
 <aside
   id="mobilePanel"
-  class="fixed right-0 top-0 h-dvh w-full max-w-[340px] bg-white z-[1100] flex flex-col border-l border-black/[0.06] shadow-[−4px_0_40px_rgba(0,0,0,0.08)] translate-x-full transition-transform duration-300 ease-out"
+  inert
   aria-hidden="true"
+  class="fixed right-0 top-0 h-dvh w-full max-w-[340px] bg-white z-[1100] flex flex-col border-l border-black/[0.06] shadow-[−4px_0_40px_rgba(0,0,0,0.08)] translate-x-full transition-transform duration-300 ease-out"
 >
   <!-- Header -->
   <div class="flex items-center justify-between px-5 py-5 border-b border-black/[0.06]">
@@ -108,6 +109,7 @@ import ButtonA from './ui/ButtonA.astro';
     panel?.classList.remove('translate-x-full');
     panel?.classList.add('translate-x-0');
     backdrop?.classList.add('opacity-100', 'pointer-events-auto');
+    panel?.removeAttribute('inert');
     panel?.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
@@ -115,6 +117,7 @@ import ButtonA from './ui/ButtonA.astro';
     panel?.classList.add('translate-x-full');
     panel?.classList.remove('translate-x-0');
     backdrop?.classList.remove('opacity-100', 'pointer-events-auto');
+    panel?.setAttribute('inert', '');
     panel?.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };

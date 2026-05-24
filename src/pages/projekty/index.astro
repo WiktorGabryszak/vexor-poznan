@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar.astro';
 import MobileMenu from '../../components/MobileMenu.astro';
 import Footer from '../../components/Footer.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
-import Eyebrow from '../../components/ui/Eyebrow.astro';
 import { Image } from 'astro:assets';
 
 import imgFabullate   from '../../assets/images/projekty-home/Fabullate.png';
@@ -82,7 +81,12 @@ const projekty: Project[] = [
                   alt={p.title}
                   class="w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                   style="height: clamp(250px, 22vw, 300px);"
+                  width={540}
+                  height={300}
+                  format="webp"
+                  quality={82}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="px-10 pb-10 pt-5 flex flex-col items-start" style={`background:${p.bg};`}>

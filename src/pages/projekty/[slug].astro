@@ -311,7 +311,7 @@ const { project } = Astro.props as { project: Project };
         style={`height: clamp(240px, 36vw, 720px);${!project.coverImage ? ` background: ${project.coverGradient};` : ''}`}
       >
         {project.coverImage ? (
-          <img src={project.coverImage} alt={project.title} class="w-full h-full object-cover" />
+          <img src={project.coverImage} alt={project.title} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" />
         ) : (
           <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 20px);"></div>
         )}
@@ -410,6 +410,7 @@ const { project } = Astro.props as { project: Project };
               alt={`Podgląd strony – ${project.title}`}
               class="w-full block"
               loading="eager"
+              decoding="async"
             />
           ) : (
             <div style={`height: 900px; background: ${project.coverGradient};`}>
@@ -428,7 +429,7 @@ const { project } = Astro.props as { project: Project };
         style={`height: clamp(220px,28vw,420px);${!project.img1Image ? ` background: ${project.img1Gradient};` : ''}`}
       >
         {project.img1Image ? (
-          <img src={project.img1Image} alt={project.title} class="w-full h-full object-cover" />
+          <img src={project.img1Image} alt={project.title} class="w-full h-full object-cover" loading="lazy" decoding="async" />
         ) : (
           <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
         )}
@@ -438,7 +439,7 @@ const { project } = Astro.props as { project: Project };
         style={`height: clamp(220px,28vw,420px);${!project.img2Image ? ` background: ${project.img2Gradient}; --stagger-i:1;` : ' --stagger-i:1;'}`}
       >
         {project.img2Image ? (
-          <img src={project.img2Image} alt={project.title} class="w-full h-full object-cover" />
+          <img src={project.img2Image} alt={project.title} class="w-full h-full object-cover" loading="lazy" decoding="async" />
         ) : (
           <div class="w-full h-full" aria-hidden="true" style="background-image: repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);"></div>
         )}
