@@ -8,8 +8,8 @@ import Footer from '../components/Footer.astro';
 <Layout
   title="Kontakt – Wycena Strony Internetowej | Vexor"
   description="Skontaktuj się z nami i opisz swój projekt. Oddzwonimy lub odpiszemy tego samego dnia roboczego. Bezpłatna wycena strony internetowej w 24h."
-  canonicalURL="https://vexordesigns.pl/kontakt/"
-  ogImage="https://vexordesigns.pl/og-image.jpg"
+  canonicalURL="https://stronyinternetowe.net/kontakt/"
+  ogImage="https://stronyinternetowe.net/og-image.jpg"
 >
   <Navbar />
   <MobileMenu />
@@ -54,7 +54,7 @@ import Footer from '../components/Footer.astro';
 
             <div class="flex flex-col">
 
-              <a href="mailto:kontakt@vexordesigns.pl"
+              <a href="mailto:kontakt@stronyinternetowe.net"
                 class="group border-b border-brand-border py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
                 <div class="flex items-center gap-4">
                   <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
@@ -65,7 +65,7 @@ import Footer from '../components/Footer.astro';
                   </span>
                   <h3 class="text-h5 font-medium text-brand-accent flex-1">Email</h3>
                 </div>
-                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">kontakt@vexordesigns.pl</p>
+                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">kontakt@stronyinternetowe.net</p>
               </a>
 
               <a href="tel:+48601076883"
@@ -113,11 +113,13 @@ import Footer from '../components/Footer.astro';
             <!-- Form body -->
             <div class="px-8 md:px-12 py-8 bg-white" >
               <form
-                name="kontakt"
+                action="https://api.web3forms.com/submit"
                 method="POST"
-                action="/kontakt/sukces/"
                 class="flex flex-col gap-4"
               >
+                <input type="hidden" name="access_key" value="8538cc0b-9eea-44a6-bb67-0323e81e1513" />
+                <input type="hidden" name="redirect" value="https://stronyinternetowe.net/kontakt/sukces/" />
+                <input type="hidden" name="subject" value="Nowe zapytanie z formularza – Vexor" />
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"

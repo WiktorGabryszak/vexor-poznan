@@ -266,7 +266,7 @@ const { project } = Astro.props as { project: Project };
 <Layout
   title={`${project.title} – Projekt Vexor`}
   description={project.intro}
-  canonicalURL={`https://vexordesigns.pl/projekty/${project.slug}/`}
+  canonicalURL={`https://stronyinternetowe.net/projekty/${project.slug}/`}
 >
   <Navbar dark />
   <MobileMenu />
@@ -401,7 +401,7 @@ const { project } = Astro.props as { project: Project };
             <span class="w-[11px] h-[11px] rounded-full bg-[#ffbd2e]"></span>
             <span class="w-[11px] h-[11px] rounded-full bg-[#28c840]"></span>
             <div class="flex-1 mx-3 h-6 rounded-full bg-white/10 flex items-center px-3">
-              <span class="text-[11px] font-mono text-white/40">{project.siteUrl ? project.siteUrl.replace('https://', '') : `vexordesigns.pl/${project.slug}/`}</span>
+              <span class="text-[11px] font-mono text-white/40">{project.siteUrl ? project.siteUrl.replace('https://', '') : `stronyinternetowe.net/${project.slug}/`}</span>
             </div>
           </div>
           {project.previewImage ? (
