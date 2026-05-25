@@ -2,30 +2,585 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
-import Hero from '../components/Hero.astro';
-import OurVision from '../components/OurVision.astro';
-import CoreValues from '../components/CoreValues.astro';
-import Portfolio from '../components/Portfolio.astro';
-import HowWeWork from '../components/HowWeWork.astro';
-import ContactCTA from '../components/ContactCTA.astro';
-import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import imgPadel from '../assets/images/projekty-home/Padel King.png';
+import imgFabullate from '../assets/images/projekty-home/Fabullate.png';
+import imgFitBox from '../assets/images/projekty-home/FitBox.png';
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vexor Designs",
+  "url": "https://stronypoznan.com/",
+  "telephone": "+48601076883",
+  "email": "kontakt@vexordesigns.pl",
+  "areaServed": "Poznań",
+  "serviceType": ["Tworzenie stron internetowych", "Sklepy WooCommerce", "Pozycjonowanie SEO"]
+});
 ---
 
 <Layout
-  title="Tworzenie Stron Internetowych dla Firm | Vexor Designs"
-  description="Projektujemy strony internetowe, sklepy WooCommerce i aplikacje webowe dla firm w Polsce. Szybka realizacja, pełne wsparcie techniczne, wycena w 24h."
-  canonicalURL="https://stronyinternetowe.net/"
-  ogImage="https://stronyinternetowe.net/og-image.jpg"
+  title="Strony internetowe Poznań – Vexor Designs"
+  description="Profesjonalne strony www dla firm z Poznania. Szybka realizacja, wycena w 24h. Zadzwoń lub napisz."
+  canonicalURL="https://stronypoznan.com/"
 >
+  <script slot="head" type="application/ld+json" set:html={localBusinessSchema} />
+
   <Navbar />
   <MobileMenu />
+
   <main>
-    <Hero />
-    <OurVision />
-    <CoreValues />
-    <Portfolio />
-    <HowWeWork />
-    <ContactCTA />
+
+    <!-- Hero -->
+    <section
+      class="min-h-[75vh] relative flex flex-col justify-center items-center text-white pt-[130px] pb-20 px-5"
+      style="background: linear-gradient(135deg, #1a1a3e 0%, #2d2d6b 60%, #3d3d8f 100%);"
+      id="hero"
+    >
+      <div class="absolute inset-0 hero-dot-grid opacity-[0.35] [background-size:32px_32px]" aria-hidden="true"></div>
+      <div class="relative z-10 flex flex-col items-center text-center max-w-[900px] mx-auto gap-6">
+        <h1 class="text-hero text-white text-balance reveal" style="--stagger-i:0">
+          Strony internetowe dla firm z Poznania
+        </h1>
+        <p class="text-[22px] md:text-[24px] text-white/85 max-w-[640px] text-pretty font-medium leading-relaxed reveal" style="--stagger-i:1">
+          Poznańskie firmy tracą klientów na strony konkurencji. Twoja strona albo wygrywa ten wyścig, albo przegrywa. Nie ma remisów na pierwszej stronie Google.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-2 reveal" style="--stagger-i:2">
+          <a
+            href="https://vexordesigns.pl/kontakt/"
+            class="inline-flex items-center h-14 px-8 rounded-2xl bg-primary hover:bg-primary-hover text-white font-semibold text-[17px] transition-colors duration-150 shadow-lg"
+          >
+            Zapytaj o wycenę
+          </a>
+          <a
+            href="https://vexordesigns.pl/projekty/"
+            class="inline-flex items-center h-14 px-8 rounded-2xl border border-white/30 text-white font-semibold text-[17px] hover:bg-white/10 transition-colors duration-150"
+          >
+            Zobacz nasze projekty
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- O nas -->
+    <section id="o-nas" class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="max-w-[800px] mx-auto flex flex-col gap-5 reveal" style="--stagger-i:0">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit border border-brand-border text-brand-text bg-white">
+            <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
+            O nas
+          </span>
+          <h2 class="text-h2">Studio tworzenia stron internetowych</h2>
+          <p class="text-xl text-brand-text leading-relaxed">
+            Vexor Designs to studio tworzenia stron internetowych działające dla firm z całej Polski. Specjalizujemy się w stronach które rankują w Google i zamieniają odwiedziny w zapytania. Obsługujemy firmy z Poznania i Wielkopolski priorytetowo.
+          </p>
+          <a
+            href="https://vexordesigns.pl/o-nas/"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150 w-fit"
+          >
+            Dowiedz się więcej o Vexor Designs
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nasze wartości -->
+    <section id="wartosci" class="bg-white py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="flex flex-col items-center gap-4 mb-[60px] text-center">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit border border-brand-border text-brand-text bg-brand-bg-light">
+            <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
+            Nasze wartości
+          </span>
+          <h2 class="text-h2">Dlaczego warto z nami pracować</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:0">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="text-h5 font-medium text-brand-accent">Szybka realizacja</h3>
+            <p class="text-brand-text text-base leading-relaxed">Pierwsze makiety w kilka dni roboczych. Wdrożenie w 2–4 tygodnie.</p>
+          </article>
+
+          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:1">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+                <path d="M8 11h6M11 8v6"/>
+              </svg>
+            </div>
+            <h3 class="text-h5 font-medium text-brand-accent">Widoczność w Google</h3>
+            <p class="text-brand-text text-base leading-relaxed">Każda strona zoptymalizowana pod lokalne frazy SEO od pierwszego dnia.</p>
+          </article>
+
+          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:2">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3 class="text-h5 font-medium text-brand-accent">Bezpośredni kontakt</h3>
+            <p class="text-brand-text text-base leading-relaxed">Rozmawiasz z osobą która faktycznie robi Twoją stronę, nie z project managerem.</p>
+          </article>
+
+          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:3">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3 class="text-h5 font-medium text-brand-accent">Uczciwa wycena</h3>
+            <p class="text-brand-text text-base leading-relaxed">Konkretna kwota w 24 godziny. Bez ukrytych kosztów.</p>
+          </article>
+
+        </div>
+
+        <div class="mt-10 flex justify-center reveal" style="--stagger-i:4">
+          <a
+            href="https://vexordesigns.pl/o-nas/"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
+          >
+            Jak pracujemy
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projekty -->
+    <section id="projekty" class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto p-5 md:p-16 rounded-[40px] bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-portfolio-image bg-cover bg-top opacity-40" aria-hidden="true"></div>
+        <div class="relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-start mb-10">
+            <div class="flex flex-col">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit bg-white/40 backdrop-blur-md border border-brand-border text-brand-text">
+                <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
+                Nasze projekty
+              </span>
+              <h2 class="text-h2 mt-[14px]">Wybrane realizacje</h2>
+              <p class="text-xl text-brand-text mt-4 max-w-[520px]">Pełne portfolio znajdziesz na vexordesigns.pl</p>
+            </div>
+            <div class="justify-self-start lg:justify-self-end self-end">
+              <a
+                href="https://vexordesigns.pl/projekty/"
+                class="inline-flex items-center h-14 px-7 rounded-2xl bg-primary hover:bg-primary-hover text-white font-semibold text-[16px] transition-colors duration-150"
+              >
+                Wszystkie projekty
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <a
+              href="https://vexordesigns.pl/projekty/"
+              aria-label="Zobacz projekt Padel King"
+              class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
+              style="--stagger-i:0; background:#142129;"
+            >
+              <div class="overflow-hidden rounded-b-[20px]">
+                <Image
+                  src={imgPadel}
+                  alt="Padel King – strona dla centrum padla"
+                  class="w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style="height: clamp(250px, 22vw, 300px);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="px-10 pb-10 pt-5 flex flex-col items-start" style="background:#142129;">
+                <h3 class="text-white text-h5">Padel King</h3>
+                <p class="text-white/85 text-base font-400 mt-1">Strona dla centrum padla</p>
+                <div class="mt-auto pt-6">
+                  <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
+                    <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
+                    <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="#000000" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+                    </span>
+                    <span class="relative z-10 group-hover/btn:text-black">Zobacz projekt</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://vexordesigns.pl/projekty/"
+              aria-label="Zobacz projekt Fabulatte"
+              class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
+              style="--stagger-i:1; background:#12343e;"
+            >
+              <div class="overflow-hidden rounded-b-[20px]">
+                <Image
+                  src={imgFabullate}
+                  alt="Fabulatte – strona dla kawiarni"
+                  class="w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style="height: clamp(250px, 22vw, 300px);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="px-10 pb-10 pt-5 flex flex-col items-start" style="background:#12343e;">
+                <h3 class="text-white text-h5">Fabulatte</h3>
+                <p class="text-white/85 text-base font-400 mt-1">Strona dla kawiarni</p>
+                <div class="mt-auto pt-6">
+                  <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
+                    <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
+                    <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="#000000" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+                    </span>
+                    <span class="relative z-10 group-hover/btn:text-black">Zobacz projekt</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://vexordesigns.pl/projekty/"
+              aria-label="Zobacz projekt FitBox"
+              class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
+              style="--stagger-i:2; background:#D58E24;"
+            >
+              <div class="overflow-hidden rounded-b-[20px]">
+                <Image
+                  src={imgFitBox}
+                  alt="FitBox – landing page dla klubu fitness"
+                  class="w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style="height: clamp(250px, 22vw, 300px);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="px-10 pb-10 pt-5 flex flex-col items-start" style="background:#D58E24;">
+                <h3 class="text-white text-h5">FitBox</h3>
+                <p class="text-white/85 text-base font-400 mt-1">Landing page dla klubu fitness</p>
+                <div class="mt-auto pt-6">
+                  <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
+                    <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
+                    <span class="relative z-10 inline-flex w-12 h-12 items-center justify-center pr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="#000000" aria-hidden="true"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+                    </span>
+                    <span class="relative z-10 group-hover/btn:text-black">Zobacz projekt</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="mt-10 flex justify-center reveal" style="--stagger-i:3">
+            <a
+              href="https://vexordesigns.pl/projekty/"
+              class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
+            >
+              Wszystkie projekty
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak działamy -->
+    <section id="jak-dzialamy" class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="flex flex-col justify-center items-center gap-6 mb-[60px]">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit border border-brand-border text-brand-text bg-white">
+            <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
+            Jak działamy
+          </span>
+          <div class="text-center">
+            <h2 class="text-h2">Nasz proces pracy</h2>
+            <p class="text-xl text-brand-text max-w-[520px] mt-[14px]">
+              Od briefu po wdrożenie — przejrzyście, terminowo, bez niespodzianek.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative border-t border-brand-border">
+          <!-- Separator arrows (desktop only) -->
+          <div class="hidden lg:flex absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+          </div>
+          <div class="hidden lg:flex absolute top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+          </div>
+          <div class="hidden lg:flex absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[52px] h-[52px] bg-white rounded-2xl shadow-sm items-center justify-center z-10" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M15.52 4.953c-.47.155-.904.523-1.125.956-.109.213-.128.327-.128.758 0 .43.019.546.131.773.101.206.87 1.009 3.384 3.533l3.253 3.266-7.438.014-7.437.014-.267.141a2.097 2.097 0 0 0-.831.834c-.109.213-.129.328-.129.758 0 .431.02.544.129.759.165.323.523.68.845.845l.253.129 7.437.014 7.438.014-3.253 3.266c-2.514 2.524-3.283 3.327-3.384 3.533-.112.227-.131.343-.131.773 0 .594.104.858.489 1.244.386.386.65.49 1.244.49.429 0 .547-.02.773-.131.391-.191 9.972-9.772 10.163-10.163.111-.226.131-.344.131-.773 0-.429-.02-.547-.131-.773-.103-.211-1.155-1.293-4.986-5.129-5.414-5.42-5.101-5.143-5.87-5.172-.235-.009-.487.003-.56.027" /></svg>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-4">
+
+            <div class="group relative px-8 pt-[100px] pb-16 text-center overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-border">
+              <div class="absolute top-6 left-0 right-0 select-none pointer-events-none text-center z-[2]" aria-hidden="true">
+                <span class="relative block text-[150px] font-black leading-[0.75em]">
+                  <span class="absolute inset-0 flex justify-center bg-gradient-to-b from-primary via-primary/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">01</span>
+                  <span class="group-hover:opacity-0 transition-opacity duration-300" style="background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 20%, #DFDEE5 100%); -webkit-background-clip: text; -webkit-text-stroke: 4px transparent; color: transparent;">01</span>
+                </span>
+              </div>
+              <h3 class="relative z-[50] text-h5 text-brand-accent mb-4 leading-snug">Brief</h3>
+              <p class="relative z-[1] text-base text-brand-muted leading-relaxed max-w-[240px] mx-auto">Opisujesz firmę i cel strony. Zajmuje 15 minut.</p>
+            </div>
+
+            <div class="group relative px-8 pt-[100px] pb-16 text-center overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-border">
+              <div class="absolute top-6 left-0 right-0 select-none pointer-events-none text-center z-[2]" aria-hidden="true">
+                <span class="relative block text-[150px] font-black leading-[0.75em]">
+                  <span class="absolute inset-0 flex justify-center bg-gradient-to-b from-primary via-primary/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">02</span>
+                  <span class="group-hover:opacity-0 transition-opacity duration-300" style="background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 20%, #DFDEE5 100%); -webkit-background-clip: text; -webkit-text-stroke: 4px transparent; color: transparent;">02</span>
+                </span>
+              </div>
+              <h3 class="relative z-[50] text-h5 text-brand-accent mb-4 leading-snug">Wycena</h3>
+              <p class="relative z-[1] text-base text-brand-muted leading-relaxed max-w-[240px] mx-auto">Konkretna kwota w ciągu 24 godzin. Bez zobowiązań.</p>
+            </div>
+
+            <div class="group relative px-8 pt-[100px] pb-16 text-center overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-border">
+              <div class="absolute top-6 left-0 right-0 select-none pointer-events-none text-center z-[2]" aria-hidden="true">
+                <span class="relative block text-[150px] font-black leading-[0.75em]">
+                  <span class="absolute inset-0 flex justify-center bg-gradient-to-b from-primary via-primary/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">03</span>
+                  <span class="group-hover:opacity-0 transition-opacity duration-300" style="background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 20%, #DFDEE5 100%); -webkit-background-clip: text; -webkit-text-stroke: 4px transparent; color: transparent;">03</span>
+                </span>
+              </div>
+              <h3 class="relative z-[50] text-h5 text-brand-accent mb-4 leading-snug">Projekt</h3>
+              <p class="relative z-[1] text-base text-brand-muted leading-relaxed max-w-[240px] mx-auto">Makiety graficzne w kilka dni roboczych. Wprowadzasz poprawki.</p>
+            </div>
+
+            <div class="group relative px-8 pt-[100px] pb-16 text-center overflow-hidden">
+              <div class="absolute top-6 left-0 right-0 select-none pointer-events-none text-center z-[2]" aria-hidden="true">
+                <span class="relative block text-[150px] font-black leading-[0.75em]">
+                  <span class="absolute inset-0 flex justify-center bg-gradient-to-b from-primary via-primary/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">04</span>
+                  <span class="group-hover:opacity-0 transition-opacity duration-300" style="background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 20%, #DFDEE5 100%); -webkit-background-clip: text; -webkit-text-stroke: 4px transparent; color: transparent;">04</span>
+                </span>
+              </div>
+              <h3 class="relative z-[50] text-h5 text-brand-accent mb-4 leading-snug">Wdrożenie</h3>
+              <p class="relative z-[1] text-base text-brand-muted leading-relaxed max-w-[240px] mx-auto">Gotowa strona, zoptymalizowana pod Google, przekazana z pełnym wsparciem.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-12 flex justify-center reveal" style="--stagger-i:0">
+          <a
+            href="https://vexordesigns.pl/o-nas/"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
+          >
+            Dowiedz się więcej o procesie
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
+
+          <!-- Left: contact info -->
+          <div class="flex flex-col gap-6 reveal" style="--stagger-i:0">
+            <div>
+              <h2 class="text-h2 font-medium text-brand-accent">Dane kontaktowe</h2>
+              <p class="text-brand-text mt-3 text-lg leading-relaxed">
+                Nie wiesz czego potrzebujesz? To normalne, napisz krótko o swojej firmie, a my zaproponujemy rozwiązanie i wycenę.
+              </p>
+            </div>
+
+            <div class="flex flex-col">
+
+              <a href="mailto:kontakt@vexordesigns.pl"
+                class="group border-b border-brand-border py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
+                <div class="flex items-center gap-4">
+                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="2" y="4" width="20" height="16" rx="2"/>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                  </span>
+                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Email</h3>
+                </div>
+                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">kontakt@vexordesigns.pl</p>
+              </a>
+
+              <a href="tel:+48601076883"
+                class="group border-b border-brand-border py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
+                <div class="flex items-center gap-4">
+                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </span>
+                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Telefon</h3>
+                </div>
+                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">+48 601 076 883</p>
+              </a>
+
+              <a href="https://www.instagram.com/vexordesigns_official/" target="_blank" rel="noopener noreferrer"
+                class="group py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
+                <div class="flex items-center gap-4">
+                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5"/>
+                      <circle cx="12" cy="12" r="4"/>
+                      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                    </svg>
+                  </span>
+                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Instagram</h3>
+                </div>
+                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">@vexordesigns_official</p>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="rounded-[32px] overflow-hidden reveal bg-white" style="--stagger-i:1">
+            <div class="px-8 md:px-12 pt-10 pb-8">
+              <h2 class="text-h2 font-500 text-brand-accent leading-[1.1] tracking-[-0.02em]">
+                Wyślij wiadomość
+              </h2>
+            </div>
+
+            <div class="px-8 md:px-12 py-8 bg-white">
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="flex flex-col gap-4"
+              >
+                <input type="hidden" name="access_key" value="8538cc0b-9eea-44a6-bb67-0323e81e1513" />
+                <input type="hidden" name="subject" value="Nowe zapytanie ze stronypoznan.com" />
+                <input type="hidden" name="redirect" value="https://stronypoznan.com/?success=1" />
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Imię i nazwisko"
+                    required
+                    autocomplete="name"
+                    class="h-14 px-5 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Adres email"
+                    required
+                    autocomplete="email"
+                    class="h-14 px-5 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150"
+                  />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Telefon"
+                    required
+                    autocomplete="tel"
+                    class="h-14 px-5 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150"
+                  />
+                  <input
+                    type="text"
+                    name="business"
+                    placeholder="Nazwa Firmy"
+                    required
+                    class="h-14 px-5 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150"
+                  />
+                </div>
+
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Opisz czego potrzebujesz. Np. jaki typ strony, ile podstron, czy masz już logo i treści..."
+                  required
+                  class="px-5 py-4 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150 resize-none leading-relaxed"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  class="h-14 w-full rounded-2xl bg-primary hover:bg-primary-hover text-white font-semibold text-base transition-colors duration-150 mt-1"
+                >
+                  Wyślij wiadomość
+                </button>
+
+                <p class="text-xs text-brand-muted leading-relaxed text-center">
+                  Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych w celu odpowiedzi na Twoje zapytanie.
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
-  <Footer />
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-brand-border py-8 px-5 text-center">
+    <p class="text-brand-muted text-sm">
+      © 2026 Strony internetowe Poznań · Realizacja: <a href="https://vexordesigns.pl" rel="dofollow" class="text-primary hover:underline">Vexor Designs</a>
+    </p>
+  </footer>
+
+  <!-- Sticky sidebar CTA (desktop only) -->
+  <div
+    id="sticky-cta"
+    class="fixed right-0 top-1/2 -translate-y-1/2 z-[90] hidden lg:flex flex-col items-end"
+    style="opacity:0;pointer-events:none;transition:opacity 0.3s ease"
+    aria-hidden="true"
+  >
+    <a
+      href="#kontakt"
+      class="bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-4 rounded-l-2xl shadow-xl transition-colors duration-150 flex items-center"
+      style="writing-mode:vertical-rl;transform:rotate(180deg)"
+      aria-label="Zapytaj o wycenę – przewiń do formularza kontaktowego"
+      aria-hidden="false"
+    >
+      Zapytaj o wycenę
+    </a>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sticky-cta');
+    const hero = document.getElementById('hero');
+    const kontakt = document.getElementById('kontakt');
+
+    if (sidebar && hero && kontakt) {
+      let heroVisible = true;
+      let kontaktVisible = false;
+
+      const updateVisibility = () => {
+        if (heroVisible || kontaktVisible) {
+          sidebar.style.opacity = '0';
+          sidebar.style.pointerEvents = 'none';
+          sidebar.setAttribute('aria-hidden', 'true');
+        } else {
+          sidebar.style.opacity = '1';
+          sidebar.style.pointerEvents = 'auto';
+          sidebar.setAttribute('aria-hidden', 'false');
+        }
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.target === hero) heroVisible = entry.isIntersecting;
+          if (entry.target === kontakt) kontaktVisible = entry.isIntersecting;
+          updateVisibility();
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(hero);
+      observer.observe(kontakt);
+
+      sidebar.querySelector('a')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        kontakt.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  </script>
+
 </Layout>

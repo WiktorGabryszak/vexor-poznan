@@ -106,6 +106,7 @@ const schemaOrg = JSON.stringify([
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={schemaOrg} />
 
+    <slot name="head" />
   </head>
   <body>
     <slot />
