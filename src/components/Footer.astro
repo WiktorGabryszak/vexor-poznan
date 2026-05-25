@@ -1,14 +1,15 @@
 ---
 // Component: Footer
-// Purpose: Footer with contact, links, and CTA.
+// Purpose: Footer with contact, links, cities, and CTA.
 // Props: none
 // JS: none
+import { cities } from '../data/cities.ts';
 ---
 
 <footer class="bg-brand-bg-light pt-[60px] relative overflow-hidden">
 	<div class="bg-white rounded-[40px] relative z-[2]">
 		<div class="max-w-[1700px] mx-auto px-5 py-10 md:px-7 md:py-10">
-			<div class="grid grid-cols-1 md:grid-cols-[40%_30%_30%] md:gap-0 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-[32%_21%_21%_26%] md:gap-0 gap-8">
 				<div class="px-0 md:px-8 md:border-r md:border-brand-border md:pl-0">
 					<a href="/" class="inline-flex items-center gap-2.5 text-brand-text mb-6" aria-label="Vexor">
 						<img src="/favicon.svg" alt="Vexor logo" width="28" height="28" />
@@ -26,9 +27,9 @@
 					</div>
 				</div>
 
-				<div class="px-0 md:px-8 md:border-r md:border-brand-border md:pr-8 md:pl-8 border-b md:border-b-0 border-brand-border pb-6 md:pb-0">
+				<div class="px-0 md:px-8 md:border-r md:border-brand-border border-b md:border-b-0 border-brand-border pb-6 md:pb-0">
 					<span class="text-[10px] uppercase tracking-[.12em] text-brand-muted font-semibold mb-[18px] block">Nawigacja</span>
-					<div class="grid grid-cols-2 gap-x-6 gap-y-2">
+					<div class="flex flex-col gap-y-1">
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/">Strona główna</a>
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/uslugi/">Usługi</a>
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/o-nas/">O nas</a>
@@ -37,6 +38,20 @@
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/uslugi/projektowanie-stron-internetowych/">Strony www</a>
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/uslugi/pozycjonowanie-seo/">Pozycjonowanie</a>
 						<a class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block" href="/uslugi/tworzenie-sklepow-internetowych/">Sklepy online</a>
+					</div>
+				</div>
+
+				<div class="px-0 md:px-8 md:border-r md:border-brand-border border-b md:border-b-0 border-brand-border pb-6 md:pb-0">
+					<span class="text-[10px] uppercase tracking-[.12em] text-brand-muted font-semibold mb-[18px] block">Obsługiwane miasta</span>
+					<div class="flex flex-col gap-y-1">
+						{cities.map((city) => (
+							<a
+								class="text-[15px] text-brand-text hover:text-primary hover:underline transition-colors py-1 inline-block"
+								href={`/strony-internetowe-${city.slug}/`}
+							>
+								Strony {city.name}
+							</a>
+						))}
 					</div>
 				</div>
 

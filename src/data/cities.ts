@@ -1,0 +1,152 @@
+export interface City {
+  slug: string;
+  name: string;
+  nameDopelniacz: string;
+  nameMiejscownik: string;
+  region: string;
+  population: string;
+  headline: string;
+  description: string;
+  metaDescription: string;
+  ctaText: string;
+  nearbyCity?: string;
+  localContext?: string;
+  localContext2?: string;
+  industries?: string;
+  faqA1?: string;
+  faqA2?: string;
+  faqA3?: string;
+}
+
+export const cities: City[] = [
+  {
+    slug: "bydgoszcz",
+    name: "Bydgoszcz",
+    nameDopelniacz: "Bydgoszczy",
+    nameMiejscownik: "Bydgoszczy",
+    region: "kujawsko-pomorskie",
+    population: "~340 000 mieszkańców",
+    headline: "Twoja firma z Bydgoszczy zasługuje na stronę, która pracuje na klientów",
+    description: "Nie kolejną stronę-wizytówkę, którą nikt nie znajdzie. Budujemy strony które rankują w Google, wyglądają lepiej niż konkurencja i zamieniają odwiedziny w zapytania.",
+    metaDescription: "Strony internetowe Bydgoszcz — Vexor Designs. Nie szablony. Strony które sprzedają. Bezpłatna wycena w 24h.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    localContext: "Bydgoszcz ma ponad 340 000 mieszkańców i silną konkurencję w większości branż. Transport, budownictwo, usługi, handel. Twoi konkurenci też mają strony. Pytanie czy Twoja jest lepsza od ich. Jeśli nie wiesz jak odpowiedzieć na to pytanie, to już jest odpowiedź.",
+    localContext2: "Pracujemy zdalnie, więc nie ma znaczenia czy siedzisz w centrum Bydgoszczy, w Fordonie czy w powiecie bydgoskim. Wyceń projekt dziś. Makiety zobaczysz w ciągu kilku dni roboczych. Bez przepłacania za agencję z wielkim biurem.",
+    industries: "Transport i logistyka, usługi budowlane i wykończeniowe, salony i gabinety, sklepy lokalne, firmy produkcyjne",
+    faqA1: "Nie podajemy cen z sufitu. Wycena zawsze po krótkim briefie, bo cena strony zależy od zakresu, nie od miasta. Napisz do nas co prowadzisz i czego potrzebujesz. Wrócimy z konkretną kwotą w ciągu 24 godzin. Bez zobowiązań.",
+    faqA2: "Prosta strona firmowa: 2 tygodnie od dostarczenia materiałów. Sklep internetowy z WooCommerce: 3 do 5 tygodni. Termin wpisujemy do umowy i go dotrzymujemy. Nie znikamy po zaliczce.",
+    faqA3: "Robimy strony dla firm z całej Polski, ale Bydgoszcz i region kujawsko-pomorski to obszar który znamy dobrze. Rozumiemy lokalną konkurencję, tempo rynku, oczekiwania klientów w tym regionie. To przekłada się na treści, które trafiają do właściwych ludzi.",
+  },
+  {
+    slug: "torun",
+    name: "Toruń",
+    nameDopelniacz: "Torunia",
+    nameMiejscownik: "Toruniu",
+    region: "kujawsko-pomorskie",
+    population: "~200 000 mieszkańców",
+    headline: "Strona internetowa dla firmy z Torunia, którą klienci faktycznie znajdą",
+    description: "Większość stron lokalnych firm nie pojawia się w Google dla nikogo poza właścicielem. Robimy strony które rankują na frazy z Toruniem i zamieniają ruch w klientów.",
+    metaDescription: "Strony internetowe Toruń — Vexor Designs. Strony które rankują lokalnie i sprzedają. Bezpłatna wycena w 24h.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    localContext: "Toruń to miasto z mocnym rynkiem gastronomicznym, turystyką i rosnącą liczbą firm usługowych. Duża liczba studentów, turyści przez cały rok, aktywna scena MŚP. W takim środowisku firma bez dobrej strony internetowej po prostu nie istnieje dla nowych klientów, którzy szukają w Google.",
+    localContext2: "Strony które tworzymy dla firm z Torunia są zoptymalizowane pod konkretne frazy: usługa plus Toruń, firma plus Toruń. Nie ogólnie pod Polskę. Lokalnie, żebyś trafiał do ludzi, którzy są już w Toruniu i szukają dokładnie tego co oferujesz.",
+    industries: "Gastronomia i kawiarnie, usługi turystyczne i noclegi, salony urody, usługi dla biznesu, sklepy lokalne",
+    faqA1: "Bez wstępnych opłat, bez wypełniania długich formularzy. Opisz nam firmę i projekt w kilku zdaniach. Dostaniesz konkretną wycenę następnego dnia roboczego. Jeśli zakres Ci nie pasuje, negocjujemy albo rozchodzimy się bez urazy.",
+    faqA2: "Strony firmowe i landing page'e: 2 tygodnie. Sklepy WooCommerce: 4 do 6 tygodni. Nie obiecujemy tygodnia jeśli projekt tego nie pozwala. Realny termin zawsze na początku.",
+    faqA3: "Obsługujemy firmy z całej Polski. W Toruniu i regionie kujawsko-pomorskim jesteśmy szczególnie aktywni. Znamy specyfikę lokalnych branż i rozumiemy jak szukają klientów firmy w tym mieście.",
+  },
+  {
+    slug: "poznan",
+    name: "Poznań",
+    nameDopelniacz: "Poznania",
+    nameMiejscownik: "Poznaniu",
+    region: "wielkopolskie",
+    population: "~540 000 mieszkańców",
+    headline: "Poznańskie firmy tracą klientów na strony konkurencji. Napraw to.",
+    description: "Poznań to jedno z najbardziej konkurencyjnych rynków w Polsce. Twoja strona albo wygrywa ten wyścig, albo przegrywa. Nie ma remisów w pierwszej stronie Google.",
+    metaDescription: "Strony internetowe Poznań — Vexor Designs. Strony które wygrywają z konkurencją w Google. Bezpłatna wycena w 24h.",
+    ctaText: "Sprawdź czy Twoja strona przegrywa",
+    localContext: "Poznań ma 540 000 mieszkańców, silny rynek B2B i dziesiątki agencji digitalowych. Firmy stąd mają wysokie wymagania i szybko sprawdzają czy dostawca dowozi. Wiemy o tym, bo kilku naszych klientów trafiło do nas właśnie z Poznania, po złych doświadczeniach z większymi agencjami, które brały dużo i robiły przeciętnie.",
+    localContext2: "Oferujemy bezpośredni kontakt z osobą, która faktycznie robi Twoją stronę, nie z project managerem który przekazuje informacje. Jeśli masz pytanie o projekt o 21:00, odpiszemy. Wycena w 24 godziny, pierwsze makiety w kilka dni roboczych.",
+    industries: "Usługi B2B, branża IT i software house, branża eventowa i targi, finanse i doradztwo, e-commerce",
+    faqA1: "Wyceniamy indywidualnie bo Poznań to rynek gdzie jeden projekt może różnić się zakresem o 300%. Napisz do nas krótki brief. Wrócimy z wyceną w 24 godziny. Jeśli chcesz, możemy też najpierw porozmawiać przez telefon o tym co potrzebujesz.",
+    faqA2: "Proste strony firmowe: 2 tygodnie. Sklepy internetowe z integracjami: 4 do 6 tygodni. Dedykowane platformy: termin po analizie zakresu. Nie bierzemy pięciu projektów na raz żeby żaden nie czekał.",
+    faqA3: "Pracujemy z firmami z całej Polski. Poznań i Wielkopolska to jeden z naszych głównych regionów. Znamy specyfikę tutejszego rynku B2B i wiemy jak wyglądają oczekiwania poznańskich firm wobec dostawców usług.",
+  },
+  {
+    slug: "inowroclaw",
+    name: "Inowrocław",
+    nameDopelniacz: "Inowrocławia",
+    nameMiejscownik: "Inowrocławiu",
+    region: "kujawsko-pomorskie",
+    population: "~70 000 mieszkańców",
+    headline: "Strona internetowa dla firmy z Inowrocławia, która pracuje na klientów",
+    description: "Nie chodzi o to żeby mieć stronę. Chodzi o to żeby mieć stronę którą klienci z Inowrocławia i okolic faktycznie znajdą w Google. Wycena bezpłatna, w 24 godziny.",
+    metaDescription: "Strony internetowe Inowrocław — Vexor Designs. Strony www i sklepy WooCommerce dla firm z Inowrocławia. Bezpłatna wycena w 24h.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    nearbyCity: "niedaleko Bydgoszczy",
+    localContext: "Inowrocław ma silny przemysł i aktywny sektor usług lokalnych. Większość firm w powiecie inowrocławskim albo nie ma strony internetowej, albo ma coś co nie działa na telefonie i nie pojawia się w Google. Przy stosunkowo niskiej konkurencji online, dobrze zrobiona strona potrafi tu trafić na pierwszą stronę wyszukiwarki znacznie szybciej niż w większym mieście.",
+    localContext2: "Obsługujemy firmy z Inowrocławia, Kruszwicy, Pakości i całego powiatu. Ceny są takie same jak dla firm z Warszawy czy Wrocławia, bez narzutów za markę agencji z reprezentacyjnym biurem. Wycena bezpłatna, odpowiedź w ciągu doby.",
+    industries: "Przemysł chemiczny, usługi budowlane i remontowe, handel lokalny, salony i gabinety, rolnictwo",
+    faqA1: "Napisz do nas przez formularz albo zadzwoń. Kilka zdań o firmie wystarczy do przygotowania wyceny. Wrócimy z konkretną kwotą w ciągu 24 godzin, bez zobowiązań z Twojej strony.",
+    faqA2: "Prosta strona firmowa to 2 tygodnie od dostarczenia materiałów. Sklep internetowy z WooCommerce to 3 do 5 tygodni. Termin zawsze potwierdzamy na piśmie przed rozpoczęciem projektu.",
+    faqA3: "Pracujemy zdalnie z firmami z całej Polski. Inowrocław i powiat inowrocławski to obszar który znamy dobrze. Znajomość lokalnej konkurencji i rynku przekłada się na treści, które trafiają do klientów szukających usług właśnie w tym rejonie.",
+  },
+  {
+    slug: "gniezno",
+    name: "Gniezno",
+    nameDopelniacz: "Gniezna",
+    nameMiejscownik: "Gnieźnie",
+    region: "wielkopolskie",
+    population: "~68 000 mieszkańców",
+    headline: "Strona internetowa dla firmy z Gniezna, na której klienci zostaną dłużej niż 10 sekund",
+    description: "Większość lokalnych stron traci odwiedzającego w kilka sekund. Projektujemy strony które odpowiadają na pytanie klienta zanim zdąży wrócić do wyników wyszukiwania.",
+    metaDescription: "Strony internetowe Gniezno — Vexor Designs. Profesjonalne strony www dla firm z Gniezna i powiatu. Bezpłatna wycena.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    nearbyCity: "niedaleko Poznania",
+    localContext: "Gniezno ma aktywny rynek lokalnych usług i stosunkowo niską konkurencję online w większości branż. Firmy które zainwestują w profesjonalną stronę z lokalnym SEO mają realną szansę na pierwszą stronę Google w Gnieźnie w kilka miesięcy. W dużych miastach ten sam efekt zajmuje często kilka lat.",
+    localContext2: "Obsługujemy firmy z Gniezna, Kłecka, Czerniejewo i całego powiatu gnieźnieńskiego. Wycena bezpłatna, odpowiedź w ciągu następnego dnia roboczego.",
+    industries: "Gastronomia i usługi turystyczne, rzemiosło i usługi lokalne, handel detaliczny, usługi dla mieszkańców",
+    faqA1: "Wyślij krótki opis projektu przez formularz lub napisz maila. Wrócimy z wyceną w ciągu 24 godzin. Żadnych opłat za wycenę ani wstępną konsultację.",
+    faqA2: "Standardowa strona firmowa to 2 tygodnie od dostarczenia materiałów. Sklep internetowy to 4 do 5 tygodni. Harmonogram ustalamy na początku projektu.",
+    faqA3: "Realizujemy projekty dla firm z całej Polski. Gniezno i Wielkopolska to obszar gdzie jesteśmy szczególnie aktywni. Znajomość lokalnej specyfiki rynku przekłada się na skuteczniejsze pozycjonowanie i lepiej dopasowane treści.",
+  },
+  {
+    slug: "mogilno",
+    name: "Mogilno",
+    nameDopelniacz: "Mogilna",
+    nameMiejscownik: "Mogilnie",
+    region: "kujawsko-pomorskie",
+    population: "~14 000 mieszkańców",
+    headline: "Strona internetowa dla firmy z Mogilna, zanim zrobi ją konkurencja",
+    description: "W powiecie mogileńskim większość firm wciąż nie ma profesjonalnej strony internetowej. Kto pojawi się w Google lokalnie jako pierwszy, ten zgarnie ten ruch. Wycena bezpłatna w 24 godziny.",
+    metaDescription: "Strony internetowe Mogilno — Vexor Designs. Strony www dla firm z Mogilna i powiatu mogileńskiego. Bezpłatna wycena.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    nearbyCity: "między Bydgoszczą a Poznaniem",
+    localContext: "Mogilno i powiat mogileński to rynek z niską konkurencją online. Większość firm z tego rejonu nie pojawia się w Google w ogóle. Dobrze zoptymalizowana strona potrafi tu zdobyć pierwszą stronę wyszukiwarki w ciągu kilku miesięcy, bez długotrwałych kampanii SEO potrzebnych w większych miastach.",
+    localContext2: "Obsługujemy firmy z Mogilna, Strzelna, Trzemeszna i okolicznych miejscowości. Projekt realizujemy zdalnie, bez żadnego wpływu na jakość i terminy. Wycena bezpłatna, konkretna odpowiedź w ciągu doby.",
+    industries: "Rolnictwo i usługi rolnicze, agroturystyka, usługi budowlane, handel lokalny, gastronomia",
+    faqA1: "Napisz do nas przez formularz lub zadzwoń. Kilka zdań o firmie wystarczy do przygotowania wyceny. Dla firm z mniejszych miejscowości często proponujemy zakres dopasowany do skali działalności i budżetu. Wycena bezpłatna, bez zobowiązań.",
+    faqA2: "Prosta strona firmowa to 10 do 14 dni od dostarczenia materiałów. Sklep internetowy to 3 do 4 tygodnie. Termin ustalamy na początku i go dotrzymujemy.",
+    faqA3: "Pracujemy zdalnie z firmami z całej Polski, w tym z Mogilna, Strzelna i okolicznych miejscowości. Lokalizacja nie ma wpływu na jakość projektu ani na terminy realizacji.",
+  },
+  {
+    slug: "janikowo",
+    name: "Janikowo",
+    nameDopelniacz: "Janikowa",
+    nameMiejscownik: "Janikowie",
+    region: "kujawsko-pomorskie",
+    population: "~8 000 mieszkańców",
+    headline: "Strona internetowa dla firmy z Janikowa, która pojawia się tam gdzie szukają klienci",
+    description: "Google to pierwsze miejsce gdzie klienci szukają lokalnych firm. Jeśli Twoja firma z Janikowa tam nie jest, trafią do konkurencji, która jest. Wycena bezpłatna w 24 godziny.",
+    metaDescription: "Strony internetowe Janikowo — Vexor Designs. Strony www dla firm z Janikowa i powiatu inowrocławskiego. Bezpłatna wycena.",
+    ctaText: "Chcę wycenę dla mojej firmy",
+    nearbyCity: "w powiecie inowrocławskim",
+    localContext: "Janikowo i gminy powiatu inowrocławskiego to obszar z rosnącą liczbą lokalnych firm i nadal niską konkurencją online. Firma która zainwestuje w profesjonalną stronę z lokalnym SEO wyprzedza lokalną konkurencję o minimum kilkanaście miesięcy, bo większość z nich nie planuje tego w najbliższym czasie.",
+    localContext2: "Obsługujemy firmy z Janikowa, Pakości, Kruszwicy i całego powiatu inowrocławskiego. Bliskość dużych rynków, Inowrocławia i Bydgoszczy, oznacza że Twoi klienci mogą szukać zarówno lokalnie jak i regionalnie. Projektujemy strony widoczne w obu przypadkach.",
+    industries: "Przemysł i produkcja, usługi lokalne i remontowe, rolnictwo i usługi rolnicze, handel",
+    faqA1: "Skontaktuj się przez formularz lub telefon. Dla firm z mniejszych miejscowości często proponujemy zakres lepiej dopasowany do potrzeb niż rozbudowana strona korporacyjna. Wycena bezpłatna, odpowiedź w ciągu 24 godzin.",
+    faqA2: "Strony firmowe i wizytówkowe to 1 do 2 tygodni od dostarczenia materiałów. Sklep internetowy to 3 do 4 tygodnie. Terminy podajemy na początku projektu i ich dotrzymujemy.",
+    faqA3: "Obsługujemy firmy z całego powiatu inowrocławskiego, w tym z Janikowa, Pakości i Kruszwicy. Niskie zagęszczenie konkurencji online w tym rejonie to realny argument za tym żeby zacząć jak najszybciej.",
+  },
+];
