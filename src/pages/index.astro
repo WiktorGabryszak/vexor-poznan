@@ -2,10 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
+import ServiceCards from '../components/ServiceCards.astro';
 import { Image } from 'astro:assets';
 import imgPadel from '../assets/images/projekty-home/Padel King.png';
 import imgFabullate from '../assets/images/projekty-home/Fabullate.png';
 import imgFitBox from '../assets/images/projekty-home/FitBox.png';
+import imgCtaBg from '../assets/images/h6_bg-1.jpg';
+import imgSeo2 from '../assets/images/uslugi-seo-2.jpg';
+import imgAplikacje2 from '../assets/images/uslugi-aplikacje-2.jpg';
+import vexor2 from '../assets/images/vexor-2.jpg';
+import deco2 from '../assets/images/h6_deco-2.png';
+import deco1 from '../assets/images/h6_deco-1.webp';
+import ButtonA from '../components/ui/ButtonA.astro';
 
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -13,7 +22,7 @@ const localBusinessSchema = JSON.stringify({
   "name": "Vexor Designs",
   "url": "https://stronypoznan.com/",
   "telephone": "+48601076883",
-  "email": "kontakt@vexordesigns.pl",
+  "email": "kontakt@stronyinternetowe.net",
   "areaServed": "Poznań",
   "serviceType": ["Tworzenie stron internetowych", "Sklepy WooCommerce", "Pozycjonowanie SEO"]
 });
@@ -29,129 +38,232 @@ const localBusinessSchema = JSON.stringify({
   <Navbar />
   <MobileMenu />
 
-  <main>
+  <main class="bg-brand-bg-light pb-5">
 
     <!-- Hero -->
-    <section
-      class="min-h-[75vh] relative flex flex-col justify-center items-center text-white pt-[130px] pb-20 px-5"
-      style="background: linear-gradient(135deg, #1a1a3e 0%, #2d2d6b 60%, #3d3d8f 100%);"
-      id="hero"
-    >
+    <section class="min-h-[65vh] relative flex flex-col bg-hero-image bg-cover bg-no-repeat text-white" id="hero">
       <div class="absolute inset-0 hero-dot-grid opacity-[0.35] [background-size:32px_32px]" aria-hidden="true"></div>
-      <div class="relative z-10 flex flex-col items-center text-center max-w-[900px] mx-auto gap-6">
-        <h1 class="text-hero text-white text-balance reveal" style="--stagger-i:0">
+
+      <div class="relative z-10 flex flex-col items-center text-center bg-hero-dots max-w-[1000px] mx-auto pt-[180px] px-6">
+        <h1 class="text-hero text-white mt-5 text-balance reveal" style="--stagger-i:1">
           Strony internetowe dla firm z Poznania
         </h1>
-        <p class="text-[22px] md:text-[24px] text-white/85 max-w-[640px] text-pretty font-medium leading-relaxed reveal" style="--stagger-i:1">
+        <p class="text-[24px] text-white/100 max-w-[560px] mt-[22px] text-pretty reveal font-medium" style="--stagger-i:2">
           Poznańskie firmy tracą klientów na strony konkurencji. Twoja strona albo wygrywa ten wyścig, albo przegrywa. Nie ma remisów na pierwszej stronie Google.
         </p>
-        <div class="flex flex-wrap justify-center gap-4 mt-2 reveal" style="--stagger-i:2">
+        <div class="flex flex-wrap justify-center gap-4 mt-5 reveal" style="--stagger-i:3">
+          <ButtonA href="#kontakt" label="Zapytaj o wycenę" invert={false} />
           <a
-            href="https://vexordesigns.pl/kontakt/"
-            class="inline-flex items-center h-14 px-8 rounded-2xl bg-primary hover:bg-primary-hover text-white font-semibold text-[17px] transition-colors duration-150 shadow-lg"
-          >
-            Zapytaj o wycenę
-          </a>
-          <a
-            href="https://vexordesigns.pl/projekty/"
+            href="https://stronyinternetowe.net/projekty/"
             class="inline-flex items-center h-14 px-8 rounded-2xl border border-white/30 text-white font-semibold text-[17px] hover:bg-white/10 transition-colors duration-150"
           >
             Zobacz nasze projekty
           </a>
         </div>
       </div>
+
+      <div class="relative z-50 mt-16 -mb-8">
+        <ServiceCards />
+      </div>
+
+      <Image
+        src={deco2}
+        alt=""
+        aria-hidden="true"
+        role="presentation"
+        fetchpriority="low"
+        loading="lazy"
+        width={250}
+        height={250}
+        style="display:none"
+        class="absolute left-[8%] top-[25%] w-[250px] h-[250px] shape-gem object-contain animate-float pointer-events-none drop-shadow-[0_20px_40px_rgba(160,96,255,0.4)]"
+      />
+
+      <Image
+        src={deco1}
+        alt=""
+        aria-hidden="true"
+        role="presentation"
+        fetchpriority="low"
+        loading="lazy"
+        width={350}
+        height={350}
+        style="display:none"
+        class="absolute right-[5%] top-[35%] w-[350px] h-[350px] shape-gem object-contain animate-float-2 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)]"
+      />
     </section>
 
     <!-- O nas -->
-    <section id="o-nas" class="bg-brand-bg-light py-[80px] md:py-[100px]">
+    <section id="o-nas" class="bg-brand-bg-light pt-[100px] pb-[100px] sm:py-[100px] -z-[50]">
       <div class="max-w-[1700px] mx-auto px-5 md:px-10">
-        <div class="max-w-[800px] mx-auto flex flex-col gap-5 reveal" style="--stagger-i:0">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit border border-brand-border text-brand-text bg-white">
-            <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
-            O nas
-          </span>
-          <h2 class="text-h2">Studio tworzenia stron internetowych</h2>
-          <p class="text-xl text-brand-text leading-relaxed">
-            Vexor Designs to studio tworzenia stron internetowych działające dla firm z całej Polski. Specjalizujemy się w stronach które rankują w Google i zamieniają odwiedziny w zapytania. Obsługujemy firmy z Poznania i Wielkopolski priorytetowo.
-          </p>
-          <a
-            href="https://vexordesigns.pl/o-nas/"
-            class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150 w-fit"
-          >
-            Dowiedz się więcej o Vexor Designs
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+        <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[60px] items-center">
+          <Image
+            src={imgAplikacje2}
+            alt="Tworzenie stron internetowych – warsztat Vexor"
+            class="reveal lg:aspect-[4/5] rounded-card object-cover object-right w-full"
+            style="--stagger-i:0"
+            loading="eager"
+            fetchpriority="high"
+            width={800}
+            height={1000}
+          />
+          <div class="flex flex-col gap-[18px] min-w-0">
+            <div class="reveal" style="--stagger-i:0">
+              <Eyebrow label="O nas" />
+            </div>
+            <h2 class="text-h2 reveal" style="--stagger-i:1">
+              Studio tworzenia stron internetowych
+            </h2>
+            <p class="text-xl text-brand-text max-w-[620px] reveal font-400" style="--stagger-i:2">
+              Vexor Designs to studio tworzenia stron internetowych działające dla firm z całej Polski. Specjalizujemy się w stronach które rankują w Google i zamieniają odwiedziny w zapytania. Obsługujemy firmy z Poznania i Wielkopolski priorytetowo.
+            </p>
+            <a
+              href="https://stronyinternetowe.net/o-nas/"
+              class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150 w-fit"
+            >
+              Dowiedz się więcej o Vexor Designs
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Nasze wartości -->
-    <section id="wartosci" class="bg-white py-[80px] md:py-[100px]">
+    <section id="wartosci" class="bg-brand-bg-light overflow-hidden relative py-8 md:py-[100px]">
+      <div class="absolute left-[-60px] top-1/2 w-[350px] h-[350px] bg-shape-3 shape-gem bg-contain bg-no-repeat animate-float-3 pointer-events-none drop-shadow-[0_24px_50px_rgba(128,64,255,0.45)] hidden lg:absolute"></div>
       <div class="max-w-[1700px] mx-auto px-5 md:px-10">
-        <div class="flex flex-col items-center gap-4 mb-[60px] text-center">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[18px] font-medium tracking-[0.02em] w-fit border border-brand-border text-brand-text bg-brand-bg-light">
-            <span class="w-1.5 h-1.5 rounded-sm bg-primary" aria-hidden="true"></span>
-            Nasze wartości
-          </span>
-          <h2 class="text-h2">Dlaczego warto z nami pracować</h2>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:0">
-            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
+        <div class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-[60px] items-center">
+          <Image
+            src={vexor2}
+            alt="Zespół Vexor przy pracy"
+            class="reveal aspect-video lg:aspect-[4/5] rounded-card object-cover w-full"
+            style="--stagger-i:0"
+            loading="lazy"
+          />
+          <div class="flex flex-col gap-6 order-last lg:order-first">
+            <div class="reveal" style="--stagger-i:0">
+              <Eyebrow label="Nasze wartości" />
             </div>
-            <h3 class="text-h5 font-medium text-brand-accent">Szybka realizacja</h3>
-            <p class="text-brand-text text-base leading-relaxed">Pierwsze makiety w kilka dni roboczych. Wdrożenie w 2–4 tygodnie.</p>
-          </article>
-
-          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:1">
-            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-                <path d="M8 11h6M11 8v6"/>
-              </svg>
+            <h2 class="text-h2 reveal" style="--stagger-i:1">
+              Dlaczego warto z nami pracować
+            </h2>
+            <div class="reveal cv-accordion" style="--stagger-i:2">
+              <div class="cv-item border-b border-brand-border" data-open="true">
+                <button class="cv-summary flex items-center gap-4 w-full text-left py-4 cursor-pointer">
+                  <span class="cv-icon w-16 h-16 rounded-2xl flex items-center justify-center bg-white transition-colors duration-300 flex-shrink-0">
+                    <span
+                      class="w-8 h-8 text-primary transition-colors duration-300"
+                      set:html={'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5"/><path d="M14.5 19c0-2 1.5-3.5 4-3.5 1.6 0 2.5.7 2.5.7"/></svg>'}
+                    />
+                  </span>
+                  <h3 class="cv-label text-h5 font-medium text-brand-muted transition-colors duration-300 flex-1">
+                    Szybka realizacja
+                  </h3>
+                  <span class="cv-indicator w-8 h-8 flex items-center justify-center flex-shrink-0 transition-transform duration-300 text-black">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <line x1="7" y1="2" x2="7" y2="12"/>
+                      <line x1="2" y1="7" x2="12" y2="7"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="cv-body">
+                  <div class="cv-inner">
+                    <p class="pl-[80px] pb-4 text-xl text-brand-muted leading-relaxed">
+                      Pierwsze makiety w kilka dni roboczych. Wdrożenie w 2–4 tygodnie.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cv-item border-b border-brand-border">
+                <button class="cv-summary flex items-center gap-4 w-full text-left py-4 cursor-pointer">
+                  <span class="cv-icon w-16 h-16 rounded-2xl flex items-center justify-center bg-white transition-colors duration-300 flex-shrink-0">
+                    <span
+                      class="w-8 h-8 text-primary transition-colors duration-300"
+                      set:html={'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 1 1-3-6.2L21 5v4h-4"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>'}
+                    />
+                  </span>
+                  <h3 class="cv-label text-h5 font-medium text-brand-muted transition-colors duration-300 flex-1">
+                    Widoczność w Google
+                  </h3>
+                  <span class="cv-indicator w-8 h-8 flex items-center justify-center flex-shrink-0 transition-transform duration-300 text-black">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <line x1="7" y1="2" x2="7" y2="12"/>
+                      <line x1="2" y1="7" x2="12" y2="7"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="cv-body">
+                  <div class="cv-inner">
+                    <p class="pl-[80px] pb-4 text-xl text-brand-muted leading-relaxed">
+                      Każda strona zoptymalizowana pod lokalne frazy SEO od pierwszego dnia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cv-item border-b border-brand-border">
+                <button class="cv-summary flex items-center gap-4 w-full text-left py-4 cursor-pointer">
+                  <span class="cv-icon w-16 h-16 rounded-2xl flex items-center justify-center bg-white transition-colors duration-300 flex-shrink-0">
+                    <span
+                      class="w-8 h-8 text-primary transition-colors duration-300"
+                      set:html={'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m8.5 12 2.4 2.4L16 9.5"/></svg>'}
+                    />
+                  </span>
+                  <h3 class="cv-label text-h5 font-medium text-brand-muted transition-colors duration-300 flex-1">
+                    Bezpośredni kontakt
+                  </h3>
+                  <span class="cv-indicator w-8 h-8 flex items-center justify-center flex-shrink-0 transition-transform duration-300 text-black">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <line x1="7" y1="2" x2="7" y2="12"/>
+                      <line x1="2" y1="7" x2="12" y2="7"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="cv-body">
+                  <div class="cv-inner">
+                    <p class="pl-[80px] pb-4 text-xl text-brand-muted leading-relaxed">
+                      Rozmawiasz z osobą która faktycznie robi Twoją stronę, nie z project managerem.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cv-item border-b border-brand-border">
+                <button class="cv-summary flex items-center gap-4 w-full text-left py-4 cursor-pointer">
+                  <span class="cv-icon w-16 h-16 rounded-2xl flex items-center justify-center bg-white transition-colors duration-300 flex-shrink-0">
+                    <span
+                      class="w-8 h-8 text-primary transition-colors duration-300"
+                      set:html={'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19v1a2 2 0 0 1-2 2h-3"/></svg>'}
+                    />
+                  </span>
+                  <h3 class="cv-label text-h5 font-medium text-brand-muted transition-colors duration-300 flex-1">
+                    Uczciwa wycena
+                  </h3>
+                  <span class="cv-indicator w-8 h-8 flex items-center justify-center flex-shrink-0 transition-transform duration-300 text-black">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <line x1="7" y1="2" x2="7" y2="12"/>
+                      <line x1="2" y1="7" x2="12" y2="7"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="cv-body">
+                  <div class="cv-inner">
+                    <p class="pl-[80px] pb-4 text-xl text-brand-muted leading-relaxed">
+                      Konkretna kwota w 24 godziny. Bez ukrytych kosztów.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="text-h5 font-medium text-brand-accent">Widoczność w Google</h3>
-            <p class="text-brand-text text-base leading-relaxed">Każda strona zoptymalizowana pod lokalne frazy SEO od pierwszego dnia.</p>
-          </article>
-
-          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:2">
-            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
+            <div class="mt-6 flex justify-start reveal" style="--stagger-i:3">
+              <a
+                href="https://stronyinternetowe.net/o-nas/"
+                class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
+              >
+                Jak pracujemy
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
-            <h3 class="text-h5 font-medium text-brand-accent">Bezpośredni kontakt</h3>
-            <p class="text-brand-text text-base leading-relaxed">Rozmawiasz z osobą która faktycznie robi Twoją stronę, nie z project managerem.</p>
-          </article>
-
-          <article class="bg-brand-bg-light rounded-[24px] p-8 flex flex-col gap-4 reveal" style="--stagger-i:3">
-            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <h3 class="text-h5 font-medium text-brand-accent">Uczciwa wycena</h3>
-            <p class="text-brand-text text-base leading-relaxed">Konkretna kwota w 24 godziny. Bez ukrytych kosztów.</p>
-          </article>
-
-        </div>
-
-        <div class="mt-10 flex justify-center reveal" style="--stagger-i:4">
-          <a
-            href="https://vexordesigns.pl/o-nas/"
-            class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
-          >
-            Jak pracujemy
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -168,22 +280,17 @@ const localBusinessSchema = JSON.stringify({
                 Nasze projekty
               </span>
               <h2 class="text-h2 mt-[14px]">Wybrane realizacje</h2>
-              <p class="text-xl text-brand-text mt-4 max-w-[520px]">Pełne portfolio znajdziesz na vexordesigns.pl</p>
+              <p class="text-xl text-brand-text mt-4 max-w-[520px]">Pełne portfolio znajdziesz na stronyinternetowe.net</p>
             </div>
-            <div class="justify-self-start lg:justify-self-end self-end">
-              <a
-                href="https://vexordesigns.pl/projekty/"
-                class="inline-flex items-center h-14 px-7 rounded-2xl bg-primary hover:bg-primary-hover text-white font-semibold text-[16px] transition-colors duration-150"
-              >
-                Wszystkie projekty
-              </a>
+            <div class="justify-self-start self-start">
+              <ButtonA href="https://stronyinternetowe.net/projekty/" label="Wszystkie projekty" invert={false} />
             </div>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             <a
-              href="https://vexordesigns.pl/projekty/"
+              href="https://stronyinternetowe.net/projekty/"
               aria-label="Zobacz projekt Padel King"
               class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
               style="--stagger-i:0; background:#142129;"
@@ -213,7 +320,7 @@ const localBusinessSchema = JSON.stringify({
             </a>
 
             <a
-              href="https://vexordesigns.pl/projekty/"
+              href="https://stronyinternetowe.net/projekty/"
               aria-label="Zobacz projekt Fabulatte"
               class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
               style="--stagger-i:1; background:#12343e;"
@@ -229,7 +336,7 @@ const localBusinessSchema = JSON.stringify({
               </div>
               <div class="px-10 pb-10 pt-5 flex flex-col items-start" style="background:#12343e;">
                 <h3 class="text-white text-h5">Fabulatte</h3>
-                <p class="text-white/85 text-base font-400 mt-1">Strona dla kawiarni</p>
+                <p class="text-white/85 text-base font-400 mt-1">Strona dla firmy marketingowej</p>
                 <div class="mt-auto pt-6">
                   <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
                     <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
@@ -243,7 +350,7 @@ const localBusinessSchema = JSON.stringify({
             </a>
 
             <a
-              href="https://vexordesigns.pl/projekty/"
+              href="https://stronyinternetowe.net/projekty/"
               aria-label="Zobacz projekt FitBox"
               class="group rounded-[20px] overflow-hidden relative cursor-pointer flex flex-col reveal"
               style="--stagger-i:2; background:#D58E24;"
@@ -259,7 +366,7 @@ const localBusinessSchema = JSON.stringify({
               </div>
               <div class="px-10 pb-10 pt-5 flex flex-col items-start" style="background:#D58E24;">
                 <h3 class="text-white text-h5">FitBox</h3>
-                <p class="text-white/85 text-base font-400 mt-1">Landing page dla klubu fitness</p>
+                <p class="text-white/85 text-base font-400 mt-1">Strona dla siłowni</p>
                 <div class="mt-auto pt-6">
                   <span class="group/btn inline-flex items-center h-12 rounded-2xl pr-6 pl-2 text-white text-[16px] font-semibold leading-[1.625] relative overflow-hidden">
                     <span class="absolute left-0 top-0 bottom-0 w-12 rounded-2xl bg-white transition-all duration-300 ease-[ease] group-hover/btn:w-full"></span>
@@ -276,7 +383,7 @@ const localBusinessSchema = JSON.stringify({
 
           <div class="mt-10 flex justify-center reveal" style="--stagger-i:3">
             <a
-              href="https://vexordesigns.pl/projekty/"
+              href="https://stronyinternetowe.net/projekty/"
               class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
             >
               Wszystkie projekty
@@ -366,7 +473,7 @@ const localBusinessSchema = JSON.stringify({
 
         <div class="mt-12 flex justify-center reveal" style="--stagger-i:0">
           <a
-            href="https://vexordesigns.pl/o-nas/"
+            href="https://stronyinternetowe.net/o-nas/"
             class="inline-flex items-center gap-2 text-primary font-semibold text-[17px] hover:gap-3 transition-all duration-150"
           >
             Dowiedz się więcej o procesie
@@ -376,64 +483,64 @@ const localBusinessSchema = JSON.stringify({
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="kontakt" class="bg-brand-bg-light py-[80px] md:py-[100px]">
-      <div class="max-w-[1700px] mx-auto px-5 md:px-10">
+    <section id="kontakt" class="py-[80px] md:py-[100px] mx-3 rounded-[40px] relative overflow-hidden bg-brand-bg-light" style="background-image: url('/h6_bg-1.jpg'); background-size: cover; background-position: center;">
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.72) 100%)"></div>
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
-
           <!-- Left: contact info -->
           <div class="flex flex-col gap-6 reveal" style="--stagger-i:0">
             <div>
-              <h2 class="text-h2 font-medium text-brand-accent">Dane kontaktowe</h2>
-              <p class="text-brand-text mt-3 text-lg leading-relaxed">
+              <div class="flex justify-start w-full mb-5">
+                <Eyebrow dark={true} label="Kontakt" />
+              </div>
+              <h2 class="text-h2 font-medium text-white">Dane kontaktowe</h2>
+              <p class="text-white/70 mt-3 text-lg leading-relaxed">
                 Nie wiesz czego potrzebujesz? To normalne, napisz krótko o swojej firmie, a my zaproponujemy rozwiązanie i wycenę.
               </p>
             </div>
 
             <div class="flex flex-col">
-
-              <a href="mailto:kontakt@vexordesigns.pl"
-                class="group border-b border-brand-border py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
+              <a href="mailto:kontakt@stronyinternetowe.net"
+                class="group border-b border-white/20 py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
                 <div class="flex items-center gap-4">
-                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 text-white">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <rect x="2" y="4" width="20" height="16" rx="2"/>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                     </svg>
                   </span>
-                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Email</h3>
+                  <h3 class="text-h5 font-medium text-white flex-1">Email</h3>
                 </div>
-                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">kontakt@vexordesigns.pl</p>
+                <p class="pl-[80px] text-xl text-white/70 leading-relaxed">kontakt@stronyinternetowe.net</p>
               </a>
 
               <a href="tel:+48601076883"
-                class="group border-b border-brand-border py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
+                class="group border-b border-white/20 py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
                 <div class="flex items-center gap-4">
-                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 text-white">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
                   </span>
-                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Telefon</h3>
+                  <h3 class="text-h5 font-medium text-white flex-1">Telefon</h3>
                 </div>
-                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">+48 601 076 883</p>
+                <p class="pl-[80px] text-xl text-white/70 leading-relaxed">+48 601 076 883</p>
               </a>
 
               <a href="https://www.instagram.com/vexordesigns_official/" target="_blank" rel="noopener noreferrer"
                 class="group py-5 flex flex-col gap-3 hover:opacity-80 transition-opacity duration-150">
                 <div class="flex items-center gap-4">
-                  <span class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 text-white">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <rect x="2" y="2" width="20" height="20" rx="5"/>
                       <circle cx="12" cy="12" r="4"/>
                       <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
                     </svg>
                   </span>
-                  <h3 class="text-h5 font-medium text-brand-accent flex-1">Instagram</h3>
+                  <h3 class="text-h5 font-medium text-white flex-1">Instagram</h3>
                 </div>
-                <p class="pl-[80px] text-xl text-brand-muted leading-relaxed">@vexordesigns_official</p>
+                <p class="pl-[80px] text-xl text-white/70 leading-relaxed">@vexordesigns_official</p>
               </a>
-
             </div>
           </div>
 
@@ -512,7 +619,6 @@ const localBusinessSchema = JSON.stringify({
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -522,27 +628,11 @@ const localBusinessSchema = JSON.stringify({
   <!-- Footer -->
   <footer class="bg-white border-t border-brand-border py-8 px-5 text-center">
     <p class="text-brand-muted text-sm">
-      © 2026 Strony internetowe Poznań · Realizacja: <a href="https://vexordesigns.pl" rel="dofollow" class="text-primary hover:underline">Vexor Designs</a>
+      © 2026 Strony internetowe Poznań · Realizacja: <a href="https://stronyinternetowe.net" rel="dofollow" class="text-primary hover:underline">Vexor</a>
     </p>
   </footer>
 
-  <!-- Sticky sidebar CTA (desktop only) -->
-  <div
-    id="sticky-cta"
-    class="fixed right-0 top-1/2 -translate-y-1/2 z-[90] hidden lg:flex flex-col items-end"
-    style="opacity:0;pointer-events:none;transition:opacity 0.3s ease"
-    aria-hidden="true"
-  >
-    <a
-      href="#kontakt"
-      class="bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-4 rounded-l-2xl shadow-xl transition-colors duration-150 flex items-center"
-      style="writing-mode:vertical-rl;transform:rotate(180deg)"
-      aria-label="Zapytaj o wycenę – przewiń do formularza kontaktowego"
-      aria-hidden="false"
-    >
-      Zapytaj o wycenę
-    </a>
-  </div>
+  
 
   <script>
     const sidebar = document.getElementById('sticky-cta');
@@ -582,5 +672,85 @@ const localBusinessSchema = JSON.stringify({
       });
     }
   </script>
+
+  <script is:inline>
+    const cvItems = document.querySelectorAll('.cv-accordion .cv-item');
+
+    function openCvItem(item) {
+      item.dataset.open = 'true';
+      const body = item.querySelector('.cv-body');
+      body.style.gridTemplateRows = '1fr';
+      const icon = item.querySelector('.cv-icon');
+      const label = item.querySelector('.cv-label');
+      const indicator = item.querySelector('.cv-indicator');
+      icon.style.backgroundColor = 'rgba(110,118,255,0.12)';
+      label.style.color = 'var(--color-brand-accent, #1a1a2e)';
+      indicator.style.transform = 'rotate(45deg)';
+    }
+
+    function closeCvItem(item) {
+      delete item.dataset.open;
+      const body = item.querySelector('.cv-body');
+      body.style.gridTemplateRows = '0fr';
+      const icon = item.querySelector('.cv-icon');
+      const label = item.querySelector('.cv-label');
+      const indicator = item.querySelector('.cv-indicator');
+      icon.style.backgroundColor = '';
+      label.style.color = '';
+      indicator.style.transform = '';
+    }
+
+    cvItems.forEach((item) => {
+      const isInitiallyOpen = item.dataset.open === 'true';
+      const body = item.querySelector('.cv-body');
+
+      if (isInitiallyOpen) {
+        body.style.gridTemplateRows = '1fr';
+        const icon = item.querySelector('.cv-icon');
+        const label = item.querySelector('.cv-label');
+        const indicator = item.querySelector('.cv-indicator');
+        icon.style.backgroundColor = 'rgba(110,118,255,0.12)';
+        label.style.color = 'var(--color-brand-accent, #1a1a2e)';
+        indicator.style.transform = 'rotate(45deg)';
+      } else {
+        body.style.gridTemplateRows = '0fr';
+      }
+
+      item.querySelector('.cv-summary').addEventListener('click', () => {
+        const isOpen = item.dataset.open === 'true';
+        cvItems.forEach((other) => {
+          if (other !== item && other.dataset.open === 'true') closeCvItem(other);
+        });
+        if (isOpen) {
+          closeCvItem(item);
+        } else {
+          openCvItem(item);
+        }
+      });
+    });
+  </script>
+
+  <style>
+    @media (min-width: 768px) {
+      .shape-gem {
+        display: block !important;
+      }
+    }
+
+    .cv-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cv-inner {
+      overflow: hidden;
+    }
+    .cv-summary {
+      background: none;
+      border: none;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  </style>
 
 </Layout>
