@@ -38,7 +38,7 @@ const localBusinessSchema = JSON.stringify({
     "Sklepy WooCommerce Poznań",
     "Pozycjonowanie SEO Poznań"
   ],
-  "priceRange": "1899 PLN do 5000 PLN"
+  "priceRange": "PLN"
 });
 ---
 
@@ -47,13 +47,6 @@ const localBusinessSchema = JSON.stringify({
   description="Tworzymy strony internetowe dla firm z Poznania. Szybka realizacja, SEO od pierwszego dnia, wycena w 24h. Sprawdź nasze realizacje."
   canonicalURL="https://stronypoznan.com/"
 >
-  <script slot="head" is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PL4ZHBYKDH"></script>
-  <script slot="head" is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PL4ZHBYKDH');
-  </script>
   <script slot="head" type="application/ld+json" set:html={localBusinessSchema} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -64,7 +57,7 @@ const localBusinessSchema = JSON.stringify({
         "name": "Ile kosztuje strona internetowa w Poznaniu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Strona wizytówkowa dla firmy z Poznania zaczyna się od 1 899 PLN. Sklepy WooCommerce i bardziej rozbudowane serwisy wyceniamy indywidualnie. Wycenę przygotowujemy bezpłatnie w ciągu 24 godzin od kontaktu."
+          "text": "Cena zależy od zakresu projektu — liczby podstron, funkcji i wybranej technologii. Każdą realizację wyceniamy indywidualnie. Wycenę przygotowujemy bezpłatnie w ciągu 24 godzin od kontaktu."
         }
       },
       {
@@ -72,7 +65,7 @@ const localBusinessSchema = JSON.stringify({
         "name": "Jak długo trwa wykonanie strony www?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standardowy czas realizacji to 2–4 tygodnie robocze. Pierwsze makiety graficzne dostajesz w kilka dni od akceptacji briefu."
+          "text": "Czas realizacji strony internetowej to do 4–6 tygodni roboczych, a sklepu internetowego do 5–8 tygodni. Pierwsze makiety graficzne dostajesz w kilka dni od akceptacji briefu."
         }
       },
       {
@@ -761,63 +754,6 @@ const localBusinessSchema = JSON.stringify({
       </div>
     </section>
 
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Ile kosztuje strona internetowa w Poznaniu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cena zależy od zakresu projektu — liczby podstron, funkcji i wybranej technologii. Każdą realizację wyceniamy indywidualnie. Wycenę przygotowujemy bezpłatnie w ciągu 24 godzin od kontaktu."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Jak długo trwa wykonanie strony www?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Strony internetowe realizujemy do 4–6 tygodni roboczych, sklepy internetowe do 5–8 tygodni. Pierwsze makiety graficzne dostajesz w kilka dni od akceptacji briefu."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czy strona będzie widoczna w Google?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Każda strona, którą tworzymy, jest zoptymalizowana pod lokalne SEO od pierwszego dnia — poprawna struktura nagłówków, meta tagi, szybkość ładowania i schema markup. Dla firm z Poznania dbamy też o frazy lokalne."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czy działacie tylko w Poznaniu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Firmy z Poznania i Wielkopolski obsługujemy priorytetowo, ale pracujemy zdalnie z klientami z całej Polski i Wielkiej Brytanii."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czy mogę zobaczyć projekt przed opłaceniem?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tak. Pracujemy etapami: najpierw makiety graficzne, dopiero potem wdrożenie. Płatność w dwóch ratach — zaliczka na start, reszta po akceptacji gotowej strony."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czy będę mógł samodzielnie edytować stronę?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "To zależy od wybranej technologii. Jeśli projekt powstaje na WordPressie, masz intuicyjny panel do samodzielnej edycji. Jeśli klient potrzebuje CMS — dobieramy go do projektu i wdrażamy. Po oddaniu strony przeprowadzamy szkolenie z obsługi."
-          }
-        }
-      ]
-    }
-    </script>
-
     <script is:inline>
       (function () {
         const cats     = document.querySelectorAll('.faq-cat-btn');
@@ -947,7 +883,6 @@ const localBusinessSchema = JSON.stringify({
                 <input type="hidden" name="redirect" value="https://stronypoznan.com/?success=1" />
                 <!-- Honeypot — web3forms odrzuca zgłoszenia gdy to pole jest wypełnione -->
                 <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-                <!-- reCAPTCHA v3 token -->
                 <input type="hidden" name="g-recaptcha-response" id="recaptcha-token" />
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1002,7 +937,9 @@ const localBusinessSchema = JSON.stringify({
                 </button>
 
                 <p class="text-xs text-brand-muted leading-relaxed text-center">
-                  Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych w celu odpowiedzi na Twoje zapytanie.
+                  Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych w celu odpowiedzi na Twoje zapytanie. Strona chroniona przez reCAPTCHA —
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline hover:text-primary">Prywatność</a> i
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline hover:text-primary">Warunki</a> Google.
                 </p>
               </form>
             </div>
@@ -1141,18 +1078,14 @@ const localBusinessSchema = JSON.stringify({
     }
   </style>
 
+
+  <script slot="head" is:inline async src="https://www.google.com/recaptcha/api.js?render=6LfwdfwsAAAAAHL0vxGacwXztTlxHgBeV-B4bUe7"></script>
+
   <script is:inline>
     (function () {
       var SITE_KEY = '6LfwdfwsAAAAAHL0vxGacwXztTlxHgBeV-B4bUe7';
-
-      var s = document.createElement('script');
-      s.src = 'https://www.google.com/recaptcha/api.js?render=' + SITE_KEY;
-      s.async = true;
-      document.head.appendChild(s);
-
       var form = document.getElementById('contact-form');
       if (!form) return;
-
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var btn = form.querySelector('[type="submit"]');

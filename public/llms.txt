@@ -1,22 +1,24 @@
-# Vexor
+# Vexor Designs — Strony internetowe Poznań
 
-> Vexor to agencja projektowania stron internetowych. Tworzymy strony www, sklepy internetowe i aplikacje webowe dla firm w Polsce.
-
-Klienci wybierają pakiet, dostarczają treści i branding, a agencja zajmuje się projektem, wdrożeniem, SEO, responsywnością mobilną, SSL, codziennymi kopiami zapasowymi i integracją z Google Analytics.
-
-## Strona główna
-- [Strona główna](https://vexordesigns.pl): Główna strona Vexor z opisem usług.
+> Vexor Designs to agencja tworzenia stron internetowych dla firm z Poznania i Wielkopolski. Tworzymy strony www, sklepy WooCommerce i aplikacje webowe — zoptymalizowane pod Google, z wyceną w 24 godziny.
 
 ## Usługi
-- [Usługi](https://vexordesigns.pl/uslugi): Przegląd usług projektowania stron, e-commerce, aplikacji i SEO.
-- [Sklepy internetowe](https://vexordesigns.pl/uslugi/tworzenie-sklepow-internetowych): Tworzenie sklepów online.
-- [Aplikacje webowe](https://vexordesigns.pl/uslugi/aplikacje-internetowe): Dedykowane aplikacje webowe.
-- [Pozycjonowanie SEO](https://vexordesigns.pl/uslugi/pozycjonowanie-seo): Optymalizacja pod wyszukiwarki.
-- [Projektowanie stron](https://vexordesigns.pl/uslugi/projektowanie-stron-internetowych): Projektowanie stron internetowych.
 
-## Projekty
-- [Projekty](https://vexordesigns.pl/projekty): Zrealizowane projekty.
+- Tworzenie stron internetowych dla firm z Poznania — czas realizacji 4–6 tygodni
+- Sklepy internetowe WooCommerce — czas realizacji 5–8 tygodni
+- Pozycjonowanie SEO lokalne — Poznań i Wielkopolska
+- Aplikacje webowe na zamówienie
 
-## Firma
-- [O nas](https://vexordesigns.pl/o-nas): Informacje o firmie.
-- [Kontakt](https://vexordesigns.pl/kontakt): Formularz kontaktowy i dane.
+## Obszar działania
+
+Obsługujemy firmy z Poznania, Wielkopolski i całej Polski. Pracujemy zdalnie.
+
+## Kontakt
+
+- Telefon: +48 601 076 883
+- Email: kontakt@stronyinternetowe.net
+- Instagram: @vexordesigns_official
+
+## Strona główna
+
+- [Strony internetowe Poznań](https://stronypoznan.com): Landing page dla firm z Poznania szukających wykonawcy strony www.

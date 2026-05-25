@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /
@@ -10,4 +10,4 @@ Disallow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://vexordesigns.pl/sitemap.xml
+Sitemap: https://stronypoznan.com/sitemap.xml
