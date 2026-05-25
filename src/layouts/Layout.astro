@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  robots?: string;
 }
 
 const {
@@ -13,6 +15,7 @@ const {
   description = 'Projektujemy strony internetowe, sklepy WooCommerce i aplikacje webowe dla firm w Polsce. Szybka realizacja, pełne wsparcie techniczne, wycena w 24h.',
   ogImage = '/og-image.jpg',
   canonicalURL = Astro.url.href,
+  robots = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 } = Astro.props;
 
 const schemaOrg = JSON.stringify([
@@ -71,7 +74,7 @@ const schemaOrg = JSON.stringify([
     <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="robots" content={robots} />
     <meta name="author" content="Vexor" />
     <link rel="canonical" href={canonicalURL} />
 
@@ -103,14 +106,6 @@ const schemaOrg = JSON.stringify([
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={schemaOrg} />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P0Y6SZL6" is:inline></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-E7P0Y6SZL6');
-    </script>
   </head>
   <body>
     <slot />
@@ -167,5 +162,7 @@ const schemaOrg = JSON.stringify([
       const teamStats = document.querySelector('.team-stats');
       if (teamStats) countObs.observe(teamStats);
     </script>
+
+    <CookieBanner />
   </body>
 </html>

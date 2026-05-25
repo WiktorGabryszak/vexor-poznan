@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Polityka Cookies | Vexor Designs"
+  description="Polityka cookies serwisu stronyinternetowe.net — informacje o plikach cookie i sposobach zarządzania nimi."
+  robots="noindex, follow"
+  canonicalURL="https://stronyinternetowe.net/polityka-cookies/"
+>
+  <Navbar />
+  <MobileMenu />
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-[32vh] relative flex flex-col justify-center items-center bg-hero-image bg-cover bg-no-repeat text-white">
+      <div class="relative z-10 max-w-[1700px] mx-auto px-5 md:px-[47px] py-16 mt-[110px] flex flex-col justify-center items-center gap-5">
+        <nav aria-label="Breadcrumb">
+          <ol class="inline-flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10 text-sm text-white/70">
+            <li><a href="/" class="hover:text-white transition-colors duration-150">Strona główna</a></li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li class="text-white font-medium" aria-current="page">Polityka cookies</li>
+          </ol>
+        </nav>
+        <h1 class="text-heroSub text-white text-balance text-center">
+          Polityka Cookies
+        </h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-brand-bg-light py-[80px] md:py-[100px]">
+      <div class="max-w-[900px] mx-auto px-5 md:px-10">
+        <div class="bg-white rounded-card p-8 md:p-14 policy-content">
+
+          <p class="text-brand-muted text-sm mb-10">Ostatnia aktualizacja: 1 czerwca 2026 r.</p>
+
+          <h2>1. Czym są pliki cookie?</h2>
+          <p>Pliki cookie (ciasteczka) to małe pliki tekstowe zapisywane na Twoim urządzeniu podczas odwiedzania stron internetowych. Służą m.in. do zapamiętywania preferencji użytkownika, analizy ruchu i poprawy działania strony.</p>
+
+          <h2>2. Jakich plików cookie używamy</h2>
+
+          <h3>Niezbędne (zawsze aktywne)</h3>
+          <p>Pliki niezbędne do prawidłowego działania strony. Nie wymagają Twojej zgody.</p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nazwa</th>
+                  <th>Cel</th>
+                  <th>Czas trwania</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>cookie_consent</code></td>
+                  <td>Zapamiętuje Twój wybór dotyczący zgody na cookies</td>
+                  <td>12 miesięcy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Analityczne (wymagają zgody)</h3>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nazwa</th>
+                  <th>Dostawca</th>
+                  <th>Cel</th>
+                  <th>Czas trwania</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>_ga</code></td>
+                  <td>Google Analytics</td>
+                  <td>Rozróżnianie użytkowników</td>
+                  <td>2 lata</td>
+                </tr>
+                <tr>
+                  <td><code>_ga_*</code></td>
+                  <td>Google Analytics</td>
+                  <td>Utrzymanie sesji GA4</td>
+                  <td>2 lata</td>
+                </tr>
+                <tr>
+                  <td><code>_gid</code></td>
+                  <td>Google Analytics</td>
+                  <td>Rozróżnianie użytkowników (sesja)</td>
+                  <td>24 godziny</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Dane zbierane przez Google Analytics mogą być przekazywane do serwerów Google w USA. Więcej informacji: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+
+          <h2>3. Jak zarządzać plikami cookie</h2>
+
+          <h3>Baner zgody</h3>
+          <p>Przy pierwszej wizycie wyświetlamy baner, w którym możesz zaakceptować lub odrzucić pliki analityczne.</p>
+
+          <h3>Ustawienia przeglądarki</h3>
+          <ul>
+            <li>Chrome: Ustawienia → Prywatność i bezpieczeństwo → Pliki cookie</li>
+            <li>Firefox: Ustawienia → Prywatność i bezpieczeństwo → Ciasteczka</li>
+            <li>Safari: Preferencje → Prywatność → Zarządzaj danymi stron</li>
+            <li>Edge: Ustawienia → Pliki cookie i uprawnienia witryn</li>
+          </ul>
+
+          <h3>Opt-out Google Analytics</h3>
+          <p>Możesz wyłączyć śledzenie przez Google Analytics instalując dodatek: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a></p>
+
+          <h2>4. Kontakt</h2>
+          <ul>
+            <li>E-mail: <a href="mailto:kontakt@stronyinternetowe.net">kontakt@stronyinternetowe.net</a></li>
+            <li>Telefon: <a href="tel:+48601076883">+48 601 076 883</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .policy-content h2 {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #000000;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .policy-content h3 {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 600;
+    color: #000000;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .policy-content p {
+    color: #484848;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+  .policy-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .policy-content li {
+    color: #484848;
+    line-height: 1.75;
+    font-size: 16px;
+    margin-bottom: 0.25rem;
+  }
+  .policy-content a {
+    color: #636EDF;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .policy-content a:hover {
+    color: #5963C8;
+  }
+  .policy-content code {
+    background: #F2F1F6;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.875em;
+    font-family: 'Courier New', monospace;
+    color: #484848;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #DFDEE5;
+  }
+  .policy-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .policy-content thead {
+    background: #F2F1F6;
+  }
+  .policy-content th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #000000;
+    white-space: nowrap;
+    border-bottom: 1px solid #DFDEE5;
+  }
+  .policy-content td {
+    padding: 0.75rem 1rem;
+    color: #484848;
+    border-bottom: 1px solid #DFDEE5;
+    line-height: 1.6;
+  }
+  .policy-content tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .policy-content tbody tr:hover td {
+    background: #F2F1F6;
+  }
+</style>

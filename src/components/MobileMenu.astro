@@ -44,24 +44,29 @@ import ButtonA from './ui/ButtonA.astro';
 
     <!-- Usługi accordion -->
     <div>
-      <button
-        id="mobileServicesToggle"
-        class="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl text-brand-accent text-[17px] font-medium hover:bg-black/[0.04] transition-colors duration-150"
-      >
-        Usługi
-        <svg id="mobileServicesChevron" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="2,4 6,8 10,4"/>
-        </svg>
-      </button>
+      <div class="flex items-center rounded-2xl hover:bg-black/[0.04] transition-colors duration-150">
+        <a href="/uslugi/" class="flex-1 px-4 py-3.5 text-brand-accent text-[17px] font-medium">
+          Usługi
+        </a>
+        <button
+          id="mobileServicesToggle"
+          class="px-3 py-3.5 text-brand-accent"
+          aria-label="Rozwiń usługi"
+        >
+          <svg id="mobileServicesChevron" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2,4 6,8 10,4"/>
+          </svg>
+        </button>
+      </div>
       <div id="mobileServicesPanel" class="hidden flex-col gap-0.5 pl-2 pb-1">
-        <a href="/uslugi/strony-internetowe/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+        <a href="/uslugi/projektowanie-stron-internetowych/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
           <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="1" y="2" width="14" height="11" rx="2"/>
             <path d="M5 15h6M8 13v2"/>
           </svg>
           Strony Internetowe
         </a>
-        <a href="/uslugi/sklepy-internetowe/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
+        <a href="/uslugi/tworzenie-sklepow-internetowych/" class="flex items-center gap-3 px-4 py-3 rounded-2xl text-brand-text text-[15px] font-medium hover:bg-black/[0.04] hover:text-brand-accent transition-colors duration-150">
           <svg class="w-4 h-4 text-primary flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 2h1.5l1 5h7l1-4H4.5"/>
             <circle cx="6.5" cy="13" r="1"/><circle cx="11" cy="13" r="1"/>
