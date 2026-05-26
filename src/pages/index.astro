@@ -47,6 +47,7 @@ const localBusinessSchema = JSON.stringify({
   description="Tworzymy strony internetowe dla firm z Poznania. Szybka realizacja, SEO od pierwszego dnia, wycena w 24h. Sprawdź nasze realizacje."
   canonicalURL="https://stronypoznan.com/"
 >
+  <script slot="head" is:inline async defer src="https://web3forms.com/client/script.js"></script>
   <script slot="head" type="application/ld+json" set:html={localBusinessSchema} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -927,6 +928,8 @@ const localBusinessSchema = JSON.stringify({
                   required
                   class="px-5 py-4 rounded-2xl bg-white border border-gray-200 text-brand-accent placeholder:text-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-150 resize-none leading-relaxed"
                 ></textarea>
+
+                <div class="h-captcha" data-captcha="true"></div>
 
                 <button
                   type="submit"
